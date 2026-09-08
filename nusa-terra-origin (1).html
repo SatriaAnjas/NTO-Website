@@ -1,2002 +1,3258 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nusa Terra Origin | Indonesian Essential Oils &amp; Natural Raw Materials</title>
-  <meta name="description" content="PT Nusa Terra Origin produces and exports Indonesian essential oils through responsible sourcing, traceable supply chains, and long-term partnerships with local producers." />
-  <meta name="keywords" content="Indonesian essential oils, Indonesia essential oil supplier, Indonesian natural ingredients, Sandalwood oil Indonesia, Vetiver Indonesia, Patchouli Sumatra, Nutmeg oil Indonesia, Benzoin Indonesia, essential oil supplier Indonesia, natural raw materials Indonesia" />
-  <meta property="og:title" content="Nusa Terra Origin | Indonesian Essential Oils &amp; Natural Raw Materials" />
-  <meta property="og:description" content="PT Nusa Terra Origin produces and exports Indonesian essential oils through responsible sourcing, traceable supply chains, and long-term partnerships with local producers." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://nusaterraorigin.org" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Nusa Terra Origin | Indonesian Essential Oils" />
-  <meta name="twitter:description" content="Premium essential oils sourced, produced, and traced at origin in Indonesia." />
-  <link rel="canonical" href="https://nusaterraorigin.org" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --forest:   #173C2C;
-      --deep:     #0D2A20;
-      --sage:     #879B7A;
-      --olive:    #667458;
-      --ivory:    #F5F1E8;
-      --sand:     #D9CBB4;
-      --gold:     #B59A62;
-      --text:     #17221D;
-      --text-light: #4A5E55;
-      --white:    #FFFFFF;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Nusa Terra Origin | Indonesian Essential Oils &amp; Natural Raw Materials
+    </title>
+    <meta
+      name="description"
+      content="PT Nusa Terra Origin produces and exports Indonesian essential oils through responsible sourcing, traceable supply chains, and long-term partnerships with local producers." />
+    <meta
+      name="keywords"
+      content="Indonesian essential oils, Indonesia essential oil supplier, Indonesian natural ingredients, Sandalwood oil Indonesia, Vetiver Indonesia, Patchouli Sumatra, Nutmeg oil Indonesia, Benzoin Indonesia, essential oil supplier Indonesia, natural raw materials Indonesia" />
+    <meta
+      property="og:title"
+      content="Nusa Terra Origin | Indonesian Essential Oils &amp; Natural Raw Materials" />
+    <meta
+      property="og:description"
+      content="PT Nusa Terra Origin produces and exports Indonesian essential oils through responsible sourcing, traceable supply chains, and long-term partnerships with local producers." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nusaterraorigin.org" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Nusa Terra Origin | Indonesian Essential Oils" />
+    <meta
+      name="twitter:description"
+      content="Premium essential oils sourced, produced, and traced at origin in Indonesia." />
+    <link rel="canonical" href="https://nusaterraorigin.org" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      crossorigin="" />
+    <style>
+      :root {
+        --forest: #173c2c;
+        --deep: #0d2a20;
+        --sage: #879b7a;
+        --olive: #667458;
+        --ivory: #f5f1e8;
+        --sand: #d9cbb4;
+        --gold: #b59a62;
+        --text: #17221d;
+        --text-light: #4a5e55;
+        --white: #ffffff;
+      }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    html { scroll-behavior: smooth; font-size: 16px; }
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
 
-    body {
-      font-family: 'Manrope', sans-serif;
-      background: var(--ivory);
-      color: var(--text);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
+      body {
+        font-family: "Manrope", sans-serif;
+        background: var(--ivory);
+        color: var(--text);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
 
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-    }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
 
-    /* ─── UTILITIES ─────────────────────────────────── */
-    .container { width: 100%; max-width: 1320px; margin: 0 auto; padding: 0 40px; }
-    .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
-    .eyebrow {
-      font-family: 'Manrope', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-    .btn {
-      display: inline-block;
-      font-family: 'Manrope', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 14px 32px;
-      border: 1.5px solid currentColor;
-      text-decoration: none;
-      cursor: pointer;
-      transition: background 0.3s, color 0.3s, border-color 0.3s;
-      background: transparent;
-    }
-    .btn-light {
-      color: var(--ivory);
-      border-color: rgba(245,241,232,0.5);
-    }
-    .btn-light:hover { background: var(--ivory); color: var(--forest); border-color: var(--ivory); }
-    .btn-dark {
-      color: var(--forest);
-      border-color: var(--forest);
-    }
-    .btn-dark:hover { background: var(--forest); color: var(--ivory); }
-    .btn-gold {
-      color: var(--gold);
-      border-color: var(--gold);
-    }
-    .btn-gold:hover { background: var(--gold); color: var(--ivory); }
-    .sr-only {
-      position: absolute; width: 1px; height: 1px;
-      padding: 0; margin: -1px; overflow: hidden;
-      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
-    }
+      /* ─── UTILITIES ─────────────────────────────────── */
+      .container {
+        width: 100%;
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+      .serif {
+        font-family: "Cormorant Garamond", Georgia, serif;
+      }
+      .eyebrow {
+        font-family: "Manrope", sans-serif;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+      .btn {
+        display: inline-block;
+        font-family: "Manrope", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 14px 32px;
+        border: 1.5px solid currentColor;
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+          background 0.3s,
+          color 0.3s,
+          border-color 0.3s;
+        background: transparent;
+      }
+      .btn-light {
+        color: var(--ivory);
+        border-color: rgba(245, 241, 232, 0.5);
+      }
+      .btn-light:hover {
+        background: var(--ivory);
+        color: var(--forest);
+        border-color: var(--ivory);
+      }
+      .btn-dark {
+        color: var(--forest);
+        border-color: var(--forest);
+      }
+      .btn-dark:hover {
+        background: var(--forest);
+        color: var(--ivory);
+      }
+      .btn-gold {
+        color: var(--gold);
+        border-color: var(--gold);
+      }
+      .btn-gold:hover {
+        background: var(--gold);
+        color: var(--ivory);
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
 
-    /* ─── NAVBAR ─────────────────────────────────────── */
-    #navbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      padding: 24px 0;
-      transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
-    }
-    #navbar.scrolled {
-      background: rgba(245,241,232,0.97);
-      backdrop-filter: blur(12px);
-      padding: 16px 0;
-      box-shadow: 0 1px 0 rgba(23,60,44,0.08);
-    }
-    .nav-inner {
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo {
-      text-decoration: none;
-      display: flex; flex-direction: column; line-height: 1;
-    }
-    .nav-logo .logo-main {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      color: var(--ivory);
-      transition: color 0.4s;
-    }
-    .nav-logo .logo-sub {
-      font-family: 'Manrope', sans-serif;
-      font-size: 0.55rem;
-      font-weight: 600;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: rgba(245,241,232,0.5);
-      transition: color 0.4s;
-      margin-top: 3px;
-    }
-    #navbar.scrolled .nav-logo .logo-main { color: var(--forest); }
-    #navbar.scrolled .nav-logo .logo-sub { color: var(--sage); }
+      /* ─── NAVBAR ─────────────────────────────────────── */
+      #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        padding: 24px 0;
+        transition:
+          background 0.4s,
+          padding 0.4s,
+          box-shadow 0.4s;
+      }
+      #navbar.scrolled {
+        background: rgba(245, 241, 232, 0.97);
+        backdrop-filter: blur(12px);
+        padding: 16px 0;
+        box-shadow: 0 1px 0 rgba(23, 60, 44, 0.08);
+      }
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav-logo {
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+      }
+      .nav-logo .logo-main {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.25rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        color: var(--ivory);
+        transition: color 0.4s;
+      }
+      .nav-logo .logo-sub {
+        font-family: "Manrope", sans-serif;
+        font-size: 0.55rem;
+        font-weight: 600;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: rgba(245, 241, 232, 0.5);
+        transition: color 0.4s;
+        margin-top: 3px;
+      }
+      #navbar.scrolled .nav-logo .logo-main {
+        color: var(--forest);
+      }
+      #navbar.scrolled .nav-logo .logo-sub {
+        color: var(--sage);
+      }
 
-    .nav-links {
-      display: flex; align-items: center; gap: 36px; list-style: none;
-    }
-    .nav-links a {
-      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em;
-      text-transform: uppercase; text-decoration: none;
-      color: rgba(245,241,232,0.85);
-      transition: color 0.3s;
-      position: relative;
-    }
-    .nav-links a::after {
-      content: ''; position: absolute; bottom: -3px; left: 0; right: 0;
-      height: 1px; background: var(--gold); transform: scaleX(0);
-      transition: transform 0.3s;
-    }
-    .nav-links a:hover::after { transform: scaleX(1); }
-    .nav-links a:hover { color: var(--ivory); }
-    #navbar.scrolled .nav-links a { color: var(--text-light); }
-    #navbar.scrolled .nav-links a:hover { color: var(--forest); }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 36px;
+        list-style: none;
+      }
+      .nav-links a {
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: rgba(245, 241, 232, 0.85);
+        transition: color 0.3s;
+        position: relative;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--gold);
+        transform: scaleX(0);
+        transition: transform 0.3s;
+      }
+      .nav-links a:hover::after {
+        transform: scaleX(1);
+      }
+      .nav-links a:hover {
+        color: var(--ivory);
+      }
+      #navbar.scrolled .nav-links a {
+        color: var(--text-light);
+      }
+      #navbar.scrolled .nav-links a:hover {
+        color: var(--forest);
+      }
 
-    .nav-cta { margin-left: 16px; }
-    .nav-cta .btn {
-      font-size: 0.65rem;
-      padding: 11px 24px;
-    }
+      .nav-cta {
+        margin-left: 16px;
+      }
+      .nav-cta .btn {
+        font-size: 0.65rem;
+        padding: 11px 24px;
+      }
 
-    .nav-hamburger {
-      display: none;
-      background: none; border: none; cursor: pointer;
-      flex-direction: column; gap: 5px; padding: 4px;
-    }
-    .nav-hamburger span {
-      display: block; width: 24px; height: 1.5px;
-      background: var(--ivory);
-      transition: background 0.4s, transform 0.3s;
-    }
-    #navbar.scrolled .nav-hamburger span { background: var(--forest); }
+      .nav-hamburger {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+        padding: 4px;
+      }
+      .nav-hamburger span {
+        display: block;
+        width: 24px;
+        height: 1.5px;
+        background: var(--ivory);
+        transition:
+          background 0.4s,
+          transform 0.3s;
+      }
+      #navbar.scrolled .nav-hamburger span {
+        background: var(--forest);
+      }
 
-    /* Mobile nav overlay */
-    #mobile-nav {
-      display: none;
-      position: fixed; inset: 0; z-index: 999;
-      background: var(--deep);
-      flex-direction: column; justify-content: center; align-items: center;
-      gap: 40px;
-    }
-    #mobile-nav.open { display: flex; }
-    .mobile-nav-close {
-      position: absolute; top: 24px; right: 28px;
-      background: none; border: none; cursor: pointer;
-      font-size: 1.5rem; color: var(--ivory);
-    }
-    .mobile-nav-links { list-style: none; text-align: center; }
-    .mobile-nav-links li + li { margin-top: 28px; }
-    .mobile-nav-links a {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem; font-weight: 400;
-      color: var(--ivory); text-decoration: none;
-      letter-spacing: 0.05em;
-      transition: color 0.3s;
-    }
-    .mobile-nav-links a:hover { color: var(--gold); }
+      /* Mobile nav overlay */
+      #mobile-nav {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+        background: var(--deep);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+      }
+      #mobile-nav.open {
+        display: flex;
+      }
+      .mobile-nav-close {
+        position: absolute;
+        top: 24px;
+        right: 28px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: var(--ivory);
+      }
+      .mobile-nav-links {
+        list-style: none;
+        text-align: center;
+      }
+      .mobile-nav-links li + li {
+        margin-top: 28px;
+      }
+      .mobile-nav-links a {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2rem;
+        font-weight: 400;
+        color: var(--ivory);
+        text-decoration: none;
+        letter-spacing: 0.05em;
+        transition: color 0.3s;
+      }
+      .mobile-nav-links a:hover {
+        color: var(--gold);
+      }
 
-    /* ─── HERO ───────────────────────────────────────── */
-    #hero {
-      position: relative;
-      width: 100%; height: 100svh; min-height: 600px;
-      overflow: hidden;
-    }
+      /* ─── HERO ───────────────────────────────────────── */
+      #hero {
+        position: relative;
+        width: 100%;
+        height: 100svh;
+        min-height: 600px;
+        overflow: hidden;
+      }
 
-    .hero-slide {
-      position: absolute; inset: 0;
-      opacity: 0; transition: opacity 1.4s ease;
-      background-size: cover; background-position: center;
-    }
-    .hero-slide.active { opacity: 1; z-index: 1; }
-    .hero-slide.prev { opacity: 0; z-index: 0; }
+      .hero-slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 1.4s ease;
+        background-size: cover;
+        background-position: center;
+      }
+      .hero-slide.active {
+        opacity: 1;
+        z-index: 1;
+      }
+      .hero-slide.prev {
+        opacity: 0;
+        z-index: 0;
+      }
 
-    /* Photographic placeholders using CSS gradients that evoke the landscape */
-    .hero-slide:nth-child(1) {
-      background-image:
-        linear-gradient(160deg, rgba(13,42,32,0.72) 0%, rgba(23,60,44,0.55) 50%, rgba(13,42,32,0.8) 100%),
-        url('https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=1800&auto=format&fit=crop&q=75');
-    }
-    .hero-slide:nth-child(2) {
-      background-image:
-        linear-gradient(160deg, rgba(13,42,32,0.65) 0%, rgba(23,60,44,0.45) 50%, rgba(13,42,32,0.78) 100%),
-        url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1800&auto=format&fit=crop&q=75');
-    }
-    .hero-slide:nth-child(3) {
-      background-image:
-        linear-gradient(160deg, rgba(13,42,32,0.7) 0%, rgba(23,60,44,0.5) 50%, rgba(13,42,32,0.82) 100%),
-        url('https://images.unsplash.com/photo-1464863979621-258859e62245?w=1800&auto=format&fit=crop&q=75');
-    }
-    .hero-slide:nth-child(4) {
-      background-image:
-        linear-gradient(160deg, rgba(13,42,32,0.68) 0%, rgba(23,60,44,0.48) 50%, rgba(13,42,32,0.8) 100%),
-        url('https://images.unsplash.com/photo-1523301551780-cd17359a95d0?w=1800&auto=format&fit=crop&q=75');
-    }
+      /* Photographic placeholders using CSS gradients that evoke the landscape */
+      .hero-slide:nth-child(1) {
+        background-image:
+          linear-gradient(
+            160deg,
+            rgba(13, 42, 32, 0.72) 0%,
+            rgba(23, 60, 44, 0.55) 50%,
+            rgba(13, 42, 32, 0.8) 100%
+          ),
+          url("images/Artboard 1.png");
+      }
+      .hero-slide:nth-child(2) {
+        background-image:
+          linear-gradient(
+            160deg,
+            rgba(13, 42, 32, 0.65) 0%,
+            rgba(23, 60, 44, 0.45) 50%,
+            rgba(13, 42, 32, 0.78) 100%
+          ),
+          url("images/Artboard 2.png");
+      }
+      .hero-slide:nth-child(3) {
+        background-image:
+          linear-gradient(
+            160deg,
+            rgba(13, 42, 32, 0.7) 0%,
+            rgba(23, 60, 44, 0.5) 50%,
+            rgba(13, 42, 32, 0.82) 100%
+          ),
+          url("images/Artboard 3.png");
+      }
+      .hero-slide:nth-child(4) {
+        background-image:
+          linear-gradient(
+            160deg,
+            rgba(13, 42, 32, 0.68) 0%,
+            rgba(23, 60, 44, 0.48) 50%,
+            rgba(13, 42, 32, 0.8) 100%
+          ),
+          url("images/Artboard 4.png");
+      }
 
-    .hero-content {
-      position: relative; z-index: 10;
-      height: 100%;
-      display: flex; flex-direction: column; justify-content: flex-end;
-      padding-bottom: 100px;
-    }
+      .hero-content {
+        position: relative;
+        z-index: 10;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 100px;
+      }
 
-    .hero-text { max-width: 820px; }
-    .hero-eyebrow {
-      display: block;
-      font-family: 'Manrope', sans-serif;
-      font-size: 0.65rem; font-weight: 600;
-      letter-spacing: 0.28em; text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
-    .hero-headline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 6vw, 5.5rem);
-      font-weight: 300;
-      line-height: 1.06;
-      color: var(--ivory);
-      margin-bottom: 24px;
-      letter-spacing: -0.01em;
-    }
-    .hero-sub {
-      font-size: 0.95rem;
-      font-weight: 400;
-      color: rgba(245,241,232,0.75);
-      line-height: 1.65;
-      max-width: 440px;
-      margin-bottom: 40px;
-    }
-    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+      .hero-text {
+        max-width: 820px;
+      }
+      .hero-eyebrow {
+        display: block;
+        font-family: "Manrope", sans-serif;
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 20px;
+      }
+      .hero-headline {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.8rem, 6vw, 5.5rem);
+        font-weight: 300;
+        line-height: 1.06;
+        color: var(--ivory);
+        margin-bottom: 24px;
+        letter-spacing: -0.01em;
+      }
+      .hero-sub {
+        font-size: 0.95rem;
+        font-weight: 400;
+        color: rgba(245, 241, 232, 0.75);
+        line-height: 1.65;
+        max-width: 440px;
+        margin-bottom: 40px;
+      }
+      .hero-btns {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
 
-    /* Slide counter / dots */
-    .hero-controls {
-      position: absolute; bottom: 40px; right: 40px;
-      z-index: 10;
-      display: flex; align-items: center; gap: 12px;
-    }
-    .hero-dot {
-      width: 20px; height: 1.5px;
-      background: rgba(245,241,232,0.3);
-      border: none; cursor: pointer; padding: 0;
-      transition: background 0.3s, width 0.3s;
-    }
-    .hero-dot.active { background: var(--ivory); width: 36px; }
+      /* Slide counter / dots */
+      .hero-controls {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .hero-dot {
+        width: 20px;
+        height: 1.5px;
+        background: rgba(245, 241, 232, 0.3);
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition:
+          background 0.3s,
+          width 0.3s;
+      }
+      .hero-dot.active {
+        background: var(--ivory);
+        width: 36px;
+      }
 
-    .hero-arrows {
-      position: absolute; bottom: 32px; left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
-      display: flex; gap: 12px;
-    }
-    .hero-arrow {
-      background: rgba(245,241,232,0.12);
-      border: 1px solid rgba(245,241,232,0.25);
-      color: var(--ivory);
-      width: 44px; height: 44px;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer; font-size: 1rem;
-      transition: background 0.3s, border-color 0.3s;
-    }
-    .hero-arrow:hover { background: rgba(245,241,232,0.22); border-color: rgba(245,241,232,0.5); }
+      .hero-arrows {
+        position: absolute;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        display: flex;
+        gap: 12px;
+      }
+      .hero-arrow {
+        background: rgba(245, 241, 232, 0.12);
+        border: 1px solid rgba(245, 241, 232, 0.25);
+        color: var(--ivory);
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 1rem;
+        transition:
+          background 0.3s,
+          border-color 0.3s;
+      }
+      .hero-arrow:hover {
+        background: rgba(245, 241, 232, 0.22);
+        border-color: rgba(245, 241, 232, 0.5);
+      }
 
-    /* ─── BRAND STATEMENT ────────────────────────────── */
-    #brand-statement {
-      background: var(--deep);
-      padding: 120px 0;
-    }
-    .brand-inner {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 80px; align-items: center;
-    }
-    .brand-left .serif-display {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.4rem, 4vw, 3.8rem);
-      font-weight: 300;
-      line-height: 1.1;
-      color: var(--ivory);
-      letter-spacing: -0.01em;
-    }
-    .brand-left .serif-display em {
-      font-style: italic;
-      color: var(--sage);
-    }
-    .gold-rule {
-      width: 40px; height: 1px;
-      background: var(--gold);
-      margin: 32px 0;
-    }
-    .brand-right p {
-      font-size: 0.95rem; line-height: 1.8;
-      color: rgba(245,241,232,0.65);
-      margin-bottom: 32px;
-    }
+      /* ─── BRAND STATEMENT ────────────────────────────── */
+      #brand-statement {
+        background: var(--deep);
+        padding: 80px 0;
+      }
+      .brand-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+      }
+      .brand-left .serif-display {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.4rem, 4vw, 3.8rem);
+        font-weight: 300;
+        line-height: 1.1;
+        color: var(--ivory);
+        letter-spacing: -0.01em;
+      }
+      .brand-left .serif-display em {
+        font-style: italic;
+        color: var(--sage);
+      }
+      .gold-rule {
+        width: 40px;
+        height: 1px;
+        background: var(--gold);
+        margin: 32px 0;
+      }
+      .brand-right p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+        color: rgba(245, 241, 232, 0.65);
+        margin-bottom: 20px;
+      }
+      .brand-right h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.7rem;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin: 20px 0 12px;
+      }
+      .brand-right h2 + p {
+        margin-bottom: 0;
+      }
+      .brand-right .btn {
+        margin-top: 40px;
+      }
 
-    /* ─── ABOUT ──────────────────────────────────────── */
-    #about {
-      background: var(--ivory);
-      padding: 140px 0;
-    }
-    .about-grid {
-      display: grid; grid-template-columns: 1.1fr 1fr;
-      gap: 100px; align-items: center;
-    }
-    .about-img-wrap {
-      position: relative;
-    }
-    .about-img-main {
-      width: 100%; aspect-ratio: 3/4;
-      object-fit: cover;
-      display: block;
-    }
-    .about-img-placeholder {
-      width: 100%; aspect-ratio: 3/4;
-      background:
-        linear-gradient(160deg, rgba(23,60,44,0.9) 0%, rgba(13,42,32,0.7) 100%),
-        url('https://images.unsplash.com/photo-1588776814546-1ffedbe31b2c?w=800&auto=format&fit=crop&q=75');
-      background-size: cover; background-position: center;
-    }
-    .about-accent-box {
-      position: absolute; bottom: -24px; right: -24px;
-      width: 160px; height: 160px;
-      background: var(--gold);
-      opacity: 0.15;
-      z-index: -1;
-    }
-    .about-text .section-label {
-      margin-bottom: 20px;
-    }
-    .about-text h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 400;
-      line-height: 1.12;
-      color: var(--forest);
-      margin-bottom: 28px;
-    }
-    .about-text p {
-      font-size: 0.95rem; line-height: 1.85;
-      color: var(--text-light);
-      margin-bottom: 20px;
-    }
-    .name-breakdown {
-      margin: 40px 0;
-      border-top: 1px solid var(--sand);
-      padding-top: 36px;
-    }
-    .name-item { margin-bottom: 20px; }
-    .name-word {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem; font-weight: 500;
-      color: var(--forest); letter-spacing: 0.05em;
-    }
-    .name-meaning {
-      font-size: 0.8rem; font-weight: 400;
-      color: var(--text-light);
-      margin-top: 2px;
-    }
+      /* ─── ABOUT ──────────────────────────────────────── */
+      #about {
+        background: var(--ivory);
+        padding: 140px 0;
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 100px;
+        align-items: center;
+      }
+      .about-img-wrap {
+        position: relative;
+      }
+      .about-img-main {
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        display: block;
+      }
+      .about-img-placeholder {
+        width: 100%;
+        aspect-ratio: 3/4;
+        background:
+          /* linear-gradient(
+            160deg,
+            rgba(23, 60, 44, 0.35) 0%,
+            rgba(13, 42, 32, 0.55) 100%
+          ), */ url("images/ImgPlaceholder.jpeg");
+        background-size: cover;
+        background-position: center;
+      }
+      .about-accent-box {
+        position: absolute;
+        bottom: -24px;
+        right: -24px;
+        width: 160px;
+        height: 160px;
+        background: var(--gold);
+        opacity: 0.15;
+        z-index: -1;
+      }
+      .about-text .section-label {
+        margin-bottom: 20px;
+      }
+      .about-text h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        font-weight: 400;
+        line-height: 1.12;
+        color: var(--forest);
+        margin-bottom: 28px;
+      }
+      .about-text p {
+        font-size: 0.95rem;
+        line-height: 1.85;
+        color: var(--text-light);
+        margin-bottom: 20px;
+      }
+      .name-breakdown {
+        margin: 40px 0;
+        border-top: 1px solid var(--sand);
+        padding-top: 36px;
+      }
+      .name-item {
+        margin-bottom: 20px;
+      }
+      .name-word {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: var(--forest);
+        letter-spacing: 0.05em;
+      }
+      .name-meaning {
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: var(--text-light);
+        margin-top: 2px;
+      }
 
-    /* ─── APPROACH ───────────────────────────────────── */
-    #approach {
-      background: var(--forest);
-      padding: 120px 0;
-    }
-    .approach-header { text-align: center; margin-bottom: 80px; }
-    .approach-header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 4vw, 3.2rem);
-      font-weight: 300; color: var(--ivory);
-      margin-top: 16px;
-    }
-    .approach-grid {
-      display: grid; grid-template-columns: repeat(5, 1fr);
-      gap: 2px;
-    }
-    .approach-item {
-      background: rgba(245,241,232,0.04);
-      padding: 48px 32px;
-      border-top: 1px solid rgba(245,241,232,0.08);
-      transition: background 0.3s;
-    }
-    .approach-item:hover { background: rgba(245,241,232,0.08); }
-    .approach-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3.5rem; font-weight: 300;
-      color: var(--gold); opacity: 0.4;
-      line-height: 1; margin-bottom: 24px;
-    }
-    .approach-title {
-      font-size: 0.65rem; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--ivory); margin-bottom: 12px;
-    }
-    .approach-desc {
-      font-size: 0.85rem; line-height: 1.7;
-      color: rgba(245,241,232,0.55);
-    }
+      /* ─── APPROACH ───────────────────────────────────── */
+      #approach {
+        background: var(--forest);
+        padding: 120px 0;
+      }
+      .approach-header {
+        text-align: center;
+        margin-bottom: 80px;
+      }
+      .approach-header h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.2rem, 4vw, 3.2rem);
+        font-weight: 300;
+        color: var(--ivory);
+        margin-top: 16px;
+      }
+      .approach-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2px;
+      }
+      .approach-item {
+        background: rgba(245, 241, 232, 0.04);
+        padding: 48px 32px;
+        border-top: 1px solid rgba(245, 241, 232, 0.08);
+        transition: background 0.3s;
+      }
+      .approach-item:hover {
+        background: rgba(245, 241, 232, 0.08);
+      }
+      .approach-num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 3.5rem;
+        font-weight: 300;
+        color: var(--gold);
+        opacity: 0.4;
+        line-height: 1;
+        margin-bottom: 24px;
+      }
+      .approach-title {
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ivory);
+        margin-bottom: 12px;
+      }
+      .approach-desc {
+        font-size: 0.85rem;
+        line-height: 1.7;
+        color: rgba(245, 241, 232, 0.55);
+      }
 
-    /* ─── PRODUCTS ───────────────────────────────────── */
-    #products {
-      background: var(--ivory);
-      padding: 140px 0;
-    }
-    .products-header {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 60px; margin-bottom: 80px;
-      align-items: end;
-    }
-    .products-header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.4rem, 4vw, 3.4rem);
-      font-weight: 400; color: var(--forest);
-      line-height: 1.1;
-    }
-    .products-header p {
-      font-size: 0.95rem; line-height: 1.75;
-      color: var(--text-light);
-      max-width: 400px;
-    }
+      /* ─── PRODUCTS ───────────────────────────────────── */
+      #products {
+        background: var(--ivory);
+        padding: 140px 0;
+      }
+      .products-header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        margin-bottom: 80px;
+        align-items: end;
+      }
+      .products-header h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.4rem, 4vw, 3.4rem);
+        font-weight: 400;
+        color: var(--forest);
+        line-height: 1.1;
+      }
+      .products-header p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+        color: var(--text-light);
+        max-width: 400px;
+      }
 
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 20px;
-    }
-    .product-card {
-      position: relative; overflow: hidden; cursor: pointer;
-      background: var(--deep);
-    }
-    .product-card:nth-child(1) { grid-column: span 5; grid-row: span 2; }
-    .product-card:nth-child(2) { grid-column: span 7; }
-    .product-card:nth-child(3) { grid-column: span 4; }
-    .product-card:nth-child(4) { grid-column: span 3; }
-    .product-card:nth-child(5) { grid-column: span 5; }
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 20px;
+      }
+      .product-card {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        background: var(--deep);
+      }
+      .product-card:nth-child(1) {
+        grid-column: span 5;
+        grid-row: span 2;
+      }
+      .product-card:nth-child(2) {
+        grid-column: span 7;
+      }
+      .product-card:nth-child(3) {
+        grid-column: span 4;
+      }
+      .product-card:nth-child(4) {
+        grid-column: span 3;
+      }
+      .product-card:nth-child(5) {
+        grid-column: span 5;
+      }
 
-    .product-img {
-      width: 100%; height: 100%; min-height: 300px;
-      background-size: cover; background-position: center;
-      transition: transform 0.8s ease;
-    }
-    .product-card:nth-child(1) .product-img { min-height: 640px; }
-    .product-card:nth-child(2) .product-img { min-height: 300px; }
-    .product-card:hover .product-img { transform: scale(1.04); }
+      .product-img {
+        width: 100%;
+        height: 100%;
+        min-height: 300px;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.8s ease;
+      }
+      .product-card:nth-child(1) .product-img {
+        min-height: 640px;
+      }
+      .product-card:nth-child(2) .product-img {
+        min-height: 300px;
+      }
+      .product-card:hover .product-img {
+        transform: scale(1.04);
+      }
 
-    .product-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(13,42,32,0.92) 0%, rgba(13,42,32,0.3) 60%, transparent 100%);
-      display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 36px 32px;
-    }
-    .product-tag {
-      font-size: 0.6rem; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 8px;
-    }
-    .product-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem; font-weight: 400;
-      color: var(--ivory); margin-bottom: 8px;
-    }
-    .product-origin {
-      font-size: 0.75rem; color: rgba(245,241,232,0.6);
-      margin-bottom: 20px;
-    }
-    .product-cta {
-      font-size: 0.62rem; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--ivory);
-      display: inline-flex; align-items: center; gap: 10px;
-      text-decoration: none;
-      opacity: 0; transform: translateY(6px);
-      transition: opacity 0.3s, transform 0.3s;
-    }
-    .product-cta::after {
-      content: '';
-      display: block; width: 24px; height: 1px;
-      background: var(--gold);
-    }
-    .product-card:hover .product-cta { opacity: 1; transform: translateY(0); }
-    .product-variants {
-      font-size: 0.72rem; color: rgba(245,241,232,0.45);
-      margin-bottom: 12px;
-    }
+      .product-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(13, 42, 32, 0.92) 0%,
+          rgba(13, 42, 32, 0.3) 60%,
+          transparent 100%
+        );
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 36px 32px;
+      }
+      .product-tag {
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 8px;
+      }
+      .product-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: var(--ivory);
+        margin-bottom: 8px;
+      }
+      .product-origin {
+        font-size: 0.75rem;
+        color: rgba(245, 241, 232, 0.6);
+        margin-bottom: 20px;
+      }
+      .product-cta {
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--ivory);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        opacity: 0;
+        transform: translateY(6px);
+        transition:
+          opacity 0.3s,
+          transform 0.3s;
+      }
+      .product-cta::after {
+        content: "";
+        display: block;
+        width: 24px;
+        height: 1px;
+        background: var(--gold);
+      }
+      .product-card:hover .product-cta {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .product-variants {
+        font-size: 0.72rem;
+        color: rgba(245, 241, 232, 0.45);
+        margin-bottom: 12px;
+      }
 
-    /* Product backgrounds */
-    .prod-sandalwood {
-      background-image:
-        linear-gradient(to top, rgba(13,42,32,0.6) 0%, transparent 70%),
-        url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&auto=format&fit=crop&q=75');
-    }
-    .prod-vetiver {
-      background-image:
-        linear-gradient(to top, rgba(13,42,32,0.6) 0%, transparent 70%),
-        url('https://images.unsplash.com/photo-1559181567-c3190ca9d70e?w=900&auto=format&fit=crop&q=75');
-    }
-    .prod-patchouli {
-      background-image:
-        linear-gradient(to top, rgba(13,42,32,0.6) 0%, transparent 70%),
-        url('https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=800&auto=format&fit=crop&q=75');
-    }
-    .prod-nutmeg {
-      background-image:
-        linear-gradient(to top, rgba(13,42,32,0.6) 0%, transparent 70%),
-        url('https://images.unsplash.com/photo-1547928578-bca3ce4a1b6c?w=800&auto=format&fit=crop&q=75');
-    }
-    .prod-benzoin {
-      background-image:
-        linear-gradient(to top, rgba(13,42,32,0.6) 0%, transparent 70%),
-        url('https://images.unsplash.com/photo-1611689102192-1f6e0e52df0a?w=800&auto=format&fit=crop&q=75');
-    }
+      /* Product backgrounds */
+      .prod-sandalwood {
+        background-image:
+          linear-gradient(to top, rgba(13, 42, 32, 0.6) 0%, transparent 70%),
+          url("images/Sandalwood.png");
+        background-color: var(--deep);
+      }
+      .prod-vetiver {
+        background-image:
+          linear-gradient(to top, rgba(13, 42, 32, 0.6) 0%, transparent 70%),
+          url("images/VetiverJavaGarut.jpeg");
+      }
+      .prod-patchouli {
+        background-image:
+          linear-gradient(to top, rgba(13, 42, 32, 0.6) 0%, transparent 70%),
+          url("images/PatchouliSumatra.jpeg");
+      }
+      .prod-nutmeg {
+        background-image:
+          linear-gradient(to top, rgba(13, 42, 32, 0.6) 0%, transparent 70%),
+          url("images/Nutmeg.jpeg");
+      }
+      .prod-benzoin {
+        background-image:
+          linear-gradient(to top, rgba(13, 42, 32, 0.6) 0%, transparent 70%),
+          url("images/Artboard 1.png");
+      }
 
-    /* ─── PRODUCT MODAL ──────────────────────────────── */
-    .modal-overlay {
-      display: none; position: fixed; inset: 0; z-index: 2000;
-      background: rgba(13,42,32,0.8); backdrop-filter: blur(8px);
-      align-items: center; justify-content: center; padding: 24px;
-    }
-    .modal-overlay.open { display: flex; }
-    .modal-box {
-      background: var(--ivory);
-      max-width: 860px; width: 100%;
-      max-height: 90vh; overflow-y: auto;
-      display: grid; grid-template-columns: 1fr 1fr;
-    }
-    .modal-img {
-      min-height: 400px;
-      background-size: cover; background-position: center;
-    }
-    .modal-content { padding: 52px 44px; }
-    .modal-eyebrow { margin-bottom: 12px; }
-    .modal-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.4rem; font-weight: 400;
-      color: var(--forest); margin-bottom: 8px;
-    }
-    .modal-origin { font-size: 0.8rem; color: var(--sage); margin-bottom: 28px; }
-    .modal-rule { width: 32px; height: 1px; background: var(--gold); margin-bottom: 28px; }
-    .modal-desc { font-size: 0.9rem; line-height: 1.8; color: var(--text-light); margin-bottom: 20px; }
-    .modal-label {
-      font-size: 0.65rem; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--text); margin-bottom: 8px; margin-top: 20px;
-    }
-    .modal-value { font-size: 0.88rem; color: var(--text-light); }
-    .modal-close {
-      position: absolute; top: 20px; right: 24px;
-      background: none; border: none; cursor: pointer;
-      font-size: 1.4rem; color: var(--forest); z-index: 10;
-      width: 36px; height: 36px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .modal-box { position: relative; }
-    .modal-footer { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--sand); }
+      /* ─── PRODUCT MODAL ──────────────────────────────── */
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 2000;
+        background: rgba(13, 42, 32, 0.8);
+        backdrop-filter: blur(8px);
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+      .modal-overlay.open {
+        display: flex;
+      }
+      .modal-box {
+        background: var(--ivory);
+        max-width: 860px;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .modal-img {
+        min-height: 400px;
+        background-size: cover;
+        background-position: center;
+      }
+      .modal-content {
+        padding: 52px 44px;
+      }
+      .modal-eyebrow {
+        margin-bottom: 12px;
+      }
+      .modal-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.4rem;
+        font-weight: 400;
+        color: var(--forest);
+        margin-bottom: 8px;
+      }
+      .modal-origin {
+        font-size: 0.8rem;
+        color: var(--sage);
+        margin-bottom: 28px;
+      }
+      .modal-rule {
+        width: 32px;
+        height: 1px;
+        background: var(--gold);
+        margin-bottom: 28px;
+      }
+      .modal-desc {
+        font-size: 0.9rem;
+        line-height: 1.8;
+        color: var(--text-light);
+        margin-bottom: 20px;
+      }
+      .modal-label {
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--text);
+        margin-bottom: 8px;
+        margin-top: 20px;
+      }
+      .modal-value {
+        font-size: 0.88rem;
+        color: var(--text-light);
+      }
+      .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.4rem;
+        color: var(--forest);
+        z-index: 10;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .modal-box {
+        position: relative;
+      }
+      .modal-footer {
+        margin-top: 36px;
+        padding-top: 28px;
+        border-top: 1px solid var(--sand);
+      }
 
-    /* ─── SUPPLY CHAIN ───────────────────────────────── */
-    #supply-chain {
-      background: var(--deep);
-      padding: 140px 0;
-    }
-    .chain-header { margin-bottom: 90px; }
-    .chain-header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
-      font-weight: 300; color: var(--ivory);
-      margin-top: 20px;
-      max-width: 540px;
-    }
-    .chain-steps {
-      display: grid; grid-template-columns: repeat(7, 1fr);
-      gap: 0; position: relative;
-    }
-    .chain-steps::before {
-      content: '';
-      position: absolute; top: 28px; left: 5%; right: 5%;
-      height: 1px; background: rgba(245,241,232,0.1);
-    }
-    .chain-step { padding: 0 16px; }
-    .chain-step-num {
-      width: 56px; height: 56px;
-      border: 1px solid rgba(245,241,232,0.2);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem; color: var(--gold);
-      background: var(--deep);
-      position: relative; z-index: 1;
-      margin-bottom: 28px;
-    }
-    .chain-step-title {
-      font-size: 0.65rem; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--ivory); margin-bottom: 10px;
-    }
-    .chain-step-desc {
-      font-size: 0.8rem; line-height: 1.65;
-      color: rgba(245,241,232,0.45);
-    }
+      /* ─── SUPPLY CHAIN ───────────────────────────────── */
+      #supply-chain {
+        background: var(--deep);
+        padding: 140px 0;
+      }
+      .chain-header {
+        margin-bottom: 90px;
+      }
+      .chain-header h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.2rem, 4vw, 3.4rem);
+        font-weight: 300;
+        color: var(--ivory);
+        margin-top: 20px;
+        max-width: 540px;
+      }
+      .chain-steps {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 0;
+        position: relative;
+      }
+      .chain-steps::before {
+        content: "";
+        position: absolute;
+        top: 28px;
+        left: 5%;
+        right: 5%;
+        height: 1px;
+        background: rgba(245, 241, 232, 0.1);
+      }
+      .chain-step {
+        padding: 0 16px;
+      }
+      .chain-step-num {
+        width: 56px;
+        height: 56px;
+        border: 1px solid rgba(245, 241, 232, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.1rem;
+        color: var(--gold);
+        background: var(--deep);
+        position: relative;
+        z-index: 1;
+        margin-bottom: 28px;
+      }
+      .chain-step-title {
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--ivory);
+        margin-bottom: 10px;
+      }
+      .chain-step-desc {
+        font-size: 0.8rem;
+        line-height: 1.65;
+        color: rgba(245, 241, 232, 0.45);
+      }
 
-    /* ─── MAP ────────────────────────────────────────── */
-    #presence {
-      background: var(--ivory);
-      padding: 140px 0;
-    }
-    .presence-header { text-align: center; margin-bottom: 70px; }
-    .presence-header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 400; color: var(--forest);
-      margin-top: 16px;
-    }
-    .map-container {
-      position: relative;
-      background: var(--deep);
-      border: 1px solid var(--sand);
-      overflow: hidden;
-    }
-    .indonesia-map-wrap {
-      width: 100%; padding: 60px 40px;
-      position: relative;
-    }
-    /* SVG Indonesia map */
-    .indonesia-svg {
-      width: 100%; max-width: 1000px;
-      margin: 0 auto; display: block;
-    }
-    .location-dots { cursor: pointer; }
-    .location-dot-outer {
-      fill: rgba(181,154,98,0.25);
-      animation: pulse 2.5s infinite;
-    }
-    .location-dot-inner { fill: var(--gold); }
-    @keyframes pulse {
-      0%, 100% { opacity: 0.4; r: 12; }
-      50% { opacity: 0.8; r: 16; }
-    }
-    .location-label {
-      font-family: 'Manrope', sans-serif;
-      font-size: 9px; font-weight: 600;
-      fill: var(--ivory);
-      letter-spacing: 0.05em;
-    }
+      /* ─── MAP ────────────────────────────────────────── */
+      #presence {
+        background: var(--ivory);
+        padding: 140px 0;
+      }
+      .presence-header {
+        text-align: center;
+        margin-bottom: 70px;
+      }
+      .presence-header h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        font-weight: 400;
+        color: var(--forest);
+        margin-top: 16px;
+      }
+      .map-container {
+        position: relative;
+        background: var(--deep);
+        border: 1px solid var(--sand);
+        overflow: hidden;
+      }
+      .indonesia-map-wrap {
+        width: 100%;
+        padding: 0;
+        position: relative;
+      }
+      .leaflet-map {
+        width: 100%;
+        height: 520px;
+        z-index: 1;
+      }
+      .leaflet-control-zoom a {
+        color: var(--forest) !important;
+      }
+      /* SVG Indonesia map */
+      .indonesia-svg {
+        display: none !important;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        display: block;
+      }
+      .location-dots {
+        cursor: pointer;
+      }
+      .location-dot-outer {
+        fill: rgba(181, 154, 98, 0.25);
+        animation: pulse 2.5s infinite;
+      }
+      .location-dot-inner {
+        fill: var(--gold);
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.4;
+          r: 12;
+        }
+        50% {
+          opacity: 0.8;
+          r: 16;
+        }
+      }
+      .location-label {
+        font-family: "Manrope", sans-serif;
+        font-size: 9px;
+        font-weight: 600;
+        fill: var(--ivory);
+        letter-spacing: 0.05em;
+      }
 
-    .locations-list {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 2px; margin-top: 2px;
-    }
-    .location-card {
-      background: var(--deep);
-      padding: 36px 32px;
-      border-top: 2px solid transparent;
-      transition: border-color 0.3s, background 0.3s;
-      cursor: default;
-    }
-    .location-card:hover { border-top-color: var(--gold); background: #112e22; }
-    .loc-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem; font-weight: 500;
-      color: var(--ivory); margin-bottom: 6px;
-    }
-    .loc-role {
-      font-size: 0.75rem; color: rgba(245,241,232,0.45);
-      line-height: 1.5;
-    }
-    .loc-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--gold); margin-bottom: 16px;
-    }
+      .locations-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2px;
+        margin-top: 2px;
+      }
+      .location-card {
+        background: var(--deep);
+        padding: 36px 32px;
+        border-top: 2px solid transparent;
+        transition:
+          border-color 0.3s,
+          background 0.3s;
+        cursor: default;
+      }
+      .location-card:hover {
+        border-top-color: var(--gold);
+        background: #112e22;
+      }
+      .loc-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: var(--ivory);
+        margin-bottom: 6px;
+      }
+      .loc-role {
+        font-size: 0.75rem;
+        color: rgba(245, 241, 232, 0.45);
+        line-height: 1.5;
+      }
+      .loc-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+        margin-bottom: 16px;
+      }
 
-    /* ─── SUSTAINABILITY ─────────────────────────────── */
-    #sustainability {
-      background: var(--forest);
-      padding: 0;
-    }
-    .sus-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      min-height: 620px;
-    }
-    .sus-img {
-      background-image:
-        url('https://images.unsplash.com/photo-1552799446-159ba9523315?w=900&auto=format&fit=crop&q=75');
-      background-size: cover; background-position: center;
-      min-height: 500px;
-    }
-    .sus-content {
-      padding: 100px 80px;
-      display: flex; flex-direction: column; justify-content: center;
-    }
-    .sus-content h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 300; color: var(--ivory);
-      line-height: 1.1; margin: 20px 0 28px;
-    }
-    .sus-content p {
-      font-size: 0.9rem; line-height: 1.8;
-      color: rgba(245,241,232,0.6);
-      margin-bottom: 48px; max-width: 420px;
-    }
-    .sus-pillars { display: flex; flex-direction: column; gap: 24px; }
-    .sus-pillar {
-      display: flex; gap: 20px; align-items: flex-start;
-    }
-    .sus-pillar-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem; font-weight: 300;
-      color: var(--gold); opacity: 0.5;
-      line-height: 1; min-width: 32px;
-    }
-    .sus-pillar-text strong {
-      display: block;
-      font-size: 0.68rem; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--ivory); margin-bottom: 4px;
-    }
-    .sus-pillar-text span {
-      font-size: 0.82rem; color: rgba(245,241,232,0.5);
-    }
+      /* ─── SUSTAINABILITY ─────────────────────────────── */
+      #sustainability {
+        background: var(--forest);
+        padding: 0;
+      }
+      .sus-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 620px;
+      }
+      .sus-img {
+        background-image: url("images/Sustainability.jpeg");
+        background-size: cover;
+        background-position: center;
+        min-height: 500px;
+      }
+      .sus-content {
+        padding: 100px 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .sus-content h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        font-weight: 300;
+        color: var(--ivory);
+        line-height: 1.1;
+        margin: 20px 0 28px;
+      }
+      .sus-content p {
+        font-size: 0.9rem;
+        line-height: 1.8;
+        color: rgba(245, 241, 232, 0.6);
+        margin-bottom: 48px;
+        max-width: 420px;
+      }
+      .sus-pillars {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      .sus-pillar {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .sus-pillar-num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2rem;
+        font-weight: 300;
+        color: var(--gold);
+        opacity: 0.5;
+        line-height: 1;
+        min-width: 32px;
+      }
+      .sus-pillar-text strong {
+        display: block;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--ivory);
+        margin-bottom: 4px;
+      }
+      .sus-pillar-text span {
+        font-size: 0.82rem;
+        color: rgba(245, 241, 232, 0.5);
+      }
 
-    /* ─── NURSERY ────────────────────────────────────── */
-    #nursery {
-      background: var(--ivory);
-      padding: 0;
-    }
-    .nursery-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      min-height: 520px;
-    }
-    .nursery-content {
-      padding: 100px 80px;
-      background: var(--deep);
-      display: flex; flex-direction: column; justify-content: center;
-    }
-    .nursery-content h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 300; color: var(--ivory);
-      margin: 20px 0 24px;
-      line-height: 1.15;
-    }
-    .nursery-content p {
-      font-size: 0.9rem; line-height: 1.8;
-      color: rgba(245,241,232,0.6);
-      margin-bottom: 36px; max-width: 380px;
-    }
-    .nursery-img {
-      background-image:
-        url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=900&auto=format&fit=crop&q=75');
-      background-size: cover; background-position: center;
-      min-height: 400px;
-    }
+      /* ─── NURSERY ────────────────────────────────────── */
+      #nursery {
+        background: var(--ivory);
+        padding: 0;
+      }
+      .nursery-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 520px;
+      }
+      .nursery-content {
+        padding: 100px 80px;
+        background: var(--deep);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .nursery-content h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.8rem, 3vw, 2.6rem);
+        font-weight: 300;
+        color: var(--ivory);
+        margin: 20px 0 24px;
+        line-height: 1.15;
+      }
+      .nursery-content p {
+        font-size: 0.9rem;
+        line-height: 1.8;
+        color: rgba(245, 241, 232, 0.6);
+        margin-bottom: 36px;
+        max-width: 380px;
+      }
+      .nursery-img {
+        background-image: url("images/Traceability.jpeg");
+        background-size: cover;
+        background-position: center;
+        min-height: 400px;
+      }
 
-    /* ─── WHY PARTNER ────────────────────────────────── */
-    #why {
-      background: var(--ivory);
-      padding: 140px 0;
-    }
-    .why-header { text-align: center; margin-bottom: 80px; }
-    .why-header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 400; color: var(--forest);
-      margin-top: 16px;
-    }
-    .why-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-    }
-    .why-item {
-      padding: 48px 40px;
-      background: var(--deep);
-      position: relative;
-      overflow: hidden;
-    }
-    .why-item::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: var(--forest);
-      transform: translateY(100%);
-      transition: transform 0.4s ease;
-    }
-    .why-item:hover::before { transform: translateY(0); }
-    .why-item > * { position: relative; z-index: 1; }
-    .why-icon {
-      width: 40px; height: 40px; margin-bottom: 28px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .why-icon svg { stroke: var(--gold); }
-    .why-title {
-      font-size: 0.68rem; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--ivory); margin-bottom: 12px;
-    }
-    .why-desc {
-      font-size: 0.85rem; line-height: 1.7;
-      color: rgba(245,241,232,0.5);
-    }
+      /* ─── WHY PARTNER ────────────────────────────────── */
+      #why {
+        background: var(--ivory);
+        padding: 140px 0;
+      }
+      .why-header {
+        text-align: center;
+        margin-bottom: 80px;
+      }
+      .why-header h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        font-weight: 400;
+        color: var(--forest);
+        margin-top: 16px;
+      }
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2px;
+      }
+      .why-item {
+        padding: 48px 40px;
+        background: var(--deep);
+        position: relative;
+        overflow: hidden;
+      }
+      .why-item::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--forest);
+        transform: translateY(100%);
+        transition: transform 0.4s ease;
+      }
+      .why-item:hover::before {
+        transform: translateY(0);
+      }
+      .why-item > * {
+        position: relative;
+        z-index: 1;
+      }
+      .why-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .why-icon svg {
+        stroke: var(--gold);
+      }
+      .why-title {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--ivory);
+        margin-bottom: 12px;
+      }
+      .why-desc {
+        font-size: 0.85rem;
+        line-height: 1.7;
+        color: rgba(245, 241, 232, 0.5);
+      }
 
-    /* ─── CTA BAND ───────────────────────────────────── */
-    #cta-band {
-      position: relative;
-      background-image:
-        linear-gradient(to right, rgba(13,42,32,0.95) 0%, rgba(23,60,44,0.85) 100%),
-        url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1600&auto=format&fit=crop&q=75');
-      background-size: cover; background-position: center;
-      padding: 140px 0;
-      text-align: center;
-    }
-    #cta-band h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.4rem, 5vw, 4.5rem);
-      font-weight: 300; color: var(--ivory);
-      line-height: 1.08; margin-bottom: 24px;
-    }
-    #cta-band p {
-      font-size: 0.95rem; line-height: 1.7;
-      color: rgba(245,241,232,0.65);
-      max-width: 440px; margin: 0 auto 48px;
-    }
-    .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+      /* ─── CTA BAND ───────────────────────────────────── */
+      #cta-band {
+        position: relative;
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(13, 42, 32, 0.75) 0%,
+            rgba(10, 142, 82, 0.6) 100%
+          ),
+          url("images/WorkWithUs.jpeg");
+        background-size: cover;
+        background-position: center;
+        padding: 140px 0;
+        text-align: center;
+      }
+      #cta-band h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.4rem, 5vw, 4.5rem);
+        font-weight: 300;
+        color: var(--ivory);
+        line-height: 1.08;
+        margin-bottom: 24px;
+      }
+      #cta-band p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: rgba(245, 241, 232, 0.65);
+        max-width: 440px;
+        margin: 0 auto 48px;
+      }
+      .cta-btns {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
 
-    /* ─── CONTACT ────────────────────────────────────── */
-    #contact {
-      background: var(--ivory);
-      padding: 140px 0;
-    }
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1.4fr;
-      gap: 100px;
-    }
-    .contact-info h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      font-weight: 400; color: var(--forest);
-      margin: 16px 0 28px;
-    }
-    .contact-info p {
-      font-size: 0.9rem; line-height: 1.8;
-      color: var(--text-light); margin-bottom: 40px;
-    }
-    .contact-detail { margin-bottom: 20px; }
-    .contact-detail-label {
-      font-size: 0.6rem; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 4px;
-    }
-    .contact-detail-val {
-      font-size: 0.88rem; color: var(--text);
-      font-style: italic;
-    }
-    .contact-form { display: flex; flex-direction: column; gap: 16px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .form-group { display: flex; flex-direction: column; gap: 6px; }
-    .form-label {
-      font-size: 0.62rem; font-weight: 700;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--text-light);
-    }
-    .form-input, .form-select, .form-textarea {
-      font-family: 'Manrope', sans-serif;
-      font-size: 0.88rem;
-      background: transparent;
-      border: none; border-bottom: 1px solid var(--sand);
-      padding: 12px 0; color: var(--text);
-      outline: none;
-      transition: border-color 0.3s;
-      width: 100%;
-      appearance: none;
-    }
-    .form-input:focus,
-    .form-select:focus,
-    .form-textarea:focus { border-bottom-color: var(--forest); }
-    .form-textarea { resize: vertical; min-height: 100px; }
-    .form-select { background: transparent; cursor: pointer; }
-    .form-submit { margin-top: 8px; }
+      /* ─── CONTACT ────────────────────────────────────── */
+      #contact {
+        background: var(--ivory);
+        padding: 140px 0;
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        gap: 100px;
+      }
+      .contact-info h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2rem, 3.5vw, 2.8rem);
+        font-weight: 400;
+        color: var(--forest);
+        margin: 16px 0 28px;
+      }
+      .contact-info p {
+        font-size: 0.9rem;
+        line-height: 1.8;
+        color: var(--text-light);
+        margin-bottom: 40px;
+      }
+      .contact-detail {
+        margin-bottom: 20px;
+      }
+      .contact-detail-label {
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 4px;
+      }
+      .contact-detail-val {
+        font-size: 0.88rem;
+        color: var(--text);
+        font-style: italic;
+      }
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .form-label {
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--text-light);
+      }
+      .form-input,
+      .form-select,
+      .form-textarea {
+        font-family: "Manrope", sans-serif;
+        font-size: 0.88rem;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid var(--sand);
+        padding: 12px 0;
+        color: var(--text);
+        outline: none;
+        transition: border-color 0.3s;
+        width: 100%;
+        appearance: none;
+      }
+      .form-input:focus,
+      .form-select:focus,
+      .form-textarea:focus {
+        border-bottom-color: var(--forest);
+      }
+      .form-textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+      .form-select {
+        background: transparent;
+        cursor: pointer;
+      }
+      .form-submit {
+        margin-top: 8px;
+      }
 
-    /* ─── FOOTER ─────────────────────────────────────── */
-    footer {
-      background: var(--deep);
-      padding: 80px 0 40px;
-    }
-    .footer-main {
-      display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr;
-      gap: 60px; margin-bottom: 60px;
-    }
-    .footer-brand .logo-main {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem; font-weight: 500;
-      letter-spacing: 0.06em; color: var(--ivory);
-    }
-    .footer-brand .logo-sub {
-      font-size: 0.55rem; font-weight: 600;
-      letter-spacing: 0.28em; text-transform: uppercase;
-      color: var(--sage); margin-top: 4px; display: block;
-    }
-    .footer-tagline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.95rem; font-style: italic;
-      color: rgba(245,241,232,0.4); margin-top: 20px;
-      line-height: 1.5;
-    }
-    .footer-col-title {
-      font-size: 0.6rem; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 20px;
-    }
-    .footer-links { list-style: none; }
-    .footer-links li + li { margin-top: 10px; }
-    .footer-links a {
-      font-size: 0.82rem; color: rgba(245,241,232,0.45);
-      text-decoration: none; transition: color 0.3s;
-    }
-    .footer-links a:hover { color: var(--ivory); }
-    .footer-bottom {
-      border-top: 1px solid rgba(245,241,232,0.08);
-      padding-top: 32px;
-      display: flex; justify-content: space-between; align-items: center;
-      font-size: 0.72rem; color: rgba(245,241,232,0.3);
-    }
+      /* ─── FOOTER ─────────────────────────────────────── */
+      footer {
+        background: var(--deep);
+        padding: 80px 0 40px;
+      }
+      .footer-main {
+        display: grid;
+        grid-template-columns: 1.8fr 1fr 1fr 1fr;
+        gap: 60px;
+        margin-bottom: 60px;
+      }
+      .footer-brand .logo-main {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.4rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        color: var(--ivory);
+      }
+      .footer-brand .logo-sub {
+        font-size: 0.55rem;
+        font-weight: 600;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--sage);
+        margin-top: 4px;
+        display: block;
+      }
+      .footer-tagline {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 0.95rem;
+        font-style: italic;
+        color: rgba(245, 241, 232, 0.4);
+        margin-top: 20px;
+        line-height: 1.5;
+      }
+      .footer-col-title {
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 20px;
+      }
+      .footer-links {
+        list-style: none;
+      }
+      .footer-links li + li {
+        margin-top: 10px;
+      }
+      .footer-links a {
+        font-size: 0.82rem;
+        color: rgba(245, 241, 232, 0.45);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .footer-links a:hover {
+        color: var(--ivory);
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(245, 241, 232, 0.08);
+        padding-top: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.72rem;
+        color: rgba(245, 241, 232, 0.3);
+      }
 
-    /* ─── FADE-IN OBSERVE ────────────────────────────── */
-    .reveal {
-      opacity: 0; transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible {
-      opacity: 1; transform: translateY(0);
-    }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.22s; }
-    .reveal-delay-3 { transition-delay: 0.36s; }
+      /* ─── FADE-IN OBSERVE ────────────────────────────── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-delay-1 {
+        transition-delay: 0.1s;
+      }
+      .reveal-delay-2 {
+        transition-delay: 0.22s;
+      }
+      .reveal-delay-3 {
+        transition-delay: 0.36s;
+      }
 
-    /* ─── RESPONSIVE ─────────────────────────────────── */
-    @media (max-width: 1024px) {
-      .container { padding: 0 28px; }
-      .nav-links { gap: 24px; }
-      .brand-inner { grid-template-columns: 1fr; gap: 48px; }
-      .about-grid { grid-template-columns: 1fr; gap: 60px; }
-      .approach-grid { grid-template-columns: repeat(3, 1fr); }
-      .products-grid { grid-template-columns: 1fr 1fr; }
-      .product-card:nth-child(1),
-      .product-card:nth-child(2),
-      .product-card:nth-child(3),
-      .product-card:nth-child(4),
-      .product-card:nth-child(5) { grid-column: span 6; }
-      .chain-steps { grid-template-columns: repeat(4, 1fr); }
-      .locations-list { grid-template-columns: repeat(2, 1fr); }
-      .sus-grid { grid-template-columns: 1fr; }
-      .nursery-grid { grid-template-columns: 1fr; }
-      .nursery-content { order: 2; }
-      .nursery-img { order: 1; }
-      .why-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-main { grid-template-columns: 1fr 1fr; gap: 40px; }
-      .modal-box { grid-template-columns: 1fr; }
-      .modal-img { min-height: 280px; }
-      .contact-grid { grid-template-columns: 1fr; gap: 60px; }
-      .products-header { grid-template-columns: 1fr; }
-    }
+      /* ─── RESPONSIVE ─────────────────────────────────── */
+      @media (max-width: 1024px) {
+        .container {
+          padding: 0 28px;
+        }
+        .nav-links {
+          gap: 24px;
+        }
+        .brand-inner {
+          grid-template-columns: 1fr;
+          gap: 48px;
+        }
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 60px;
+        }
+        .approach-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .products-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .product-card:nth-child(1),
+        .product-card:nth-child(2),
+        .product-card:nth-child(3),
+        .product-card:nth-child(4),
+        .product-card:nth-child(5) {
+          grid-column: span 6;
+        }
+        .chain-steps {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        .locations-list {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .sus-grid {
+          grid-template-columns: 1fr;
+        }
+        .nursery-grid {
+          grid-template-columns: 1fr;
+        }
+        .nursery-content {
+          order: 2;
+        }
+        .nursery-img {
+          order: 1;
+        }
+        .why-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .footer-main {
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
+        }
+        .modal-box {
+          grid-template-columns: 1fr;
+        }
+        .modal-img {
+          min-height: 280px;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 60px;
+        }
+        .products-header {
+          grid-template-columns: 1fr;
+        }
+      }
 
-    @media (max-width: 768px) {
-      .nav-links, .nav-cta { display: none; }
-      .nav-hamburger { display: flex; }
-      #hero { height: 100svh; }
-      .hero-content { padding-bottom: 80px; }
-      .hero-controls { bottom: 20px; right: 20px; }
-      .approach-grid { grid-template-columns: 1fr 1fr; }
-      .products-grid { grid-template-columns: 1fr; }
-      .product-card:nth-child(n) { grid-column: span 1; }
-      .chain-steps { grid-template-columns: repeat(2, 1fr); }
-      .chain-steps::before { display: none; }
-      .locations-list { grid-template-columns: 1fr; }
-      .sus-content { padding: 60px 36px; }
-      .nursery-content { padding: 60px 36px; }
-      .why-grid { grid-template-columns: 1fr; }
-      .footer-main { grid-template-columns: 1fr; gap: 36px; }
-      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-      .form-row { grid-template-columns: 1fr; }
-      .hero-arrows { display: none; }
-    }
+      @media (max-width: 768px) {
+        .nav-links,
+        .nav-cta {
+          display: none;
+        }
+        .nav-hamburger {
+          display: flex;
+        }
+        #hero {
+          height: 100svh;
+        }
+        .hero-content {
+          padding-bottom: 80px;
+        }
+        .hero-controls {
+          bottom: 20px;
+          right: 20px;
+        }
+        .approach-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .products-grid {
+          grid-template-columns: 1fr;
+        }
+        .product-card:nth-child(n) {
+          grid-column: span 1;
+        }
+        .chain-steps {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .chain-steps::before {
+          display: none;
+        }
+        .locations-list {
+          grid-template-columns: 1fr;
+        }
+        .sus-content {
+          padding: 60px 36px;
+        }
+        .nursery-content {
+          padding: 60px 36px;
+        }
+        .why-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-main {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          gap: 12px;
+          text-align: center;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+        .hero-arrows {
+          display: none;
+        }
+      }
 
-    @media (max-width: 480px) {
-      .container { padding: 0 20px; }
-      #brand-statement { padding: 80px 0; }
-      #about { padding: 80px 0; }
-      #approach { padding: 80px 0; }
-      #products { padding: 80px 0; }
-      #supply-chain { padding: 80px 0; }
-      #presence { padding: 80px 0; }
-      #why { padding: 80px 0; }
-      #cta-band { padding: 80px 0; }
-      #contact { padding: 80px 0; }
-      .approach-grid { grid-template-columns: 1fr; }
-      .chain-steps { grid-template-columns: 1fr; }
-    }
-  </style>
-</head>
-<body>
-
-<!-- ═══════════════════════════════════════════════════
+      @media (max-width: 480px) {
+        .container {
+          padding: 0 20px;
+        }
+        #brand-statement {
+          padding: 56px 0;
+        }
+        #about {
+          padding: 80px 0;
+        }
+        #approach {
+          padding: 80px 0;
+        }
+        #products {
+          padding: 80px 0;
+        }
+        #supply-chain {
+          padding: 80px 0;
+        }
+        #presence {
+          padding: 80px 0;
+        }
+        #why {
+          padding: 80px 0;
+        }
+        #cta-band {
+          padding: 80px 0;
+        }
+        #contact {
+          padding: 80px 0;
+        }
+        .approach-grid {
+          grid-template-columns: 1fr;
+        }
+        .chain-steps {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════════════════════
      NAVIGATION
 ════════════════════════════════════════════════════ -->
-<nav id="navbar" role="navigation" aria-label="Main navigation">
-  <div class="container">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo" aria-label="Nusa Terra Origin home">
-        <span class="logo-main">NUSA TERRA ORIGIN</span>
-        <span class="logo-sub">Indonesian Natural Origins</span>
-      </a>
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="#" class="nav-logo" aria-label="Nusa Terra Origin home">
+            <span class="logo-main">NUSA TERRA ORIGIN</span>
+            <span class="logo-sub">Indonesian Natural Origins</span>
+          </a>
 
-      <ul class="nav-links" role="list">
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#supply-chain">Supply Chain</a></li>
-        <li><a href="#sustainability">Sustainability</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+          <ul class="nav-links" role="list">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#supply-chain">Supply Chain</a></li>
+            <li><a href="#sustainability">Sustainability</a></li>
+            <li><a href="#nursery">Our Nurseries</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
 
-      <div class="nav-cta">
-        <a href="#contact" class="btn btn-light" aria-label="Let's work together">Let's Work Together</a>
+          <div class="nav-cta">
+            <a
+              href="#contact"
+              class="btn btn-light"
+              aria-label="Let's work together"
+              >Let's Work Together</a
+            >
+          </div>
+
+          <button
+            class="nav-hamburger"
+            id="nav-toggle"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </div>
+    </nav>
 
-      <button class="nav-hamburger" id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
-        <span></span><span></span><span></span>
+    <!-- Mobile Nav -->
+    <nav
+      id="mobile-nav"
+      role="navigation"
+      aria-label="Mobile navigation"
+      aria-hidden="true">
+      <button class="mobile-nav-close" id="nav-close" aria-label="Close menu">
+        &#x2715;
       </button>
-    </div>
-  </div>
-</nav>
+      <ul class="mobile-nav-links" role="list">
+        <li><a href="#about" class="mobile-nav-link">About Us</a></li>
+        <li><a href="#products" class="mobile-nav-link">Products</a></li>
+        <li>
+          <a href="#supply-chain" class="mobile-nav-link">Supply Chain</a>
+        </li>
+        <li>
+          <a href="#sustainability" class="mobile-nav-link">Sustainability</a>
+        </li>
+        <li><a href="#nursery" class="mobile-nav-link">Our Nurseries</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <a
+        href="#contact"
+        class="btn btn-light mobile-nav-link"
+        style="margin-top: 20px"
+        >Let's Work Together</a
+      >
+    </nav>
 
-<!-- Mobile Nav -->
-<nav id="mobile-nav" role="navigation" aria-label="Mobile navigation" aria-hidden="true">
-  <button class="mobile-nav-close" id="nav-close" aria-label="Close menu">&#x2715;</button>
-  <ul class="mobile-nav-links" role="list">
-    <li><a href="#about" class="mobile-nav-link">About Us</a></li>
-    <li><a href="#products" class="mobile-nav-link">Products</a></li>
-    <li><a href="#supply-chain" class="mobile-nav-link">Supply Chain</a></li>
-    <li><a href="#sustainability" class="mobile-nav-link">Sustainability</a></li>
-    <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
-  </ul>
-  <a href="#contact" class="btn btn-light mobile-nav-link" style="margin-top: 20px;">Let's Work Together</a>
-</nav>
-
-<!-- ═══════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════
      HERO SLIDER
 ════════════════════════════════════════════════════ -->
-<section id="hero" role="banner" aria-label="Hero — Nusa Terra Origin">
-  <!-- Slides -->
-  <div class="hero-slide active" id="slide-0" aria-label="Slide 1: From Indonesian Origin, to the World">
-    <div class="hero-content container">
-      <div class="hero-text">
-        <span class="hero-eyebrow">Nusa Terra Origin</span>
-        <h1 class="hero-headline serif">From Indonesian Origin,<br>to the World.</h1>
-        <p class="hero-sub">Premium essential oils sourced, produced, and traced at origin in the Indonesian archipelago.</p>
-        <div class="hero-btns">
-          <a href="#products" class="btn btn-light">Explore Our Products</a>
-          <a href="#about" class="btn" style="color:rgba(245,241,232,0.6);border-color:rgba(245,241,232,0.2);">About Nusa Terra</a>
+    <section id="hero" role="banner" aria-label="Hero — Nusa Terra Origin">
+      <!-- Slides -->
+      <div
+        class="hero-slide active"
+        id="slide-0"
+        aria-label="Slide 1: From Indonesian Origin, to the World">
+        <div class="hero-content container">
+          <div class="hero-text">
+            <span class="hero-eyebrow">Nusa Terra Origin</span>
+            <h1 class="hero-headline serif">
+              From Indonesian Origin,<br />to the World.
+            </h1>
+            <p class="hero-sub">
+              Premium essential oils sourced, produced, and traced at origin in
+              the Indonesian archipelago.
+            </p>
+            <div class="hero-btns">
+              <a href="#products" class="btn btn-light">Explore Our Products</a>
+              <a
+                href="#about"
+                class="btn"
+                style="
+                  color: rgba(245, 241, 232, 0.6);
+                  border-color: rgba(245, 241, 232, 0.2);
+                "
+                >About Nusa Terra</a
+              >
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="hero-slide" id="slide-1" aria-label="Slide 2: Rooted in Nature, Built on Trust">
-    <div class="hero-content container">
-      <div class="hero-text">
-        <span class="hero-eyebrow">Our Approach</span>
-        <h2 class="hero-headline serif">Rooted in Nature.<br>Built on Trust.</h2>
-        <p class="hero-sub">Working closely with local producers to build responsible and lasting supply chains across Indonesia.</p>
-        <div class="hero-btns">
-          <a href="#supply-chain" class="btn btn-light">Our Supply Chain</a>
+      <div
+        class="hero-slide"
+        id="slide-1"
+        aria-label="Slide 2: Rooted in Nature, Built on Trust">
+        <div class="hero-content container">
+          <div class="hero-text">
+            <span class="hero-eyebrow">Our Approach</span>
+            <h2 class="hero-headline serif">
+              Rooted in Nature.<br />Built on Trust.
+            </h2>
+            <p class="hero-sub">
+              Working closely with local producers to build responsible and
+              lasting supply chains across Indonesia.
+            </p>
+            <div class="hero-btns">
+              <a href="#supply-chain" class="btn btn-light">Our Supply Chain</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="hero-slide" id="slide-2" aria-label="Slide 3: The Source Matters">
-    <div class="hero-content container">
-      <div class="hero-text">
-        <span class="hero-eyebrow">Traceability</span>
-        <h2 class="hero-headline serif">The Source<br>Matters.</h2>
-        <p class="hero-sub">From raw materials to distillation, we work closely with our partners at every stage of the journey.</p>
-        <div class="hero-btns">
-          <a href="#about" class="btn btn-light">Our Story</a>
+      <div
+        class="hero-slide"
+        id="slide-2"
+        aria-label="Slide 3: The Source Matters">
+        <div class="hero-content container">
+          <div class="hero-text">
+            <span class="hero-eyebrow">Traceability</span>
+            <h2 class="hero-headline serif">The Source<br />Matters.</h2>
+            <p class="hero-sub">
+              From raw materials to distillation, we work closely with our
+              partners at every stage of the journey.
+            </p>
+            <div class="hero-btns">
+              <a href="#about" class="btn btn-light">Our Story</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="hero-slide" id="slide-3" aria-label="Slide 4: Indonesian Botanicals, Global Possibilities">
-    <div class="hero-content container">
-      <div class="hero-text">
-        <span class="hero-eyebrow">Natural Ingredients</span>
-        <h2 class="hero-headline serif">Indonesian Botanicals.<br>Global Possibilities.</h2>
-        <p class="hero-sub">Natural ingredients for fragrance and essential oil applications, sourced from Indonesia's richest landscapes.</p>
-        <div class="hero-btns">
-          <a href="#products" class="btn btn-light">View Products</a>
+      <div
+        class="hero-slide"
+        id="slide-3"
+        aria-label="Slide 4: Indonesian Botanicals, Global Possibilities">
+        <div class="hero-content container">
+          <div class="hero-text">
+            <span class="hero-eyebrow">Natural Ingredients</span>
+            <h2 class="hero-headline serif">
+              Indonesian Botanicals.<br />Global Possibilities.
+            </h2>
+            <p class="hero-sub">
+              Natural ingredients for fragrance and essential oil applications,
+              sourced from Indonesia's richest landscapes.
+            </p>
+            <div class="hero-btns">
+              <a href="#products" class="btn btn-light">View Products</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Controls -->
-  <div class="hero-controls" role="group" aria-label="Slide controls">
-    <button class="hero-dot active" data-slide="0" aria-label="Go to slide 1"></button>
-    <button class="hero-dot" data-slide="1" aria-label="Go to slide 2"></button>
-    <button class="hero-dot" data-slide="2" aria-label="Go to slide 3"></button>
-    <button class="hero-dot" data-slide="3" aria-label="Go to slide 4"></button>
-  </div>
+      <!-- Controls -->
+      <div class="hero-controls" role="group" aria-label="Slide controls">
+        <button
+          class="hero-dot active"
+          data-slide="0"
+          aria-label="Go to slide 1"></button>
+        <button
+          class="hero-dot"
+          data-slide="1"
+          aria-label="Go to slide 2"></button>
+        <button
+          class="hero-dot"
+          data-slide="2"
+          aria-label="Go to slide 3"></button>
+        <button
+          class="hero-dot"
+          data-slide="3"
+          aria-label="Go to slide 4"></button>
+      </div>
 
-  <div class="hero-arrows" role="group" aria-label="Previous and next slide">
-    <button class="hero-arrow" id="hero-prev" aria-label="Previous slide">&#8592;</button>
-    <button class="hero-arrow" id="hero-next" aria-label="Next slide">&#8594;</button>
-  </div>
-</section>
+      <div
+        class="hero-arrows"
+        role="group"
+        aria-label="Previous and next slide">
+        <button class="hero-arrow" id="hero-prev" aria-label="Previous slide">
+          &#8592;
+        </button>
+        <button class="hero-arrow" id="hero-next" aria-label="Next slide">
+          &#8594;
+        </button>
+      </div>
+    </section>
 
-<!-- ═══════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════
      BRAND STATEMENT
 ════════════════════════════════════════════════════ -->
-<section id="brand-statement" aria-labelledby="brand-headline">
-  <div class="container">
-    <div class="brand-inner">
-      <div class="brand-left reveal">
-        <p class="eyebrow">The Origin</p>
-        <div class="gold-rule"></div>
-        <p class="serif-display" id="brand-headline">
-          Nature is our<br><em>source.</em><br>
-          Partnership is our<br>foundation.
-        </p>
+    <section id="brand-statement" aria-labelledby="brand-headline">
+      <div class="container">
+        <div class="brand-inner">
+          <div class="brand-left reveal">
+            <p class="eyebrow">The Origin</p>
+            <div class="gold-rule"></div>
+            <p class="serif-display" id="brand-headline">
+              Nature is our<br /><em>source.</em><br />
+              Partnership is our<br />foundation.
+            </p>
+          </div>
+          <div class="brand-right reveal reveal-delay-2">
+            <p>
+              Nusa Terra Origin is a family-run company producing and exporting
+              essential oils from Indonesia. We are built around ethical,
+              long-term partnerships with local producers, distillers, and
+              growers who share our commitment to quality and responsible
+              natural resource management.
+            </p>
+            <p>
+              We do not source from intermediaries. We build supply chains at
+              origin — working alongside producers from planting and raw
+              material collection through to distillation and export.
+            </p>
+            <h2>Nusa</h2>
+            <p>
+              The islands — a reflection of Indonesia's vast and diverse
+              archipelago.
+            </p>
+            <h2>Terra</h2>
+            <p>
+              The earth — the soil, forests, and land that give life to our
+              botanicals.
+            </p>
+            <h2>Origin</h2>
+            <p>
+              The source — our commitment to knowing exactly where every
+              ingredient begins.
+            </p>
+            <a href="#about" class="btn btn-light">Discover Our Story</a>
+          </div>
+        </div>
       </div>
-      <div class="brand-right reveal reveal-delay-2">
-        <p>Nusa Terra Origin is a family-run company producing and exporting essential oils from Indonesia. We are built around ethical, long-term partnerships with local producers, distillers, and growers who share our commitment to quality and responsible natural resource management.</p>
-        <p>We do not source from intermediaries. We build supply chains at origin — working alongside producers from planting and raw material collection through to distillation and export.</p>
-        <a href="#about" class="btn btn-light">Discover Our Story</a>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════
      ABOUT
 ════════════════════════════════════════════════════ -->
-<section id="about" aria-labelledby="about-headline">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-img-wrap reveal">
-        <div class="about-img-placeholder" role="img" aria-label="Indonesian botanical landscape — producers working with natural ingredients"></div>
-        <div class="about-accent-box" aria-hidden="true"></div>
-      </div>
-      <div class="about-text reveal reveal-delay-2">
-        <p class="eyebrow section-label">Who We Are</p>
-        <h2 id="about-headline">Rooted in Indonesia.<br>Connected to the world.</h2>
-        <p>PT Nusa Terra Origin was established to create a direct, honest, and traceable route from Indonesia's botanical landscapes to international buyers. We are a family-run business, and that is a distinction we take seriously — it defines how we build relationships, how we work with producers, and how we approach quality.</p>
-        <p>Our supply chain is our product. We maintain visibility across the production journey, from the farms and forests where raw materials are gathered, to the distillation houses and warehouses where they become the essential oils that reach our clients.</p>
-
-        <div class="name-breakdown">
-          <div class="name-item">
-            <div class="name-word">Nusa</div>
-            <div class="name-meaning">The islands — a reflection of Indonesia's vast and diverse archipelago</div>
+    <section id="about" aria-labelledby="about-headline">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-img-wrap reveal">
+            <div
+              class="about-img-placeholder"
+              role="img"
+              aria-label="Indonesian botanical landscape — producers working with natural ingredients"></div>
+            <div class="about-accent-box" aria-hidden="true"></div>
           </div>
-          <div class="name-item">
-            <div class="name-word">Terra</div>
-            <div class="name-meaning">The earth — the soil, forests, and land that give life to our botanicals</div>
-          </div>
-          <div class="name-item">
-            <div class="name-word">Origin</div>
-            <div class="name-meaning">The source — our commitment to knowing exactly where every ingredient begins</div>
+          <div class="about-text reveal reveal-delay-2">
+            <p class="eyebrow section-label">Who We Are</p>
+            <h2 id="about-headline">
+              Rooted in Indonesia.<br />Connected to the world.
+            </h2>
+            <p>
+              Our company takes its name from the vibrant landscapes of the
+              Indonesian archipelago. Derived from the word “Nusantara”—“the
+              archipelago”—it reflects a territory of exceptional botanical,
+              cultural, and human richness. Nusa — the islands. Terra — the
+              earth. Origin — the source. We develop our supply chains directly
+              in the heart of regions selected for the quality of their terroir,
+              their local expertise, and the potential for impact we can create
+              there alongside the communities. We invest alongside local
+              partners and support producers at every stage of the supply chain:
+              from plantations and raw material sourcing to the distillation of
+              oils. With a strong presence on the ground, each supply chain is
+              managed as an independent business; our collection centers and
+              local offices are run autonomously and handle the receipt and
+              management of oils.
+            </p>
+            <p>
+              as well as the documentation tracking for the supply chains. On a
+              daily basis, our teams work closely with local producers and
+              partners, monitor harvests, oversee production, and coordinate the
+              implementation of our programs and investments. We have chosen to
+              develop our supply chains at a deliberately controlled scale in
+              order to build supply chains on a human scale, deeply rooted in
+              their local communities, where quality, traceability, and
+              sustainable relationships go hand in hand.
+            </p>
+            <!-- <div class="name-breakdown">
+              <div class="name-item">
+                <div class="name-word">Nusa</div>
+                <div class="name-meaning">
+                  The islands — a reflection of Indonesia's vast and diverse
+                  archipelago
+                </div>
+              </div>
+              <div class="name-item">
+                <div class="name-word">Terra</div>
+                <div class="name-meaning">
+                  The earth — the soil, forests, and land that give life to our
+                  botanicals
+                </div>
+              </div>
+              <div class="name-item">
+                <div class="name-word">Origin</div>
+                <div class="name-meaning">
+                  The source — our commitment to knowing exactly where every
+                  ingredient begins
+                </div>
+              </div>
+            </div> -->
+            <a href="#supply-chain" class="btn btn-dark">Our Supply Chain</a>
           </div>
         </div>
-        <a href="#supply-chain" class="btn btn-dark">Our Supply Chain</a>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════
      APPROACH
 ════════════════════════════════════════════════════ -->
-<section id="approach" aria-labelledby="approach-headline">
-  <div class="container">
-    <div class="approach-header reveal">
-      <p class="eyebrow">Our Approach</p>
-      <h2 id="approach-headline">How we work</h2>
-    </div>
-    <div class="approach-grid">
-      <div class="approach-item reveal">
-        <div class="approach-num" aria-hidden="true">1</div>
-        <div class="approach-title">Source</div>
-        <div class="approach-desc">We establish supply chains at origin, working directly with producers rather than through intermediaries.</div>
+    <section id="approach" aria-labelledby="approach-headline">
+      <div class="container">
+        <div class="approach-header reveal">
+          <p class="eyebrow">Our Approach</p>
+          <h2 id="approach-headline">How we work</h2>
+        </div>
+        <div class="approach-grid">
+          <div class="approach-item reveal">
+            <div class="approach-num" aria-hidden="true">1</div>
+            <div class="approach-title">Source</div>
+            <div class="approach-desc">
+              We establish supply chains at origin, working directly with
+              producers rather than through intermediaries.
+            </div>
+          </div>
+          <div class="approach-item reveal reveal-delay-1">
+            <div class="approach-num" aria-hidden="true">2</div>
+            <div class="approach-title">Partnership</div>
+            <div class="approach-desc">
+              Local producers are long-term partners, not simply suppliers. We
+              build relationships designed to last.
+            </div>
+          </div>
+          <div class="approach-item reveal reveal-delay-2">
+            <div class="approach-num" aria-hidden="true">3</div>
+            <div class="approach-title">Traceability</div>
+            <div class="approach-desc">
+              We maintain visibility across the production journey, from raw
+              material to finished oil.
+            </div>
+          </div>
+          <div class="approach-item reveal reveal-delay-3">
+            <div class="approach-num" aria-hidden="true">4</div>
+            <div class="approach-title">Quality</div>
+            <div class="approach-desc">
+              Careful selection, controlled processing, and consistent quality
+              management at every stage.
+            </div>
+          </div>
+          <div class="approach-item reveal reveal-delay-3">
+            <div class="approach-num" aria-hidden="true">5</div>
+            <div class="approach-title">Sustainability</div>
+            <div class="approach-desc">
+              Responsible production designed for long-term impact — for the
+              land, the community, and our partners.
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="approach-item reveal reveal-delay-1">
-        <div class="approach-num" aria-hidden="true">2</div>
-        <div class="approach-title">Partnership</div>
-        <div class="approach-desc">Local producers are long-term partners, not simply suppliers. We build relationships designed to last.</div>
-      </div>
-      <div class="approach-item reveal reveal-delay-2">
-        <div class="approach-num" aria-hidden="true">3</div>
-        <div class="approach-title">Traceability</div>
-        <div class="approach-desc">We maintain visibility across the production journey, from raw material to finished oil.</div>
-      </div>
-      <div class="approach-item reveal reveal-delay-3">
-        <div class="approach-num" aria-hidden="true">4</div>
-        <div class="approach-title">Quality</div>
-        <div class="approach-desc">Careful selection, controlled processing, and consistent quality management at every stage.</div>
-      </div>
-      <div class="approach-item reveal reveal-delay-3">
-        <div class="approach-num" aria-hidden="true">5</div>
-        <div class="approach-title">Sustainability</div>
-        <div class="approach-desc">Responsible production designed for long-term impact — for the land, the community, and our partners.</div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════
      PRODUCTS
 ════════════════════════════════════════════════════ -->
-<section id="products" aria-labelledby="products-headline">
-  <div class="container">
-    <div class="products-header">
-      <div class="reveal">
-        <p class="eyebrow">Our Products</p>
-        <h2 id="products-headline">Indonesian botanicals,<br>carefully sourced and<br>produced at origin.</h2>
+    <section id="products" aria-labelledby="products-headline">
+      <div class="container">
+        <div class="products-header">
+          <div class="reveal">
+            <p class="eyebrow">Our Products</p>
+            <h2 id="products-headline">
+              Indonesian botanicals,<br />carefully sourced and<br />produced at
+              origin.
+            </h2>
+          </div>
+          <div class="reveal reveal-delay-2">
+            <p>
+              We work with a focused selection of Indonesian essential oils and
+              natural raw materials. Each product reflects a supply chain built
+              at source, managed from plantation to export.
+            </p>
+            <br />
+            <a href="#contact" class="btn btn-dark"
+              >Request Product Information</a
+            >
+          </div>
+        </div>
+
+        <div class="products-grid" role="list">
+          <!-- Sandalwood Timor -->
+          <article
+            class="product-card reveal"
+            role="listitem"
+            data-product="sandalwoodtimor"
+            aria-label="Sandalwood Timor — click to view details"
+            tabindex="0"
+            onclick="openModal('sandalwoodtimor')"
+            onkeydown="
+              if (event.key === 'Enter') openModal('sandalwoodtimor');
+            ">
+            <div class="product-img prod-sandalwood" aria-hidden="true"></div>
+            <div class="product-overlay">
+              <div class="product-tag">Essential Oil</div>
+              <h3 class="product-name">Sandalwood Timor</h3>
+              <p class="product-origin">
+                East Nusa Tenggara, the Sandalwood at his origin
+              </p>
+              <button
+                class="product-cta"
+                aria-label="Explore Sandalwood product">
+                Explore Product
+              </button>
+            </div>
+          </article>
+
+          <!-- Vetiver -->
+          <article
+            class="product-card reveal reveal-delay-1"
+            role="listitem"
+            data-product="vetiver"
+            aria-label="Vetiver — click to view details"
+            tabindex="0"
+            onclick="openModal('vetiver')"
+            onkeydown="if (event.key === 'Enter') openModal('vetiver');">
+            <div class="product-img prod-vetiver" aria-hidden="true"></div>
+            <div class="product-overlay">
+              <div class="product-tag">Essential Oil</div>
+              <h3 class="product-name">Vetiver</h3>
+              <p class="product-origin">Garut, West Java, Indonesia</p>
+              <p class="product-variants">Conventional &amp; Low Smoked</p>
+              <button class="product-cta" aria-label="Explore Vetiver product">
+                Explore Product
+              </button>
+            </div>
+          </article>
+
+          <!-- Patchouli -->
+          <article
+            class="product-card reveal reveal-delay-2"
+            role="listitem"
+            data-product="patchouli"
+            aria-label="Patchouli Sumatra — click to view details"
+            tabindex="0"
+            onclick="openModal('patchouli')"
+            onkeydown="if (event.key === 'Enter') openModal('patchouli');">
+            <div class="product-img prod-patchouli" aria-hidden="true"></div>
+            <div class="product-overlay">
+              <div class="product-tag">Essential Oil</div>
+              <h3 class="product-name">Patchouli Sumatra</h3>
+              <p class="product-origin">Banda Aceh, Sumatra, Indonesia</p>
+              <button
+                class="product-cta"
+                aria-label="Explore Patchouli Sumatra product">
+                Explore Product
+              </button>
+            </div>
+          </article>
+
+          <!-- Nutmeg -->
+          <article
+            class="product-card reveal reveal-delay-3"
+            role="listitem"
+            data-product="nutmeg"
+            aria-label="Nutmeg — click to view details"
+            tabindex="0"
+            onclick="openModal('nutmeg')"
+            onkeydown="if (event.key === 'Enter') openModal('nutmeg');">
+            <div class="product-img prod-nutmeg" aria-hidden="true"></div>
+            <div class="product-overlay">
+              <div class="product-tag">Natural Raw Material</div>
+              <h3 class="product-name">Nutmeg</h3>
+              <p class="product-origin">Indonesia</p>
+              <button class="product-cta" aria-label="Explore Nutmeg product">
+                Explore Product
+              </button>
+            </div>
+          </article>
+
+          <!-- Benzoin -->
+          <article
+            class="product-card reveal reveal-delay-3"
+            role="listitem"
+            data-product="benzoin"
+            aria-label="Benzoin — click to view details"
+            tabindex="0"
+            onclick="openModal('benzoin')"
+            onkeydown="if (event.key === 'Enter') openModal('benzoin');">
+            <div class="product-img prod-benzoin" aria-hidden="true"></div>
+            <div class="product-overlay">
+              <div class="product-tag">Natural Raw Material</div>
+              <h3 class="product-name">Benzoin</h3>
+              <p class="product-origin">Indonesia</p>
+              <button class="product-cta" aria-label="Explore Benzoin product">
+                Explore Product
+              </button>
+            </div>
+          </article>
+        </div>
       </div>
-      <div class="reveal reveal-delay-2">
-        <p>We work with a focused selection of Indonesian essential oils and natural raw materials. Each product reflects a supply chain built at source, managed from plantation to export.</p>
-        <br>
-        <a href="#contact" class="btn btn-dark">Request Product Information</a>
-      </div>
-    </div>
+    </section>
 
-    <div class="products-grid" role="list">
-
-      <!-- Sandalwood -->
-      <article class="product-card reveal" role="listitem"
-        data-product="sandalwood"
-        aria-label="Sandalwood — click to view details"
-        tabindex="0"
-        onclick="openModal('sandalwood')"
-        onkeydown="if(event.key==='Enter')openModal('sandalwood')">
-        <div class="product-img prod-sandalwood" aria-hidden="true"></div>
-        <div class="product-overlay">
-          <div class="product-tag">Essential Oil</div>
-          <h3 class="product-name">Sandalwood</h3>
-          <p class="product-origin">Wonosari &amp; Soe, West Timor, Indonesia</p>
-          <button class="product-cta" aria-label="Explore Sandalwood product">Explore Product</button>
-        </div>
-      </article>
-
-      <!-- Vetiver -->
-      <article class="product-card reveal reveal-delay-1" role="listitem"
-        data-product="vetiver"
-        aria-label="Vetiver — click to view details"
-        tabindex="0"
-        onclick="openModal('vetiver')"
-        onkeydown="if(event.key==='Enter')openModal('vetiver')">
-        <div class="product-img prod-vetiver" aria-hidden="true"></div>
-        <div class="product-overlay">
-          <div class="product-tag">Essential Oil</div>
-          <h3 class="product-name">Vetiver</h3>
-          <p class="product-origin">Garut, West Java, Indonesia</p>
-          <p class="product-variants">Conventional &amp; Low Smoked</p>
-          <button class="product-cta" aria-label="Explore Vetiver product">Explore Product</button>
-        </div>
-      </article>
-
-      <!-- Patchouli -->
-      <article class="product-card reveal reveal-delay-2" role="listitem"
-        data-product="patchouli"
-        aria-label="Patchouli Sumatra — click to view details"
-        tabindex="0"
-        onclick="openModal('patchouli')"
-        onkeydown="if(event.key==='Enter')openModal('patchouli')">
-        <div class="product-img prod-patchouli" aria-hidden="true"></div>
-        <div class="product-overlay">
-          <div class="product-tag">Essential Oil</div>
-          <h3 class="product-name">Patchouli Sumatra</h3>
-          <p class="product-origin">Banda Aceh, Sumatra, Indonesia</p>
-          <button class="product-cta" aria-label="Explore Patchouli Sumatra product">Explore Product</button>
-        </div>
-      </article>
-
-      <!-- Nutmeg -->
-      <article class="product-card reveal reveal-delay-3" role="listitem"
-        data-product="nutmeg"
-        aria-label="Nutmeg — click to view details"
-        tabindex="0"
-        onclick="openModal('nutmeg')"
-        onkeydown="if(event.key==='Enter')openModal('nutmeg')">
-        <div class="product-img prod-nutmeg" aria-hidden="true"></div>
-        <div class="product-overlay">
-          <div class="product-tag">Natural Raw Material</div>
-          <h3 class="product-name">Nutmeg</h3>
-          <p class="product-origin">Indonesia</p>
-          <button class="product-cta" aria-label="Explore Nutmeg product">Explore Product</button>
-        </div>
-      </article>
-
-      <!-- Benzoin -->
-      <article class="product-card reveal reveal-delay-3" role="listitem"
-        data-product="benzoin"
-        aria-label="Benzoin — click to view details"
-        tabindex="0"
-        onclick="openModal('benzoin')"
-        onkeydown="if(event.key==='Enter')openModal('benzoin')">
-        <div class="product-img prod-benzoin" aria-hidden="true"></div>
-        <div class="product-overlay">
-          <div class="product-tag">Natural Raw Material</div>
-          <h3 class="product-name">Benzoin</h3>
-          <p class="product-origin">Indonesia</p>
-          <button class="product-cta" aria-label="Explore Benzoin product">Explore Product</button>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════
      PRODUCT MODAL
 ════════════════════════════════════════════════════ -->
-<div class="modal-overlay" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
-  <div class="modal-box">
-    <button class="modal-close" id="modal-close-btn" aria-label="Close product details">&#x2715;</button>
-    <div class="modal-img" id="modal-img" role="img" aria-label="Product image"></div>
-    <div class="modal-content">
-      <p class="eyebrow modal-eyebrow" id="modal-tag">Essential Oil</p>
-      <h2 class="modal-title" id="modal-title">Product Name</h2>
-      <p class="modal-origin" id="modal-origin">Origin, Indonesia</p>
-      <div class="modal-rule"></div>
-      <p class="modal-desc" id="modal-desc">Description.</p>
-      <div id="modal-variants-wrap" style="display:none;">
-        <p class="modal-label">Available Variants</p>
-        <p class="modal-value" id="modal-variants"></p>
-      </div>
-      <p class="modal-label">Origin</p>
-      <p class="modal-value" id="modal-origin-detail"></p>
-      <div class="modal-footer">
-        <a href="#contact" class="btn btn-dark" onclick="closeModal()">Request Product Information</a>
+    <div
+      class="modal-overlay"
+      id="product-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      aria-hidden="true">
+      <div class="modal-box">
+        <button
+          class="modal-close"
+          id="modal-close-btn"
+          aria-label="Close product details">
+          &#x2715;
+        </button>
+        <div
+          class="modal-img"
+          id="modal-img"
+          role="img"
+          aria-label="Product image"></div>
+        <div class="modal-content">
+          <p class="eyebrow modal-eyebrow" id="modal-tag">Essential Oil</p>
+          <h2 class="modal-title" id="modal-title">Product Name</h2>
+          <p class="modal-origin" id="modal-origin">Origin, Indonesia</p>
+          <div class="modal-rule"></div>
+          <p class="modal-desc" id="modal-desc">Description.</p>
+          <div id="modal-variants-wrap" style="display: none">
+            <p class="modal-label">Available Variants</p>
+            <p class="modal-value" id="modal-variants"></p>
+          </div>
+          <p class="modal-label">Origin</p>
+          <p class="modal-value" id="modal-origin-detail"></p>
+          <div class="modal-footer">
+            <a href="#contact" class="btn btn-dark" onclick="closeModal()"
+              >Request Product Information</a
+            >
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- ═══════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════
      SUPPLY CHAIN
 ════════════════════════════════════════════════════ -->
-<section id="supply-chain" aria-labelledby="chain-headline">
-  <div class="container">
-    <div class="chain-header reveal">
-      <p class="eyebrow">From Source to Distillation</p>
-      <h2 id="chain-headline">A supply chain built at every stage of the journey.</h2>
-    </div>
-    <div class="chain-steps" role="list">
-      <div class="chain-step reveal" role="listitem">
-        <div class="chain-step-num" aria-hidden="true">I</div>
-        <div class="chain-step-title">Planting</div>
-        <div class="chain-step-desc">We support producers from the planting stage, including nursery development for key botanicals such as sandalwood.</div>
+    <section id="supply-chain" aria-labelledby="chain-headline">
+      <div class="container">
+        <div class="chain-header reveal">
+          <p class="eyebrow">From Source to Distillation</p>
+          <h2 id="chain-headline">
+            A supply chain built at every stage of the journey.
+          </h2>
+        </div>
+        <div class="chain-steps" role="list">
+          <div class="chain-step reveal" role="listitem">
+            <div class="chain-step-num" aria-hidden="true">I</div>
+            <div class="chain-step-title">Planting</div>
+            <div class="chain-step-desc">
+              We support producers from the planting stage, including nursery
+              development for key botanicals such as sandalwood.
+            </div>
+          </div>
+          <div class="chain-step reveal reveal-delay-1" role="listitem">
+            <div class="chain-step-num" aria-hidden="true">II</div>
+            <div class="chain-step-title">Raw Material Sourcing</div>
+            <div class="chain-step-desc">
+              We source directly from local farmers, collectors, and producers
+              across Indonesia's key growing regions.
+            </div>
+          </div>
+          <div class="chain-step reveal reveal-delay-2" role="listitem">
+            <div class="chain-step-num" aria-hidden="true">III</div>
+            <div class="chain-step-title">Selection &amp; Collection</div>
+            <div class="chain-step-desc">
+              Raw materials are carefully selected and collected at our regional
+              offices and collection centres.
+            </div>
+          </div>
+          <div class="chain-step reveal reveal-delay-3" role="listitem">
+            <div class="chain-step-num" aria-hidden="true">IV</div>
+            <div class="chain-step-title">Processing</div>
+            <div class="chain-step-desc">
+              We manage controlled processing and preparation, working with
+              trusted local partners at our production sites.
+            </div>
+          </div>
+          <div class="chain-step reveal reveal-delay-3" role="listitem">
+            <div class="chain-step-num" aria-hidden="true">V</div>
+            <div class="chain-step-title">Distillation</div>
+            <div class="chain-step-desc">
+              Essential oils are produced through distillation, overseen to
+              maintain consistency and quality at origin.
+            </div>
+          </div>
+          <div class="chain-step reveal reveal-delay-3" role="listitem">
+            <div class="chain-step-num" aria-hidden="true">VI</div>
+            <div class="chain-step-title">Quality &amp; Traceability</div>
+            <div class="chain-step-desc">
+              Each batch is tracked and documented to ensure full traceability
+              from source to delivery.
+            </div>
+          </div>
+          <div class="chain-step reveal reveal-delay-3" role="listitem">
+            <div class="chain-step-num" aria-hidden="true">VII</div>
+            <div class="chain-step-title">Export</div>
+            <div class="chain-step-desc">
+              Finished products are consolidated at our Medan export hub and
+              prepared for international shipment.
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="chain-step reveal reveal-delay-1" role="listitem">
-        <div class="chain-step-num" aria-hidden="true">II</div>
-        <div class="chain-step-title">Raw Material Sourcing</div>
-        <div class="chain-step-desc">We source directly from local farmers, collectors, and producers across Indonesia's key growing regions.</div>
-      </div>
-      <div class="chain-step reveal reveal-delay-2" role="listitem">
-        <div class="chain-step-num" aria-hidden="true">III</div>
-        <div class="chain-step-title">Selection &amp; Collection</div>
-        <div class="chain-step-desc">Raw materials are carefully selected and collected at our regional offices and collection centres.</div>
-      </div>
-      <div class="chain-step reveal reveal-delay-3" role="listitem">
-        <div class="chain-step-num" aria-hidden="true">IV</div>
-        <div class="chain-step-title">Processing</div>
-        <div class="chain-step-desc">We manage controlled processing and preparation, working with trusted local partners at our production sites.</div>
-      </div>
-      <div class="chain-step reveal reveal-delay-3" role="listitem">
-        <div class="chain-step-num" aria-hidden="true">V</div>
-        <div class="chain-step-title">Distillation</div>
-        <div class="chain-step-desc">Essential oils are produced through distillation, overseen to maintain consistency and quality at origin.</div>
-      </div>
-      <div class="chain-step reveal reveal-delay-3" role="listitem">
-        <div class="chain-step-num" aria-hidden="true">VI</div>
-        <div class="chain-step-title">Quality &amp; Traceability</div>
-        <div class="chain-step-desc">Each batch is tracked and documented to ensure full traceability from source to delivery.</div>
-      </div>
-      <div class="chain-step reveal reveal-delay-3" role="listitem">
-        <div class="chain-step-num" aria-hidden="true">VII</div>
-        <div class="chain-step-title">Export</div>
-        <div class="chain-step-desc">Finished products are consolidated at our Medan export hub and prepared for international shipment.</div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════
      PRESENCE / LOCATIONS
 ════════════════════════════════════════════════════ -->
-<section id="presence" aria-labelledby="presence-headline">
-  <div class="container">
-    <div class="presence-header reveal">
-      <p class="eyebrow">Our Presence</p>
-      <h2 id="presence-headline">Across the Indonesian Archipelago</h2>
-    </div>
+    <section id="presence" aria-labelledby="presence-headline">
+      <div class="container">
+        <div class="presence-header reveal">
+          <p class="eyebrow">Our Presence</p>
+          <h2 id="presence-headline">Across the Indonesian Archipelago</h2>
+        </div>
 
-    <!-- Simplified SVG Indonesia map with location pins -->
-    <div class="map-container reveal">
-      <div class="indonesia-map-wrap">
-        <svg class="indonesia-svg" viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" aria-label="Map of Indonesia showing Nusa Terra Origin locations" role="img">
-          <!-- Sumatra -->
-          <path d="M 60 120 Q 80 100 120 95 Q 160 90 200 100 Q 240 108 260 130 Q 270 160 255 190 Q 240 215 200 225 Q 170 230 140 220 Q 110 208 85 190 Q 65 170 60 150 Z" fill="rgba(135,155,122,0.15)" stroke="rgba(245,241,232,0.12)" stroke-width="1"/>
-          <!-- Java -->
-          <path d="M 280 155 Q 320 145 380 148 Q 430 150 470 155 Q 500 160 510 170 Q 505 185 470 188 Q 420 192 370 188 Q 320 183 285 175 Q 272 168 280 155 Z" fill="rgba(135,155,122,0.15)" stroke="rgba(245,241,232,0.12)" stroke-width="1"/>
-          <!-- Kalimantan -->
-          <path d="M 480 60 Q 530 45 590 50 Q 640 55 670 80 Q 695 105 690 150 Q 685 185 655 205 Q 625 220 585 215 Q 545 208 515 185 Q 492 162 485 130 Q 478 100 480 60 Z" fill="rgba(135,155,122,0.15)" stroke="rgba(245,241,232,0.12)" stroke-width="1"/>
-          <!-- Sulawesi -->
-          <path d="M 700 80 Q 720 70 740 78 Q 755 92 748 115 Q 740 138 725 150 Q 715 140 700 130 Q 688 108 700 80 Z" fill="rgba(135,155,122,0.1)" stroke="rgba(245,241,232,0.12)" stroke-width="1"/>
-          <path d="M 730 130 Q 750 120 768 135 Q 778 155 765 175 Q 748 188 730 178 Q 718 162 730 130 Z" fill="rgba(135,155,122,0.1)" stroke="rgba(245,241,232,0.12)" stroke-width="1"/>
-          <!-- Maluku -->
-          <path d="M 790 80 Q 808 72 820 85 Q 826 100 815 112 Q 800 118 788 105 Z" fill="rgba(135,155,122,0.1)" stroke="rgba(245,241,232,0.12)" stroke-width="1"/>
-          <!-- Papua / West Timor / Nusa Tenggara -->
-          <path d="M 520 195 Q 560 190 600 196 Q 635 202 660 215 Q 672 228 660 240 Q 640 250 610 245 Q 578 238 548 228 Q 526 218 520 195 Z" fill="rgba(135,155,122,0.12)" stroke="rgba(245,241,232,0.12)" stroke-width="1"/>
-          <!-- Timor island -->
-          <path d="M 680 230 Q 720 220 755 228 Q 770 240 758 255 Q 738 265 710 260 Q 692 252 680 230 Z" fill="rgba(135,155,122,0.12)" stroke="rgba(245,241,232,0.12)" stroke-width="1"/>
-          <!-- Papua -->
-          <path d="M 790 100 Q 840 90 875 110 Q 890 135 880 168 Q 865 195 840 205 Q 815 208 800 190 Q 786 168 790 140 Q 790 118 790 100 Z" fill="rgba(135,155,122,0.1)" stroke="rgba(245,241,232,0.12)" stroke-width="1"/>
+        <!-- Interactive Leaflet map with location pins -->
+        <div class="map-container reveal">
+          <div class="indonesia-map-wrap">
+            <div
+              id="indonesia-map"
+              class="leaflet-map"
+              role="img"
+              aria-label="Interactive map of Indonesia showing Nusa Terra Origin locations"></div>
+            <svg
+              class="indonesia-svg"
+              viewBox="0 0 900 340"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-label="Map of Indonesia showing Nusa Terra Origin locations"
+              role="img">
+              <!-- Sumatra -->
+              <path
+                d="M 60 120 Q 80 100 120 95 Q 160 90 200 100 Q 240 108 260 130 Q 270 160 255 190 Q 240 215 200 225 Q 170 230 140 220 Q 110 208 85 190 Q 65 170 60 150 Z"
+                fill="rgba(135,155,122,0.15)"
+                stroke="rgba(245,241,232,0.12)"
+                stroke-width="1" />
+              <!-- Java -->
+              <path
+                d="M 280 155 Q 320 145 380 148 Q 430 150 470 155 Q 500 160 510 170 Q 505 185 470 188 Q 420 192 370 188 Q 320 183 285 175 Q 272 168 280 155 Z"
+                fill="rgba(135,155,122,0.15)"
+                stroke="rgba(245,241,232,0.12)"
+                stroke-width="1" />
+              <!-- Kalimantan -->
+              <path
+                d="M 480 60 Q 530 45 590 50 Q 640 55 670 80 Q 695 105 690 150 Q 685 185 655 205 Q 625 220 585 215 Q 545 208 515 185 Q 492 162 485 130 Q 478 100 480 60 Z"
+                fill="rgba(135,155,122,0.15)"
+                stroke="rgba(245,241,232,0.12)"
+                stroke-width="1" />
+              <!-- Sulawesi -->
+              <path
+                d="M 700 80 Q 720 70 740 78 Q 755 92 748 115 Q 740 138 725 150 Q 715 140 700 130 Q 688 108 700 80 Z"
+                fill="rgba(135,155,122,0.1)"
+                stroke="rgba(245,241,232,0.12)"
+                stroke-width="1" />
+              <path
+                d="M 730 130 Q 750 120 768 135 Q 778 155 765 175 Q 748 188 730 178 Q 718 162 730 130 Z"
+                fill="rgba(135,155,122,0.1)"
+                stroke="rgba(245,241,232,0.12)"
+                stroke-width="1" />
+              <!-- Maluku -->
+              <path
+                d="M 790 80 Q 808 72 820 85 Q 826 100 815 112 Q 800 118 788 105 Z"
+                fill="rgba(135,155,122,0.1)"
+                stroke="rgba(245,241,232,0.12)"
+                stroke-width="1" />
+              <!-- Papua / West Timor / Nusa Tenggara -->
+              <path
+                d="M 520 195 Q 560 190 600 196 Q 635 202 660 215 Q 672 228 660 240 Q 640 250 610 245 Q 578 238 548 228 Q 526 218 520 195 Z"
+                fill="rgba(135,155,122,0.12)"
+                stroke="rgba(245,241,232,0.12)"
+                stroke-width="1" />
+              <!-- Timor island -->
+              <path
+                d="M 680 230 Q 720 220 755 228 Q 770 240 758 255 Q 738 265 710 260 Q 692 252 680 230 Z"
+                fill="rgba(135,155,122,0.12)"
+                stroke="rgba(245,241,232,0.12)"
+                stroke-width="1" />
+              <!-- Papua -->
+              <path
+                d="M 790 100 Q 840 90 875 110 Q 890 135 880 168 Q 865 195 840 205 Q 815 208 800 190 Q 786 168 790 140 Q 790 118 790 100 Z"
+                fill="rgba(135,155,122,0.1)"
+                stroke="rgba(245,241,232,0.12)"
+                stroke-width="1" />
 
-          <!-- LOCATION PINS -->
-          <!-- Banda Aceh (Sumatra north) -->
-          <g class="location-dots" tabindex="0" role="button" aria-label="Banda Aceh — Patchouli Collection Centre & Regional Office">
-            <circle cx="80" cy="108" r="14" class="location-dot-outer"/>
-            <circle cx="80" cy="108" r="5" class="location-dot-inner"/>
-            <text x="97" y="105" class="location-label">Banda Aceh</text>
-          </g>
+              <!-- LOCATION PINS -->
+              <!-- Banda Aceh (Sumatra north) -->
+              <g
+                class="location-dots"
+                tabindex="0"
+                role="button"
+                aria-label="Banda Aceh — Patchouli Collection Centre & Regional Office">
+                <circle cx="80" cy="108" r="14" class="location-dot-outer" />
+                <circle cx="80" cy="108" r="5" class="location-dot-inner" />
+                <text x="97" y="105" class="location-label">Banda Aceh</text>
+              </g>
 
-          <!-- Medan (Sumatra, northeast coast) -->
-          <g class="location-dots" tabindex="0" role="button" aria-label="Medan — Main Warehouse & Export Hub">
-            <circle cx="152" cy="112" r="14" class="location-dot-outer"/>
-            <circle cx="152" cy="112" r="5" class="location-dot-inner"/>
-            <text x="165" y="109" class="location-label">Medan</text>
-          </g>
+              <!-- Medan (Sumatra, northeast coast) -->
+              <g
+                class="location-dots"
+                tabindex="0"
+                role="button"
+                aria-label="Medan — Main Warehouse & Export Hub">
+                <circle cx="152" cy="112" r="14" class="location-dot-outer" />
+                <circle cx="152" cy="112" r="5" class="location-dot-inner" />
+                <text x="165" y="109" class="location-label">Medan</text>
+              </g>
 
-          <!-- Salatiga (Central Java) -->
-          <g class="location-dots" tabindex="0" role="button" aria-label="Salatiga — Head Office & Administration">
-            <circle cx="388" cy="162" r="14" class="location-dot-outer"/>
-            <circle cx="388" cy="162" r="5" class="location-dot-inner"/>
-            <text x="400" y="158" class="location-label">Salatiga</text>
-          </g>
+              <!-- Salatiga (Central Java) -->
+              <g
+                class="location-dots"
+                tabindex="0"
+                role="button"
+                aria-label="Salatiga — Head Office & Administration">
+                <circle cx="388" cy="162" r="14" class="location-dot-outer" />
+                <circle cx="388" cy="162" r="5" class="location-dot-inner" />
+                <text x="400" y="158" class="location-label">Salatiga</text>
+              </g>
 
-          <!-- Garut (West Java) -->
-          <g class="location-dots" tabindex="0" role="button" aria-label="Garut — Vetiver Warehouse & Regional Office">
-            <circle cx="325" cy="167" r="14" class="location-dot-outer"/>
-            <circle cx="325" cy="167" r="5" class="location-dot-inner"/>
-            <text x="310" y="186" class="location-label">Garut</text>
-          </g>
+              <!-- Garut (West Java) -->
+              <g
+                class="location-dots"
+                tabindex="0"
+                role="button"
+                aria-label="Garut — Vetiver Warehouse & Regional Office">
+                <circle cx="325" cy="167" r="14" class="location-dot-outer" />
+                <circle cx="325" cy="167" r="5" class="location-dot-inner" />
+                <text x="310" y="186" class="location-label">Garut</text>
+              </g>
 
-          <!-- Wonosari (East Java) -->
-          <g class="location-dots" tabindex="0" role="button" aria-label="Wonosari — Sandalwood Production Site, Nursery, Office & Lodge">
-            <circle cx="440" cy="163" r="14" class="location-dot-outer"/>
-            <circle cx="440" cy="163" r="5" class="location-dot-inner"/>
-            <text x="452" y="158" class="location-label">Wonosari</text>
-          </g>
+              <!-- Wonosari (East Java) -->
+              <g
+                class="location-dots"
+                tabindex="0"
+                role="button"
+                aria-label="Wonosari — Sandalwood Production Site, Nursery, Office & Lodge">
+                <circle cx="440" cy="163" r="14" class="location-dot-outer" />
+                <circle cx="440" cy="163" r="5" class="location-dot-inner" />
+                <text x="452" y="158" class="location-label">Wonosari</text>
+              </g>
 
-          <!-- Soe, West Timor -->
-          <g class="location-dots" tabindex="0" role="button" aria-label="Soe, West Timor — Sandalwood Collection, Grading & Warehouse">
-            <circle cx="710" cy="244" r="14" class="location-dot-outer"/>
-            <circle cx="710" cy="244" r="5" class="location-dot-inner"/>
-            <text x="720" y="240" class="location-label">Soe, West Timor</text>
-          </g>
-        </svg>
+              <!-- Soe, West Timor -->
+              <g
+                class="location-dots"
+                tabindex="0"
+                role="button"
+                aria-label="Soe, West Timor — Sandalwood Collection, Grading & Warehouse">
+                <circle cx="710" cy="244" r="14" class="location-dot-outer" />
+                <circle cx="710" cy="244" r="5" class="location-dot-inner" />
+                <text x="720" y="240" class="location-label">
+                  Soe, West Timor
+                </text>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Location cards -->
+        <div class="locations-list" aria-label="Office and facility locations">
+          <div class="location-card reveal">
+            <div class="loc-dot" aria-hidden="true"></div>
+            <div class="loc-name">Salatiga</div>
+            <div class="loc-role">
+              Head Office &amp; Administration<br />Central Java, Indonesia
+            </div>
+          </div>
+          <div class="location-card reveal reveal-delay-1">
+            <div class="loc-dot" aria-hidden="true"></div>
+            <div class="loc-name">Banda Aceh</div>
+            <div class="loc-role">
+              Patchouli Collection Centre &amp; Regional Office<br />Sumatra,
+              Indonesia
+            </div>
+          </div>
+          <div class="location-card reveal reveal-delay-2">
+            <div class="loc-dot" aria-hidden="true"></div>
+            <div class="loc-name">Medan</div>
+            <div class="loc-role">
+              Main Warehouse &amp; Export Hub<br />Sumatra, Indonesia
+            </div>
+          </div>
+          <div class="location-card reveal reveal-delay-3">
+            <div class="loc-dot" aria-hidden="true"></div>
+            <div class="loc-name">Garut</div>
+            <div class="loc-role">
+              Vetiver Warehouse &amp; Regional Office<br />West Java, Indonesia
+            </div>
+          </div>
+          <div class="location-card reveal reveal-delay-3">
+            <div class="loc-dot" aria-hidden="true"></div>
+            <div class="loc-name">Wonosari</div>
+            <div class="loc-role">
+              Sandalwood Production Site, Nursery, Office &amp; Lodge<br />East
+              Java, Indonesia
+            </div>
+          </div>
+          <div class="location-card reveal reveal-delay-3">
+            <div class="loc-dot" aria-hidden="true"></div>
+            <div class="loc-name">Soe, West Timor</div>
+            <div class="loc-role">
+              Sandalwood Collection, Grading &amp; Warehouse<br />East Nusa
+              Tenggara, Indonesia
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Location cards -->
-    <div class="locations-list" aria-label="Office and facility locations">
-      <div class="location-card reveal">
-        <div class="loc-dot" aria-hidden="true"></div>
-        <div class="loc-name">Salatiga</div>
-        <div class="loc-role">Head Office &amp; Administration<br>Central Java, Indonesia</div>
-      </div>
-      <div class="location-card reveal reveal-delay-1">
-        <div class="loc-dot" aria-hidden="true"></div>
-        <div class="loc-name">Banda Aceh</div>
-        <div class="loc-role">Patchouli Collection Centre &amp; Regional Office<br>Sumatra, Indonesia</div>
-      </div>
-      <div class="location-card reveal reveal-delay-2">
-        <div class="loc-dot" aria-hidden="true"></div>
-        <div class="loc-name">Medan</div>
-        <div class="loc-role">Main Warehouse &amp; Export Hub<br>Sumatra, Indonesia</div>
-      </div>
-      <div class="location-card reveal reveal-delay-3">
-        <div class="loc-dot" aria-hidden="true"></div>
-        <div class="loc-name">Garut</div>
-        <div class="loc-role">Vetiver Warehouse &amp; Regional Office<br>West Java, Indonesia</div>
-      </div>
-      <div class="location-card reveal reveal-delay-3">
-        <div class="loc-dot" aria-hidden="true"></div>
-        <div class="loc-name">Wonosari</div>
-        <div class="loc-role">Sandalwood Production Site, Nursery, Office &amp; Lodge<br>East Java, Indonesia</div>
-      </div>
-      <div class="location-card reveal reveal-delay-3">
-        <div class="loc-dot" aria-hidden="true"></div>
-        <div class="loc-name">Soe, West Timor</div>
-        <div class="loc-role">Sandalwood Collection, Grading &amp; Warehouse<br>East Nusa Tenggara, Indonesia</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════
      SUSTAINABILITY
 ════════════════════════════════════════════════════ -->
-<section id="sustainability" aria-labelledby="sus-headline">
-  <div class="sus-grid">
-    <div class="sus-img" role="img" aria-label="Sustainable Indonesian botanical landscape"></div>
-    <div class="sus-content">
-      <p class="eyebrow">Sustainability</p>
-      <h2 id="sus-headline">Better for Nature.<br>Better for People.</h2>
-      <p>Responsible production is not a label we apply — it is the way we have chosen to operate from the beginning. We work to protect the natural resources we depend on and to strengthen the communities and producers who are part of our supply chain.</p>
-      <div class="sus-pillars">
-        <div class="sus-pillar">
-          <div class="sus-pillar-num" aria-hidden="true">1</div>
-          <div class="sus-pillar-text">
-            <strong>Responsible Sourcing</strong>
-            <span>Managing natural resources with long-term thinking at the centre of every sourcing decision.</span>
-          </div>
-        </div>
-        <div class="sus-pillar">
-          <div class="sus-pillar-num" aria-hidden="true">2</div>
-          <div class="sus-pillar-text">
-            <strong>Local Partnerships</strong>
-            <span>Building the skills, capacity, and livelihoods of the communities and producers we work with.</span>
-          </div>
-        </div>
-        <div class="sus-pillar">
-          <div class="sus-pillar-num" aria-hidden="true">3</div>
-          <div class="sus-pillar-text">
-            <strong>Long-Term Impact</strong>
-            <span>Designing supply chains that remain viable, productive, and equitable across generations.</span>
+    <section id="sustainability" aria-labelledby="sus-headline">
+      <div class="sus-grid">
+        <div
+          class="sus-img"
+          role="img"
+          aria-label="Sustainable Indonesian botanical landscape"></div>
+        <div class="sus-content">
+          <p class="eyebrow">Sustainability</p>
+          <h2 id="sus-headline">Better for Nature.<br />Better for People.</h2>
+          <p>
+            We limit our production to sustainable and traceable raw materials,
+            in collaboration with our restoration efforts, including replanting
+            six trees for each one collected.
+          </p>
+          <div class="sus-pillars">
+            <div class="sus-pillar">
+              <div class="sus-pillar-num" aria-hidden="true">1</div>
+              <div class="sus-pillar-text">
+                <strong>Responsible Sourcing</strong>
+                <span
+                  >Managing natural resources with long-term thinking at the
+                  centre of every sourcing decision.</span
+                >
+              </div>
+            </div>
+            <div class="sus-pillar">
+              <div class="sus-pillar-num" aria-hidden="true">2</div>
+              <div class="sus-pillar-text">
+                <strong>Local Partnerships</strong>
+                <span
+                  >Building the skills, capacity, and livelihoods of the
+                  communities and producers we work with.</span
+                >
+              </div>
+            </div>
+            <div class="sus-pillar">
+              <div class="sus-pillar-num" aria-hidden="true">3</div>
+              <div class="sus-pillar-text">
+                <strong>Long-Term Impact</strong>
+                <span
+                  >Designing supply chains that remain viable, productive, and
+                  equitable across generations.</span
+                >
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════
      NURSERY
 ════════════════════════════════════════════════════ -->
-<section id="nursery" aria-labelledby="nursery-headline">
-  <div class="nursery-grid">
-    <div class="nursery-content">
-      <p class="eyebrow">At the Root</p>
-      <h2 id="nursery-headline">Growing the<br>Future at Source.</h2>
-      <p>At our Wonosari site, we maintain nurseries to support the responsible cultivation of sandalwood and other botanicals. By working with the plant cycle from seedling to maturity, we take a genuine role in the long-term stewardship of the species and landscapes we depend on.</p>
-      <a href="#contact" class="btn btn-light">Learn About Our Work</a>
-    </div>
-    <div class="nursery-img" role="img" aria-label="Young plants growing in the Wonosari nursery — sustainable botanical cultivation"></div>
-  </div>
-</section>
+    <section id="nursery" aria-labelledby="nursery-headline">
+      <div class="nursery-grid">
+        <div class="nursery-content">
+          <p class="eyebrow">TRACEABLE</p>
+          <h2 id="nursery-headline">Growing the<br />Future at Source.</h2>
+          <p>
+            We have set a traceability system that ensures a clear path from the
+            tree owners through the oil production process, passing through
+            legalized collection points and established collectors.
+          </p>
+          <a href="#contact" class="btn btn-light">Learn About Our Work</a>
+        </div>
+        <div
+          class="nursery-img"
+          role="img"
+          aria-label="Young plants growing in the Wonosari nursery — sustainable botanical cultivation"></div>
+      </div>
+    </section>
 
-<!-- ═══════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════
      WHY PARTNER
 ════════════════════════════════════════════════════ -->
-<section id="why" aria-labelledby="why-headline">
-  <div class="container">
-    <div class="why-header reveal">
-      <p class="eyebrow">Why Choose Us</p>
-      <h2 id="why-headline">Why Partner With Nusa Terra Origin?</h2>
-    </div>
-    <div class="why-grid">
-      <div class="why-item reveal">
-        <div class="why-icon" aria-hidden="true">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2"/>
-            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-          </svg>
+    <section id="why" aria-labelledby="why-headline">
+      <div class="container">
+        <div class="why-header reveal">
+          <p class="eyebrow">Why Choose Us</p>
+          <h2 id="why-headline">Why Partner With Nusa Terra Origin?</h2>
         </div>
-        <div class="why-title">Source-Based Supply Chains</div>
-        <div class="why-desc">We build and manage supply chains directly at origin — no intermediaries, no opacity. You connect with the source through us.</div>
-      </div>
-      <div class="why-item reveal reveal-delay-1">
-        <div class="why-icon" aria-hidden="true">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-          </svg>
+        <div class="why-grid">
+          <div class="why-item reveal">
+            <div class="why-icon" aria-hidden="true">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2" />
+                <path
+                  d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+            </div>
+            <div class="why-title">Source-Based Supply Chains</div>
+            <div class="why-desc">
+              We build and manage supply chains directly at origin — no
+              intermediaries, no opacity. You connect with the source through
+              us.
+            </div>
+          </div>
+          <div class="why-item reveal reveal-delay-1">
+            <div class="why-icon" aria-hidden="true">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <div class="why-title">Full Traceability</div>
+            <div class="why-desc">
+              We maintain visibility across the production journey — from the
+              farms and forests where raw materials are gathered, to
+              distillation and export.
+            </div>
+          </div>
+          <div class="why-item reveal reveal-delay-2">
+            <div class="why-icon" aria-hidden="true">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <div class="why-title">Long-Term Partnerships</div>
+            <div class="why-desc">
+              We build lasting relationships with both our producers and our
+              buyers. Consistency and trust are the foundations of how we work.
+            </div>
+          </div>
+          <div class="why-item reveal">
+            <div class="why-icon" aria-hidden="true">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" />
+                <path
+                  d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
+              </svg>
+            </div>
+            <div class="why-title">Family-Run Commitment</div>
+            <div class="why-desc">
+              As a family-run company, our relationships are personal. When you
+              work with us, you work with the people responsible for every
+              decision.
+            </div>
+          </div>
+          <div class="why-item reveal reveal-delay-1">
+            <div class="why-icon" aria-hidden="true">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <div class="why-title">Controlled Production</div>
+            <div class="why-desc">
+              Our production sites and regional offices allow us to manage
+              quality and consistency with real operational presence at source.
+            </div>
+          </div>
+          <div class="why-item reveal reveal-delay-2">
+            <div class="why-icon" aria-hidden="true">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 8v4l3 3" />
+              </svg>
+            </div>
+            <div class="why-title">Responsible Sourcing</div>
+            <div class="why-desc">
+              We source with long-term thinking — protecting the ecosystems and
+              communities that make Indonesian botanicals possible.
+            </div>
+          </div>
         </div>
-        <div class="why-title">Full Traceability</div>
-        <div class="why-desc">We maintain visibility across the production journey — from the farms and forests where raw materials are gathered, to distillation and export.</div>
       </div>
-      <div class="why-item reveal reveal-delay-2">
-        <div class="why-icon" aria-hidden="true">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
-        </div>
-        <div class="why-title">Long-Term Partnerships</div>
-        <div class="why-desc">We build lasting relationships with both our producers and our buyers. Consistency and trust are the foundations of how we work.</div>
-      </div>
-      <div class="why-item reveal">
-        <div class="why-icon" aria-hidden="true">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/>
-            <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
-          </svg>
-        </div>
-        <div class="why-title">Family-Run Commitment</div>
-        <div class="why-desc">As a family-run company, our relationships are personal. When you work with us, you work with the people responsible for every decision.</div>
-      </div>
-      <div class="why-item reveal reveal-delay-1">
-        <div class="why-icon" aria-hidden="true">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
-        </div>
-        <div class="why-title">Controlled Production</div>
-        <div class="why-desc">Our production sites and regional offices allow us to manage quality and consistency with real operational presence at source.</div>
-      </div>
-      <div class="why-item reveal reveal-delay-2">
-        <div class="why-icon" aria-hidden="true">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 8v4l3 3"/>
-          </svg>
-        </div>
-        <div class="why-title">Responsible Sourcing</div>
-        <div class="why-desc">We source with long-term thinking — protecting the ecosystems and communities that make Indonesian botanicals possible.</div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════
      CTA BAND
 ════════════════════════════════════════════════════ -->
-<section id="cta-band" aria-labelledby="cta-headline">
-  <div class="container">
-    <p class="eyebrow" style="color:var(--gold);">Work With Us</p>
-    <h2 id="cta-headline" class="reveal">Let's Build Something<br>from the Source.</h2>
-    <p class="reveal reveal-delay-1">Connect with our team to explore our essential oils and natural raw materials. We welcome direct inquiries from fragrance manufacturers, essential oil buyers, and natural ingredient companies.</p>
-    <div class="cta-btns reveal reveal-delay-2">
-      <a href="#contact" class="btn btn-light">Contact Our Team</a>
-      <a href="#products" class="btn" style="color:rgba(245,241,232,0.55);border-color:rgba(245,241,232,0.18);">Explore Products</a>
-    </div>
-  </div>
-</section>
+    <section id="cta-band" aria-labelledby="cta-headline">
+      <div class="container">
+        <p class="eyebrow" style="color: var(--gold)">Work With Us</p>
+        <h2 id="cta-headline" class="reveal">
+          Let's Build Something<br />from the Source.
+        </h2>
+        <p class="reveal reveal-delay-1">
+          Connect with our team to explore our essential oils and natural raw
+          materials. We welcome direct inquiries from fragrance manufacturers,
+          essential oil buyers, and natural ingredient companies.
+        </p>
+        <div class="cta-btns reveal reveal-delay-2">
+          <a href="#contact" class="btn btn-light">Contact Our Team</a>
+          <a
+            href="#products"
+            class="btn"
+            style="
+              color: rgba(245, 241, 232, 0.55);
+              border-color: rgba(245, 241, 232, 0.18);
+            "
+            >Explore Products</a
+          >
+        </div>
+      </div>
+    </section>
 
-<!-- ═══════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════
      CONTACT
 ════════════════════════════════════════════════════ -->
-<section id="contact" aria-labelledby="contact-headline">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info reveal">
-        <p class="eyebrow">Let's Connect</p>
-        <h2 id="contact-headline">We welcome your inquiry.</h2>
-        <p>Whether you are sourcing essential oils for the first time or looking to build a long-term supply relationship, we are ready to discuss how Nusa Terra Origin can support your needs.</p>
+    <section id="contact" aria-labelledby="contact-headline">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <p class="eyebrow">Let's Connect</p>
+            <h2 id="contact-headline">We welcome your inquiry.</h2>
+            <p>
+              Whether you are sourcing essential oils for the first time or
+              looking to build a long-term supply relationship, we are ready to
+              discuss how Nusa Terra Origin can support your needs.
+            </p>
 
-        <div class="contact-detail">
-          <div class="contact-detail-label">Email</div>
-          <!-- PLACEHOLDER — to be updated with actual company email -->
-          <div class="contact-detail-val">hello@nusaterraorigin.org <em style="font-size:0.72rem;color:var(--sage);font-style:normal;">(placeholder)</em></div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-label">Website</div>
-          <div class="contact-detail-val">nusaterraorigin.org</div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-label">Head Office</div>
-          <div class="contact-detail-val">Salatiga, Central Java, Indonesia</div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-label">Export Hub</div>
-          <div class="contact-detail-val">Medan, Sumatra, Indonesia</div>
+            <div class="contact-detail">
+              <div class="contact-detail-label">Email</div>
+              <!-- PLACEHOLDER — to be updated with actual company email -->
+              <div class="contact-detail-val">
+                hello@nusaterraorigin.org
+                <em
+                  style="
+                    font-size: 0.72rem;
+                    color: var(--sage);
+                    font-style: normal;
+                  "
+                  >(placeholder)</em
+                >
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-label">Website</div>
+              <div class="contact-detail-val">nusaterraorigin.org</div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-label">Head Office</div>
+              <div class="contact-detail-val">
+                Salatiga, Central Java, Indonesia
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-label">Export Hub</div>
+              <div class="contact-detail-val">Medan, Sumatra, Indonesia</div>
+            </div>
+          </div>
+
+          <div class="reveal reveal-delay-2">
+            <div
+              class="contact-form"
+              role="form"
+              aria-label="Product inquiry form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="f-name" class="form-label">Full Name</label>
+                  <input
+                    type="text"
+                    id="f-name"
+                    name="name"
+                    class="form-input"
+                    autocomplete="name"
+                    required />
+                </div>
+                <div class="form-group">
+                  <label for="f-company" class="form-label">Company</label>
+                  <input
+                    type="text"
+                    id="f-company"
+                    name="company"
+                    class="form-input"
+                    autocomplete="organization" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="f-email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    id="f-email"
+                    name="email"
+                    class="form-input"
+                    autocomplete="email"
+                    required />
+                </div>
+                <div class="form-group">
+                  <label for="f-country" class="form-label">Country</label>
+                  <input
+                    type="text"
+                    id="f-country"
+                    name="country"
+                    class="form-input"
+                    autocomplete="country-name" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="f-product" class="form-label"
+                  >Product Interest</label
+                >
+                <select id="f-product" name="product" class="form-select">
+                  <option value="">Select a product...</option>
+                  <option value="sandalwood">Sandalwood</option>
+                  <option value="vetiver">Vetiver</option>
+                  <option value="patchouli">Patchouli Sumatra</option>
+                  <option value="nutmeg">Nutmeg</option>
+                  <option value="benzoin">Benzoin</option>
+                  <option value="multiple">Multiple Products</option>
+                  <option value="other">Other Enquiry</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="f-message" class="form-label">Message</label>
+                <textarea
+                  id="f-message"
+                  name="message"
+                  class="form-textarea"
+                  rows="4"></textarea>
+              </div>
+              <div class="form-submit">
+                <button
+                  type="submit"
+                  class="btn btn-dark"
+                  onclick="handleFormSubmit(event)">
+                  Send Inquiry
+                </button>
+              </div>
+              <div
+                id="form-success"
+                style="
+                  display: none;
+                  margin-top: 16px;
+                  font-size: 0.85rem;
+                  color: var(--forest);
+                ">
+                Thank you for your inquiry. We will be in touch soon.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="reveal reveal-delay-2">
-        <div class="contact-form" role="form" aria-label="Product inquiry form">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="f-name" class="form-label">Full Name</label>
-              <input type="text" id="f-name" name="name" class="form-input" autocomplete="name" required />
-            </div>
-            <div class="form-group">
-              <label for="f-company" class="form-label">Company</label>
-              <input type="text" id="f-company" name="company" class="form-input" autocomplete="organization" />
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="f-email" class="form-label">Email</label>
-              <input type="email" id="f-email" name="email" class="form-input" autocomplete="email" required />
-            </div>
-            <div class="form-group">
-              <label for="f-country" class="form-label">Country</label>
-              <input type="text" id="f-country" name="country" class="form-input" autocomplete="country-name" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="f-product" class="form-label">Product Interest</label>
-            <select id="f-product" name="product" class="form-select">
-              <option value="">Select a product...</option>
-              <option value="sandalwood">Sandalwood</option>
-              <option value="vetiver">Vetiver</option>
-              <option value="patchouli">Patchouli Sumatra</option>
-              <option value="nutmeg">Nutmeg</option>
-              <option value="benzoin">Benzoin</option>
-              <option value="multiple">Multiple Products</option>
-              <option value="other">Other Enquiry</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="f-message" class="form-label">Message</label>
-            <textarea id="f-message" name="message" class="form-textarea" rows="4"></textarea>
-          </div>
-          <div class="form-submit">
-            <button type="submit" class="btn btn-dark" onclick="handleFormSubmit(event)">Send Inquiry</button>
-          </div>
-          <div id="form-success" style="display:none;margin-top:16px;font-size:0.85rem;color:var(--forest);">Thank you for your inquiry. We will be in touch soon.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════
      FOOTER
 ════════════════════════════════════════════════════ -->
-<footer role="contentinfo">
-  <div class="container">
-    <div class="footer-main">
-      <div class="footer-brand">
-        <div class="logo-main">NUSA TERRA ORIGIN</div>
-        <span class="logo-sub">PT Nusa Terra Origin</span>
-        <p class="footer-tagline">"Natural origins.<br>Enduring partnerships."</p>
+    <footer role="contentinfo">
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <div class="logo-main">NUSA TERRA ORIGIN</div>
+            <span class="logo-sub">PT Nusa Terra Origin</span>
+            <p class="footer-tagline">
+              "Natural origins.<br />Enduring partnerships."
+            </p>
+          </div>
+          <div>
+            <div class="footer-col-title">Navigate</div>
+            <ul class="footer-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#products">Products</a></li>
+              <li><a href="#supply-chain">Supply Chain</a></li>
+              <li><a href="#sustainability">Sustainability</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer-col-title">Products</div>
+            <ul class="footer-links">
+              <li>
+                <a href="#products" onclick="openModal('sandalwood')"
+                  >Sandalwood</a
+                >
+              </li>
+              <li>
+                <a href="#products" onclick="openModal('vetiver')">Vetiver</a>
+              </li>
+              <li>
+                <a href="#products" onclick="openModal('patchouli')"
+                  >Patchouli Sumatra</a
+                >
+              </li>
+              <li>
+                <a href="#products" onclick="openModal('nutmeg')">Nutmeg</a>
+              </li>
+              <li>
+                <a href="#products" onclick="openModal('benzoin')">Benzoin</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer-col-title">Locations</div>
+            <ul class="footer-links">
+              <li><a href="#presence">Salatiga</a></li>
+              <li><a href="#presence">Banda Aceh</a></li>
+              <li><a href="#presence">Medan</a></li>
+              <li><a href="#presence">Garut</a></li>
+              <li><a href="#presence">Wonosari</a></li>
+              <li><a href="#presence">Soe, West Timor</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Nusa Terra Origin. All rights reserved.</span>
+          <span>Salatiga, Central Java, Indonesia</span>
+        </div>
       </div>
-      <div>
-        <div class="footer-col-title">Navigate</div>
-        <ul class="footer-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#supply-chain">Supply Chain</a></li>
-          <li><a href="#sustainability">Sustainability</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Products</div>
-        <ul class="footer-links">
-          <li><a href="#products" onclick="openModal('sandalwood')">Sandalwood</a></li>
-          <li><a href="#products" onclick="openModal('vetiver')">Vetiver</a></li>
-          <li><a href="#products" onclick="openModal('patchouli')">Patchouli Sumatra</a></li>
-          <li><a href="#products" onclick="openModal('nutmeg')">Nutmeg</a></li>
-          <li><a href="#products" onclick="openModal('benzoin')">Benzoin</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Locations</div>
-        <ul class="footer-links">
-          <li><a href="#presence">Salatiga</a></li>
-          <li><a href="#presence">Banda Aceh</a></li>
-          <li><a href="#presence">Medan</a></li>
-          <li><a href="#presence">Garut</a></li>
-          <li><a href="#presence">Wonosari</a></li>
-          <li><a href="#presence">Soe, West Timor</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Nusa Terra Origin. All rights reserved.</span>
-      <span>Salatiga, Central Java, Indonesia</span>
-    </div>
-  </div>
-</footer>
+    </footer>
 
-<!-- ═══════════════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════════════
      JAVASCRIPT
 ════════════════════════════════════════════════════ -->
-<script>
-// ── NAVBAR SCROLL ──
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
-}, { passive: true });
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      crossorigin=""></script>
+    <script>
+      // ── NAVBAR SCROLL ──
+      const navbar = document.getElementById("navbar");
+      window.addEventListener(
+        "scroll",
+        () => {
+          navbar.classList.toggle("scrolled", window.scrollY > 60);
+        },
+        { passive: true },
+      );
 
-// ── MOBILE NAV ──
-const toggle = document.getElementById('nav-toggle');
-const mobileNav = document.getElementById('mobile-nav');
-const closeBtn = document.getElementById('nav-close');
-const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+      // ── MOBILE NAV ──
+      const toggle = document.getElementById("nav-toggle");
+      const mobileNav = document.getElementById("mobile-nav");
+      const closeBtn = document.getElementById("nav-close");
+      const mobileLinks = document.querySelectorAll(".mobile-nav-link");
 
-function openMobileNav() {
-  mobileNav.classList.add('open');
-  mobileNav.setAttribute('aria-hidden', 'false');
-  toggle.setAttribute('aria-expanded', 'true');
-  document.body.style.overflow = 'hidden';
-}
-function closeMobileNav() {
-  mobileNav.classList.remove('open');
-  mobileNav.setAttribute('aria-hidden', 'true');
-  toggle.setAttribute('aria-expanded', 'false');
-  document.body.style.overflow = '';
-}
-toggle.addEventListener('click', openMobileNav);
-closeBtn.addEventListener('click', closeMobileNav);
-mobileLinks.forEach(l => l.addEventListener('click', closeMobileNav));
+      function openMobileNav() {
+        mobileNav.classList.add("open");
+        mobileNav.setAttribute("aria-hidden", "false");
+        toggle.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+      function closeMobileNav() {
+        mobileNav.classList.remove("open");
+        mobileNav.setAttribute("aria-hidden", "true");
+        toggle.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+      toggle.addEventListener("click", openMobileNav);
+      closeBtn.addEventListener("click", closeMobileNav);
+      mobileLinks.forEach((l) => l.addEventListener("click", closeMobileNav));
 
-// ── HERO SLIDER ──
-let currentSlide = 0;
-let sliderTimer = null;
-const slides = document.querySelectorAll('.hero-slide');
-const dots = document.querySelectorAll('.hero-dot');
-const totalSlides = slides.length;
-let isTransitioning = false;
-let isPaused = false;
+      // ── HERO SLIDER ──
+      let currentSlide = 0;
+      let sliderTimer = null;
+      const slides = document.querySelectorAll(".hero-slide");
+      const dots = document.querySelectorAll(".hero-dot");
+      const totalSlides = slides.length;
+      let isTransitioning = false;
+      let isPaused = false;
 
-function goToSlide(n) {
-  if (isTransitioning) return;
-  isTransitioning = true;
-  slides[currentSlide].classList.remove('active');
-  dots[currentSlide].classList.remove('active');
-  currentSlide = (n + totalSlides) % totalSlides;
-  slides[currentSlide].classList.add('active');
-  dots[currentSlide].classList.add('active');
-  setTimeout(() => { isTransitioning = false; }, 1500);
-}
+      function goToSlide(n) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        slides[currentSlide].classList.remove("active");
+        dots[currentSlide].classList.remove("active");
+        currentSlide = (n + totalSlides) % totalSlides;
+        slides[currentSlide].classList.add("active");
+        dots[currentSlide].classList.add("active");
+        setTimeout(() => {
+          isTransitioning = false;
+        }, 1500);
+      }
 
-function nextSlide() { goToSlide(currentSlide + 1); }
-function prevSlide() { goToSlide(currentSlide - 1); }
+      function nextSlide() {
+        goToSlide(currentSlide + 1);
+      }
+      function prevSlide() {
+        goToSlide(currentSlide - 1);
+      }
 
-function startTimer() {
-  clearInterval(sliderTimer);
-  sliderTimer = setInterval(() => { if (!isPaused) nextSlide(); }, 6000);
-}
+      function startTimer() {
+        clearInterval(sliderTimer);
+        sliderTimer = setInterval(() => {
+          if (!isPaused) nextSlide();
+        }, 6000);
+      }
 
-document.getElementById('hero-next').addEventListener('click', () => { nextSlide(); startTimer(); });
-document.getElementById('hero-prev').addEventListener('click', () => { prevSlide(); startTimer(); });
-dots.forEach((d, i) => d.addEventListener('click', () => { goToSlide(i); startTimer(); }));
+      document.getElementById("hero-next").addEventListener("click", () => {
+        nextSlide();
+        startTimer();
+      });
+      document.getElementById("hero-prev").addEventListener("click", () => {
+        prevSlide();
+        startTimer();
+      });
+      dots.forEach((d, i) =>
+        d.addEventListener("click", () => {
+          goToSlide(i);
+          startTimer();
+        }),
+      );
 
-const hero = document.getElementById('hero');
-hero.addEventListener('mouseenter', () => { isPaused = true; });
-hero.addEventListener('mouseleave', () => { isPaused = false; });
+      const hero = document.getElementById("hero");
+      hero.addEventListener("mouseenter", () => {
+        isPaused = true;
+      });
+      hero.addEventListener("mouseleave", () => {
+        isPaused = false;
+      });
 
-// Touch/swipe
-let touchX = 0;
-hero.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
-hero.addEventListener('touchend', e => {
-  const diff = touchX - e.changedTouches[0].clientX;
-  if (Math.abs(diff) > 50) { diff > 0 ? nextSlide() : prevSlide(); startTimer(); }
-}, { passive: true });
+      // Touch/swipe
+      let touchX = 0;
+      hero.addEventListener(
+        "touchstart",
+        (e) => {
+          touchX = e.touches[0].clientX;
+        },
+        { passive: true },
+      );
+      hero.addEventListener(
+        "touchend",
+        (e) => {
+          const diff = touchX - e.changedTouches[0].clientX;
+          if (Math.abs(diff) > 50) {
+            diff > 0 ? nextSlide() : prevSlide();
+            startTimer();
+          }
+        },
+        { passive: true },
+      );
 
-// Keyboard
-document.addEventListener('keydown', e => {
-  if (e.key === 'ArrowLeft') { prevSlide(); startTimer(); }
-  if (e.key === 'ArrowRight') { nextSlide(); startTimer(); }
-});
+      // Keyboard
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") {
+          prevSlide();
+          startTimer();
+        }
+        if (e.key === "ArrowRight") {
+          nextSlide();
+          startTimer();
+        }
+      });
 
-startTimer();
+      startTimer();
 
-// ── PRODUCT DATA ──
-const productData = {
-  sandalwood: {
-    tag: 'Essential Oil',
-    name: 'Sandalwood',
-    origin: 'Wonosari, East Java & Soe, West Timor, Indonesia',
-    desc: 'Indonesian sandalwood is one of the most prized botanical raw materials in the fragrance and natural products industry. We work with sandalwood from our production site and nursery in Wonosari, East Java, as well as from our collection, grading, and warehouse operations in Soe, West Timor. Our involvement begins at the nursery stage, where we support the cultivation of sandalwood trees as part of a responsible long-term production approach.',
-    variants: null,
-    originDetail: 'Wonosari, East Java & Soe, West Timor (East Nusa Tenggara), Indonesia',
-    imgClass: 'prod-sandalwood'
-  },
-  vetiver: {
-    tag: 'Essential Oil',
-    name: 'Vetiver',
-    origin: 'Garut, West Java, Indonesia',
-    desc: 'Vetiver from Garut, West Java, is widely regarded as one of the finest in the world. Its complex, earthy, and woody profile makes it a cornerstone ingredient in fine fragrance. We operate a dedicated Vetiver Warehouse and Regional Office in Garut, enabling us to work closely with local producers and manage quality from collection through to processing. We offer both Conventional and Low Smoked variants to meet different application and quality requirements.',
-    variants: 'Conventional / Low Smoked',
-    originDetail: 'Garut, West Java, Indonesia',
-    imgClass: 'prod-vetiver'
-  },
-  patchouli: {
-    tag: 'Essential Oil',
-    name: 'Patchouli Sumatra',
-    origin: 'Banda Aceh, Sumatra, Indonesia',
-    desc: 'Patchouli from Sumatra is a foundational ingredient in the global fragrance industry. Our Patchouli Collection Centre and Regional Office in Banda Aceh allows us to work directly with producers in the key growing areas of Sumatra, managing collection, grading, and preparation before further processing.',
-    variants: null,
-    originDetail: 'Banda Aceh & surrounding Patchouli growing regions, Sumatra, Indonesia',
-    imgClass: 'prod-patchouli'
-  },
-  nutmeg: {
-    tag: 'Natural Raw Material',
-    name: 'Nutmeg',
-    origin: 'Indonesia',
-    desc: 'Indonesia is one of the world\'s primary sources of nutmeg, a botanical with significant applications across fragrance, food flavour, and natural products. We source nutmeg as part of our broader portfolio of Indonesian natural raw materials, maintaining our commitment to traceable, responsibly sourced supply chains.',
-    variants: null,
-    originDetail: 'Indonesia',
-    imgClass: 'prod-nutmeg'
-  },
-  benzoin: {
-    tag: 'Natural Raw Material',
-    name: 'Benzoin',
-    origin: 'Indonesia',
-    desc: 'Benzoin resin is a valued natural raw material in perfumery and incense, prized for its warm, balsamic character and fixative properties. Indonesia is a significant source of benzoin. We source benzoin as part of our portfolio of Indonesian natural raw materials, applying the same principles of direct sourcing and traceability that govern our essential oil products.',
-    variants: null,
-    originDetail: 'Indonesia',
-    imgClass: 'prod-benzoin'
-  }
-};
+      // ── PRODUCT DATA ──
+      const productData = {
+        sandalwoodtimor: {
+          tag: "Essential Oil",
+          name: "Sandalwood Timor",
+          origin: "Wonosari, East Java & Soe, West Timor, Indonesia",
+          desc: "Our raw materials come from traceable sources in Timor and Sumba Islands. Two licensed collection points have been established in the center of Timor Island. We have been collaborating for two years with a local environmental organization on nurseries, as well as the socialization of restoration and replanting efforts for sandalwood trees",
+          variants: null,
+          originDetail: "East Nusa Tenggara, the Sandalwood at his origin",
+          imgClass: "prod-sandalwood",
+        },
+        vetiver: {
+          tag: "Essential Oil",
+          name: "Vetiver",
+          origin: "Garut, West Java, Indonesia",
+          desc: "Vetiver from Garut, West Java, is widely regarded as one of the finest in the world. Its complex, earthy, and woody profile makes it a cornerstone ingredient in fine fragrance. We operate a dedicated Vetiver Warehouse and Regional Office in Garut, enabling us to work closely with local producers and manage quality from collection through to processing. We offer both Conventional and Low Smoked variants to meet different application and quality requirements.",
+          variants: "Conventional / Low Smoked",
+          originDetail: "Garut, West Java, Indonesia",
+          imgClass: "prod-vetiver",
+        },
+        patchouli: {
+          tag: "Essential Oil",
+          name: "Patchouli Sumatra",
+          origin: "Banda Aceh, Sumatra, Indonesia",
+          desc: "Patchouli from Sumatra is a foundational ingredient in the global fragrance industry. Our Patchouli Collection Centre and Regional Office in Banda Aceh allows us to work directly with producers in the key growing areas of Sumatra, managing collection, grading, and preparation before further processing.",
+          variants: null,
+          originDetail:
+            "Banda Aceh & surrounding Patchouli growing regions, Sumatra, Indonesia",
+          imgClass: "prod-patchouli",
+        },
+        nutmeg: {
+          tag: "Natural Raw Material",
+          name: "Nutmeg",
+          origin: "Indonesia",
+          desc: "Indonesia is one of the world's primary sources of nutmeg, a botanical with significant applications across fragrance, food flavour, and natural products. We source nutmeg as part of our broader portfolio of Indonesian natural raw materials, maintaining our commitment to traceable, responsibly sourced supply chains.",
+          variants: null,
+          originDetail: "Indonesia",
+          imgClass: "prod-nutmeg",
+        },
+        benzoin: {
+          tag: "Natural Raw Material",
+          name: "Benzoin",
+          origin: "Indonesia",
+          desc: "Benzoin resin is a valued natural raw material in perfumery and incense, prized for its warm, balsamic character and fixative properties. Indonesia is a significant source of benzoin. We source benzoin as part of our portfolio of Indonesian natural raw materials, applying the same principles of direct sourcing and traceability that govern our essential oil products.",
+          variants: null,
+          originDetail: "Indonesia",
+          imgClass: "prod-benzoin",
+        },
+      };
 
-function openModal(key) {
-  const d = productData[key];
-  if (!d) return;
-  document.getElementById('modal-tag').textContent = d.tag;
-  document.getElementById('modal-title').textContent = d.name;
-  document.getElementById('modal-origin').textContent = d.origin;
-  document.getElementById('modal-desc').textContent = d.desc;
-  document.getElementById('modal-origin-detail').textContent = d.originDetail;
-  const varWrap = document.getElementById('modal-variants-wrap');
-  if (d.variants) {
-    document.getElementById('modal-variants').textContent = d.variants;
-    varWrap.style.display = 'block';
-  } else {
-    varWrap.style.display = 'none';
-  }
-  const img = document.getElementById('modal-img');
-  img.className = 'modal-img ' + d.imgClass;
-  img.setAttribute('aria-label', d.name + ' — product image');
-  const overlay = document.getElementById('product-modal');
-  overlay.classList.add('open');
-  overlay.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
-  document.getElementById('modal-close-btn').focus();
-}
-function closeModal() {
-  const overlay = document.getElementById('product-modal');
-  overlay.classList.remove('open');
-  overlay.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
-}
-document.getElementById('modal-close-btn').addEventListener('click', closeModal);
-document.getElementById('product-modal').addEventListener('click', e => {
-  if (e.target === e.currentTarget) closeModal();
-});
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal();
-});
+      function openModal(key) {
+        const d = productData[key];
+        if (!d) return;
+        document.getElementById("modal-tag").textContent = d.tag;
+        document.getElementById("modal-title").textContent = d.name;
+        document.getElementById("modal-origin").textContent = d.origin;
+        document.getElementById("modal-desc").textContent = d.desc;
+        document.getElementById("modal-origin-detail").textContent =
+          d.originDetail;
+        const varWrap = document.getElementById("modal-variants-wrap");
+        if (d.variants) {
+          document.getElementById("modal-variants").textContent = d.variants;
+          varWrap.style.display = "block";
+        } else {
+          varWrap.style.display = "none";
+        }
+        const img = document.getElementById("modal-img");
+        img.className = "modal-img " + d.imgClass;
+        img.setAttribute("aria-label", d.name + " — product image");
+        const overlay = document.getElementById("product-modal");
+        overlay.classList.add("open");
+        overlay.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        document.getElementById("modal-close-btn").focus();
+      }
+      function closeModal() {
+        const overlay = document.getElementById("product-modal");
+        overlay.classList.remove("open");
+        overlay.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+      document
+        .getElementById("modal-close-btn")
+        .addEventListener("click", closeModal);
+      document
+        .getElementById("product-modal")
+        .addEventListener("click", (e) => {
+          if (e.target === e.currentTarget) closeModal();
+        });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
 
-// ── SCROLL REVEAL ──
-const revealEls = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-revealEls.forEach(el => observer.observe(el));
+      // ── INTERACTIVE INDONESIA MAP ──
+      const indonesiaMap = L.map("indonesia-map", {
+        scrollWheelZoom: false,
+      }).setView([-2.5, 118], 5);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 18,
+      }).addTo(indonesiaMap);
 
-// ── FORM ──
-function handleFormSubmit(e) {
-  e.preventDefault();
-  document.getElementById('form-success').style.display = 'block';
-}
-</script>
+      const mapLocations = [
+        [
+          "Banda Aceh",
+          5.5483,
+          95.3238,
+          "Patchouli Collection Centre & Regional Office",
+        ],
+        ["Medan", 3.5952, 98.6722, "Main Warehouse & Export Hub"],
+        ["Salatiga", -7.3305, 110.5084, "Head Office & Administration"],
+        ["Garut", -7.2167, 107.9, "Vetiver Warehouse & Regional Office"],
+        ["Wonosari", -8.0, 110.6, "Sandalwood Production Site & Nursery"],
+        [
+          "Soe, West Timor",
+          -9.86,
+          124.28,
+          "Sandalwood Collection, Grading & Warehouse",
+        ],
+      ];
 
-</body>
+      mapLocations.forEach(([name, latitude, longitude, description]) => {
+        L.circleMarker([latitude, longitude], {
+          radius: 8,
+          color: "#f5f1e8",
+          weight: 2,
+          fillColor: "#b59a62",
+          fillOpacity: 1,
+        })
+          .addTo(indonesiaMap)
+          .bindPopup(`<strong>${name}</strong><br>${description}`);
+      });
+
+      // ── SCROLL REVEAL ──
+      const revealEls = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.08, rootMargin: "0px 0px -40px 0px" },
+      );
+      revealEls.forEach((el) => observer.observe(el));
+
+      // ── FORM ──
+      function handleFormSubmit(e) {
+        e.preventDefault();
+        document.getElementById("form-success").style.display = "block";
+      }
+    </script>
+  </body>
 </html>
