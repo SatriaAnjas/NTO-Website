@@ -1,0 +1,979 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nusa Terra Origin | Product Details</title>
+    <meta
+      name="description"
+      content="Nusa Terra Origin product portfolio including sandalwood timor, vetiver, patchouli sumatra, nutmeg, and benzoin." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <style>
+      :root {
+        --forest: #173c2c;
+        --deep: #0d2a20;
+        --sage: #879b7a;
+        --olive: #667458;
+        --ivory: #f5f1e8;
+        --sand: #d9cbb4;
+        --gold: #b59a62;
+        --text: #17221d;
+        --text-light: #4a5e55;
+        --white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+        /* scroll-padding-top: 96px; */
+      }
+
+      body {
+        font-family: "Manrope", sans-serif;
+        background: var(--ivory);
+        color: var(--text);
+        overflow-x: hidden;
+      }
+
+      /* section {
+        scroll-margin-top: 96px;
+      } */
+
+      a {
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        width: min(1320px, calc(100% - 80px));
+        margin: 0 auto;
+      }
+
+      .serif {
+        font-family: "Cormorant Garamond", Georgia, serif;
+      }
+
+      .eyebrow {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .reveal-delay-1 {
+        transition-delay: 0.1s;
+      }
+
+      .reveal-delay-2 {
+        transition-delay: 0.22s;
+      }
+
+      .reveal-delay-3 {
+        transition-delay: 0.36s;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 32px;
+        border: 1.5px solid currentColor;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .btn-light {
+        color: var(--ivory);
+        border-color: rgba(245, 241, 232, 0.5);
+      }
+
+      .btn-light:hover {
+        background: var(--ivory);
+        color: var(--forest);
+        border-color: var(--ivory);
+      }
+
+      .btn-dark {
+        color: var(--forest);
+        border-color: var(--forest);
+      }
+
+      .btn-dark:hover {
+        background: var(--forest);
+        color: var(--ivory);
+      }
+
+      #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        padding: 24px 0;
+        background: rgba(245, 241, 232, 0.97);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 1px 0 rgba(23, 60, 44, 0.08);
+        transition: all 0.4s ease;
+      }
+
+      #navbar.scrolled {
+        background: rgba(245, 241, 232, 0.97);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 1px 0 rgba(23, 60, 44, 0.08);
+        padding: 16px 0;
+      }
+
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .nav-logo {
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+      }
+
+      .nav-logo .logo-main {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.25rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        color: var(--forest);
+        transition: color 0.3s ease;
+      }
+
+      .nav-logo .logo-sub {
+        font-size: 0.55rem;
+        font-weight: 600;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--sage);
+        margin-top: 3px;
+        transition: color 0.3s ease;
+      }
+
+      #navbar.scrolled .nav-logo .logo-main,
+      #navbar.scrolled .nav-logo .logo-sub {
+        color: var(--forest);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 36px;
+        list-style: none;
+      }
+
+      .nav-links a {
+        position: relative;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--text-light);
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -6px;
+        height: 1px;
+        background: var(--gold);
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.3s ease;
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a:focus-visible::after {
+        transform: scaleX(1);
+      }
+
+      #navbar.scrolled .nav-links a {
+        color: var(--text-light);
+      }
+
+      #navbar.scrolled .nav-links a:hover {
+        color: var(--forest);
+      }
+
+      .nav-cta {
+        margin-left: 16px;
+      }
+
+      .nav-cta .btn {
+        font-size: 0.65rem;
+        padding: 11px 24px;
+      }
+
+      .nav-hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: 0;
+        cursor: pointer;
+        padding: 4px;
+      }
+
+      .nav-hamburger span {
+        display: block;
+        width: 24px;
+        height: 1.5px;
+        background: var(--forest);
+        transition: all 0.3s ease;
+      }
+
+      #navbar.scrolled .nav-hamburger span {
+        background: var(--forest);
+      }
+
+      #mobile-nav {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+        background: var(--deep);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+      }
+
+      #mobile-nav.open {
+        display: flex;
+      }
+
+      .mobile-nav-close {
+        position: absolute;
+        top: 24px;
+        right: 28px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: var(--ivory);
+      }
+
+      .mobile-nav-links {
+        list-style: none;
+        text-align: center;
+      }
+
+      .mobile-nav-links li + li {
+        margin-top: 28px;
+      }
+
+      .mobile-nav-links a {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2rem;
+        font-weight: 400;
+        color: var(--ivory);
+        letter-spacing: 0.05em;
+      }
+
+      .product-detail {
+        padding: 96px 0;
+      }
+
+      .product-detail:nth-child(even) {
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      .product-detail:nth-child(even) .detail-grid > *:first-child {
+        order: 2;
+      }
+
+      .product-detail:nth-child(even) .detail-grid > *:last-child {
+        order: 1;
+      }
+
+      .detail-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 56px;
+        align-items: center;
+      }
+
+      .product-detail:nth-child(even) .detail-grid {
+        grid-template-areas: "content media";
+      }
+
+      .product-detail:nth-child(even) .detail-media {
+        grid-area: media;
+      }
+
+      .product-detail:nth-child(even) .detail-content {
+        grid-area: content;
+      }
+
+      .detail-media {
+        min-height: 520px;
+        border-radius: 18px;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 24px 60px rgba(17, 35, 29, 0.12);
+      }
+
+      .media-sandalwood {
+        background-image:
+          linear-gradient(
+            to top,
+            rgba(13, 42, 32, 0.2),
+            rgba(13, 42, 32, 0.25)
+          ),
+          url("images/Sandalwood.png");
+      }
+
+      .media-vetiver {
+        background-image:
+          linear-gradient(
+            to top,
+            rgba(13, 42, 32, 0.16),
+            rgba(13, 42, 32, 0.3)
+          ),
+          url("images/VetiverJavaGarut.jpeg");
+      }
+
+      .media-patchouli {
+        background-image:
+          linear-gradient(
+            to top,
+            rgba(13, 42, 32, 0.16),
+            rgba(13, 42, 32, 0.3)
+          ),
+          url("images/PatchouliSumatra.jpeg");
+      }
+
+      .media-nutmeg {
+        background-image:
+          linear-gradient(
+            to top,
+            rgba(13, 42, 32, 0.16),
+            rgba(13, 42, 32, 0.3)
+          ),
+          url("images/Nutmeg.jpeg");
+      }
+
+      .media-benzoin {
+        background-image:
+          linear-gradient(
+            to top,
+            rgba(13, 42, 32, 0.16),
+            rgba(13, 42, 32, 0.3)
+          ),
+          url("images/Artboard 1.png");
+      }
+
+      .detail-content h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.2rem, 4vw, 3.6rem);
+        font-weight: 400;
+        line-height: 1;
+        color: var(--forest);
+        margin: 18px 0 10px;
+      }
+
+      .detail-origin {
+        font-size: 0.8rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--sage);
+        margin-bottom: 24px;
+      }
+
+      .detail-content p {
+        color: var(--text-light);
+        line-height: 1.85;
+        font-size: 0.96rem;
+      }
+
+      .detail-content .description {
+        margin-bottom: 32px;
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px 28px;
+        padding-top: 28px;
+        border-top: 1px solid var(--sand);
+      }
+
+      .info-item {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .info-item span {
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+
+      .info-item strong {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--forest);
+      }
+
+      .detail-actions {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-top: 36px;
+      }
+
+      footer {
+        background: var(--deep);
+        padding: 80px 0 40px;
+        color: var(--ivory);
+      }
+
+      .footer-main {
+        display: grid;
+        grid-template-columns: 1.8fr 1fr 1fr 1fr;
+        gap: 60px;
+        margin-bottom: 60px;
+      }
+
+      .footer-brand .logo-main {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.4rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+      }
+
+      .footer-brand .logo-sub {
+        font-size: 0.55rem;
+        font-weight: 600;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--sage);
+        margin-top: 4px;
+        display: block;
+      }
+
+      .footer-tagline {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 0.95rem;
+        font-style: italic;
+        color: rgba(245, 241, 232, 0.4);
+        margin-top: 20px;
+        line-height: 1.5;
+      }
+
+      .footer-col-title {
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 20px;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li + li {
+        margin-top: 10px;
+      }
+
+      .footer-links a {
+        color: rgba(245, 241, 232, 0.45);
+        font-size: 0.82rem;
+      }
+
+      .footer-links a:hover {
+        color: var(--ivory);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(245, 241, 232, 0.08);
+        padding-top: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.72rem;
+        color: rgba(245, 241, 232, 0.3);
+      }
+
+      @media (max-width: 1024px) {
+        .detail-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .product-detail:nth-child(even) .detail-grid {
+          grid-template-areas: "media" "content";
+        }
+
+        .product-detail:nth-child(even) .detail-grid > *:first-child,
+        .product-detail:nth-child(even) .detail-grid > *:last-child {
+          order: initial;
+        }
+
+        .footer-main {
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        /* html {
+          scroll-padding-top: 78px;
+        }
+
+        section {
+          scroll-margin-top: 78px;
+        } */
+
+        .nav-links,
+        .nav-cta {
+          display: none;
+        }
+
+        .nav-hamburger {
+          display: flex;
+        }
+
+        .page-hero {
+          padding-top: 150px;
+        }
+
+        .detail-media {
+          min-height: 360px;
+        }
+
+        .info-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-main {
+          grid-template-columns: 1fr;
+          gap: 36px;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          gap: 12px;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <a
+          href="index.html"
+          class="nav-logo"
+          aria-label="Nusa Terra Origin home">
+          <span class="logo-main">NUSA TERRA ORIGIN</span>
+          <span class="logo-sub">Indonesian Natural Origins</span>
+        </a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#products">Products</a></li>
+          <li><a href="index.html#supply-chain">Supply Chain</a></li>
+          <li><a href="index.html#sustainability">Sustainability</a></li>
+          <li><a href="index.html#nur-series">Our Nurseries</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-cta">
+          <a href="index.html#contact" class="btn btn-light"
+            >Let’s Work Together</a
+          >
+        </div>
+
+        <button
+          class="nav-hamburger"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <nav
+      id="mobile-nav"
+      role="navigation"
+      aria-label="Mobile navigation"
+      aria-hidden="true">
+      <button class="mobile-nav-close" id="nav-close" aria-label="Close menu">
+        ×
+      </button>
+      <ul class="mobile-nav-links" role="list">
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="index.html#supply-chain">Supply Chain</a></li>
+        <li><a href="index.html#sustainability">Sustainability</a></li>
+        <li><a href="index.html#nur-series">Our Nurseries</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn btn-light">Let’s Work Together</a>
+    </nav>
+
+    <main>
+      <section class="product-detail reveal" id="sandalwood-timor">
+        <div class="container detail-grid">
+          <div
+            class="detail-media media-sandalwood"
+            aria-label="Sandalwood Timor"></div>
+          <div class="detail-content">
+            <p class="eyebrow">Essential Oil</p>
+            <h2>Sandalwood Timor</h2>
+            <p class="detail-origin">East Nusa Tenggara, Indonesia</p>
+            <p class="description">
+              Our sandalwood from Timor and Sumba comes from traceable sources,
+              with working relationships built around restoration, sourcing
+              discipline, and long-term rural partnerships. This product
+              reflects the depth of Indonesia's sandalwood heritage and the care
+              with which we build every supply chain at origin.
+            </p>
+            <div class="info-grid">
+              <div class="info-item">
+                <span>Origin</span>
+                <strong>Wonosari, East Java &amp; Soe, West Timor</strong>
+              </div>
+              <div class="info-item">
+                <span>Category</span>
+                <strong>Essential Oil</strong>
+              </div>
+              <div class="info-item">
+                <span>Current Focus</span>
+                <strong>Traceable sourcing &amp; restoration</strong>
+              </div>
+              <div class="info-item">
+                <span>Applications</span>
+                <strong>Fine fragrance, wellness, perfumery</strong>
+              </div>
+            </div>
+            <div class="detail-actions">
+              <a href="index.html#contact" class="btn btn-dark"
+                >Sustainability</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-detail reveal reveal-delay-1" id="vetiver">
+        <div class="container detail-grid">
+          <div class="detail-content">
+            <p class="eyebrow">Essential Oil</p>
+            <h2>Vetiver</h2>
+            <p class="detail-origin">Garut, West Java, Indonesia</p>
+            <p class="description">
+              Vetiver from Garut is widely recognized for its earthy, woody, and
+              refined character. At Nusa Terra Origin, we build direct
+              relationships with producers in the region and manage quality from
+              collection through processing, with both Conventional and Low
+              Smoked variants available.
+            </p>
+            <div class="info-grid">
+              <div class="info-item">
+                <span>Origin</span>
+                <strong>Garut, West Java, Indonesia</strong>
+              </div>
+              <div class="info-item">
+                <span>Category</span>
+                <strong>Essential Oil</strong>
+              </div>
+              <div class="info-item">
+                <span>Variants</span>
+                <strong>Conventional &amp; Low Smoked</strong>
+              </div>
+              <div class="info-item">
+                <span>Applications</span>
+                <strong>Fine fragrance, perfumery, cosmetics</strong>
+              </div>
+            </div>
+            <div class="detail-actions">
+              <a href="index.html#contact" class="btn btn-dark"
+                >Sustainability</a
+              >
+            </div>
+          </div>
+          <div class="detail-media media-vetiver" aria-label="Vetiver"></div>
+        </div>
+      </section>
+
+      <section
+        class="product-detail reveal reveal-delay-2"
+        id="patchouli-sumatra">
+        <div class="container detail-grid">
+          <div
+            class="detail-media media-patchouli"
+            aria-label="Patchouli Sumatra"></div>
+          <div class="detail-content">
+            <p class="eyebrow">Essential Oil</p>
+            <h2>Patchouli Sumatra</h2>
+            <p class="detail-origin">Banda Aceh &amp; Sumatra, Indonesia</p>
+            <p class="description">
+              Patchouli from Sumatra is a foundational ingredient in the global
+              fragrance industry. Our regional collection centre in Banda Aceh
+              allows us to work closely with producers at source, managing
+              collection, grading, and preparation with traceability built into
+              the process.
+            </p>
+            <div class="info-grid">
+              <div class="info-item">
+                <span>Origin</span>
+                <strong>Banda Aceh &amp; surrounding growing regions</strong>
+              </div>
+              <div class="info-item">
+                <span>Category</span>
+                <strong>Essential Oil</strong>
+              </div>
+              <div class="info-item">
+                <span>Supply Model</span>
+                <strong>Direct sourcing at origin</strong>
+              </div>
+              <div class="info-item">
+                <span>Applications</span>
+                <strong>Fragrance, personal care, additives</strong>
+              </div>
+            </div>
+            <div class="detail-actions">
+              <a href="index.html#contact" class="btn btn-dark"
+                >Sustainability</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-detail reveal reveal-delay-3" id="nutmeg">
+        <div class="container detail-grid">
+          <div class="detail-content">
+            <p class="eyebrow">Natural Raw Material</p>
+            <h2>Nutmeg</h2>
+            <p class="detail-origin">Indonesia</p>
+            <p class="description">
+              Nutmeg is one of Indonesia's most valued botanical raw materials,
+              with relevance across fragrance, flavor, and natural product
+              applications. We source nutmeg as part of a broader portfolio of
+              responsibly managed Indonesian natural ingredients, supporting
+              traceable supply chains from harvest to export.
+            </p>
+            <div class="info-grid">
+              <div class="info-item">
+                <span>Origin</span>
+                <strong>Indonesia</strong>
+              </div>
+              <div class="info-item">
+                <span>Category</span>
+                <strong>Natural Raw Material</strong>
+              </div>
+              <div class="info-item">
+                <span>Core Value</span>
+                <strong>Traceable, responsibly sourced</strong>
+              </div>
+              <div class="info-item">
+                <span>Applications</span>
+                <strong>Flavor, fragrance, natural products</strong>
+              </div>
+            </div>
+            <div class="detail-actions">
+              <a href="index.html#contact" class="btn btn-dark"
+                >Sustainability</a
+              >
+            </div>
+          </div>
+          <div class="detail-media media-nutmeg" aria-label="Nutmeg"></div>
+        </div>
+      </section>
+
+      <section class="product-detail reveal reveal-delay-3" id="benzoin">
+        <div class="container detail-grid">
+          <div class="detail-media media-benzoin" aria-label="Benzoin"></div>
+          <div class="detail-content">
+            <p class="eyebrow">Natural Raw Material</p>
+            <h2>Benzoin</h2>
+            <p class="detail-origin">Indonesia</p>
+            <p class="description">
+              Benzoin resin is valued for its warm, balsamic character and its
+              use as a natural fixative. Indonesia remains a significant source
+              of benzoin, and we apply the same direct sourcing, traceability,
+              and quality principles used across our broader portfolio of
+              natural ingredients.
+            </p>
+            <div class="info-grid">
+              <div class="info-item">
+                <span>Origin</span>
+                <strong>Indonesia</strong>
+              </div>
+              <div class="info-item">
+                <span>Category</span>
+                <strong>Natural Raw Material</strong>
+              </div>
+              <div class="info-item">
+                <span>Key Attributes</span>
+                <strong>Balsamic, warm, fixative</strong>
+              </div>
+              <div class="info-item">
+                <span>Applications</span>
+                <strong>Perfumery, incense, natural blends</strong>
+              </div>
+            </div>
+            <div class="detail-actions">
+              <a href="index.html#contact" class="btn btn-dark"
+                >Sustainability</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <div class="logo-main">NUSA TERRA ORIGIN</div>
+            <span class="logo-sub">PT Nusa Terra Origin</span>
+            <p class="footer-tagline">
+              "Natural origins.<br />Enduring partnerships."
+            </p>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Navigate</div>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="index.html#products">Products</a></li>
+              <li><a href="index.html#supply-chain">Supply Chain</a></li>
+              <li><a href="index.html#sustainability">Sustainability</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Products</div>
+            <ul class="footer-links">
+              <li><a href="#sandalwood-timor">Sandalwood Timor</a></li>
+              <li><a href="#vetiver">Vetiver</a></li>
+              <li><a href="#patchouli-sumatra">Patchouli Sumatra</a></li>
+              <li><a href="#nutmeg">Nutmeg</a></li>
+              <li><a href="#benzoin">Benzoin</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="footer-col-title">Locations</div>
+            <ul class="footer-links">
+              <li><a href="index.html#presence">Salatiga</a></li>
+              <li><a href="index.html#presence">Banda Aceh</a></li>
+              <li><a href="index.html#presence">Medan</a></li>
+              <li><a href="index.html#presence">Garut</a></li>
+              <li><a href="index.html#presence">Wonosari</a></li>
+              <li><a href="index.html#presence">Soe, West Timor</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2026 Nusa Terra Origin. All rights reserved.</span>
+          <span>Salatiga, Central Java, Indonesia</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const navbar = document.getElementById("navbar");
+      const toggle = document.getElementById("nav-toggle");
+      const mobileNav = document.getElementById("mobile-nav");
+      const closeBtn = document.getElementById("nav-close");
+      const mobileLinks = document.querySelectorAll(".mobile-nav-links a");
+
+      function updateNavbar() {
+        navbar.classList.toggle("scrolled", window.scrollY > 60);
+      }
+
+      window.addEventListener("scroll", updateNavbar, { passive: true });
+      updateNavbar();
+
+      const revealEls = document.querySelectorAll(".reveal");
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.08, rootMargin: "0px 0px -40px 0px" },
+      );
+
+      revealEls.forEach((el) => revealObserver.observe(el));
+
+      function openMobileNav() {
+        mobileNav.classList.add("open");
+        mobileNav.setAttribute("aria-hidden", "false");
+        toggle.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeMobileNav() {
+        mobileNav.classList.remove("open");
+        mobileNav.setAttribute("aria-hidden", "true");
+        toggle.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+
+      toggle.addEventListener("click", openMobileNav);
+      closeBtn.addEventListener("click", closeMobileNav);
+      mobileLinks.forEach((link) =>
+        link.addEventListener("click", closeMobileNav),
+      );
+    </script>
+  </body>
+</html>
