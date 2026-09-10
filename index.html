@@ -65,7 +65,7 @@
       html {
         scroll-behavior: smooth;
         font-size: 16px;
-        scroll-padding-top: 96px;
+        /* scroll-padding-top: 96px; */
       }
 
       body {
@@ -76,9 +76,9 @@
         -webkit-font-smoothing: antialiased;
       }
 
-      section {
+      /* section {
         scroll-margin-top: 96px;
-      }
+      } */
 
       @media (prefers-reduced-motion: reduce) {
         *,
@@ -160,7 +160,6 @@
         white-space: nowrap;
         border: 0;
       }
-      
 
       /* ─── NAVBAR ─────────────────────────────────────── */
       #navbar {
@@ -701,7 +700,11 @@
         width: 100%;
         aspect-ratio: 4 / 5;
         background:
-          linear-gradient(180deg, rgba(11, 27, 23, 0.12), rgba(11, 27, 23, 0.22)),
+          linear-gradient(
+            180deg,
+            rgba(11, 27, 23, 0.12),
+            rgba(11, 27, 23, 0.22)
+          ),
           url("images/DSC_4224.jpg");
         background-size: cover;
         background-position: center;
@@ -823,45 +826,37 @@
 
       .products-grid {
         display: grid;
-        grid-template-columns: repeat(12, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 20px;
+      }
+      .product-category {
+        margin-bottom: 48px;
+      }
+      .product-category-title {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--forest);
+        margin-bottom: 24px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--sand);
       }
       .product-card {
         position: relative;
         overflow: hidden;
         cursor: pointer;
         background: var(--deep);
-      }
-      .product-card:nth-child(1) {
-        grid-column: span 5;
-        grid-row: span 2;
-      }
-      .product-card:nth-child(2) {
-        grid-column: span 7;
-      }
-      .product-card:nth-child(3) {
-        grid-column: span 4;
-      }
-      .product-card:nth-child(4) {
-        grid-column: span 3;
-      }
-      .product-card:nth-child(5) {
-        grid-column: 1 / -1;
+        min-height: 430px;
       }
 
       .product-img {
         width: 100%;
         height: 100%;
-        min-height: 300px;
+        min-height: 430px;
         background-size: cover;
         background-position: center;
         transition: transform 0.8s ease;
-      }
-      .product-card:nth-child(1) .product-img {
-        min-height: 640px;
-      }
-      .product-card:nth-child(2) .product-img {
-        min-height: 300px;
       }
       .product-card:hover .product-img {
         transform: scale(1.04);
@@ -1689,14 +1684,7 @@
           grid-template-columns: repeat(3, 1fr);
         }
         .products-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-        .product-card:nth-child(1),
-        .product-card:nth-child(2),
-        .product-card:nth-child(3),
-        .product-card:nth-child(4),
-        .product-card:nth-child(5) {
-          grid-column: span 6;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
         .chain-steps {
           grid-template-columns: repeat(4, 1fr);
@@ -1776,8 +1764,9 @@
         .products-grid {
           grid-template-columns: 1fr;
         }
-        .product-card:nth-child(n) {
-          grid-column: span 1;
+        .product-card,
+        .product-img {
+          min-height: 360px;
         }
         .chain-steps {
           grid-template-columns: repeat(2, 1fr);
@@ -1869,8 +1858,6 @@
 
           <ul class="nav-links" role="list">
             <li><a href="#about">About Us</a></li>
-              
-            </li>
             <li><a href="#products">Products</a></li>
             <li><a href="#supply-chain">Supply Chain</a></li>
             <li><a href="#sustainability">Sustainability</a></li>
@@ -2158,29 +2145,6 @@
               their local communities, where quality, traceability, and
               sustainable relationships go hand in hand.
             </p>
-            <!-- <div class="name-breakdown">
-              <div class="name-item">
-                <div class="name-word">Nusa</div>
-                <div class="name-meaning">
-                  The islands — a reflection of Indonesia's vast and diverse
-                  archipelago
-                </div>
-              </div>
-              <div class="name-item">
-                <div class="name-word">Terra</div>
-                <div class="name-meaning">
-                  The earth — the soil, forests, and land that give life to our
-                  botanicals
-                </div>
-              </div>
-              <div class="name-item">
-                <div class="name-word">Origin</div>
-                <div class="name-meaning">
-                  The source — our commitment to knowing exactly where every
-                  ingredient begins
-                </div>
-              </div>
-            </div> -->
             <a href="#supply-chain" class="btn btn-dark">Our Supply Chain</a>
           </div>
         </div>
@@ -2200,27 +2164,40 @@
         <div class="team-layout reveal">
           <div class="team-photo" aria-hidden="true"></div>
           <div class="team-content">
-           
             <div class="team-role">Partnership Director</div>
             <p class="team-bio">
-             Our approach blends human relationships, heritage knowledge, raw material selection, processing expertise, and natural resource protection ensuring sustainable and long-term production. 
-Committed to delivering sustainably produced essential oils, we uplift communities through responsible and ethical partnerships
-We founded .NUSA TERRA with a deeply held belief: we can only grow when our partners grow with us. This means investing in their skills, their capacity and their long-term future.
-
+              Our approach blends human relationships, heritage knowledge, raw
+              material selection, processing expertise, and natural resource
+              protection ensuring sustainable and long-term production.
             </p>
-            <br />
             <p class="team-bio">
-             <p class="team-bio">
-             From Sumatra patchouli and Garut vetiver to nutmeg, benzoin and sandalwood, we produce our oils at source, together with the producers and communities who keep these traditions alive.
-We work alongside producers at every stage of the journey — from planting and sourcing raw materials through to distillation.
-This philosophy is at the heart of our business model. Our producers and local partners are more than suppliers: they are part of what we build.
-Deeply rooted in the field, each supply chain is managed like an independent business, close to its landscape, its producers and its own local realities.
-Across the Indonesian archipelago, our offices and collection centres receive and check the oils, maintain traceability and manage the production records.
-Every day, our teams work closely with producers, follow the harvests, oversee production and coordinate the programmes and investments developed together with our local partners.
-
-
+              Committed to delivering sustainably produced essential oils, we
+              uplift communities through responsible and ethical partnerships.
+              We founded Nusa Terra with a deeply held belief: we can only grow
+              when our partners grow with us. This means investing in their
+              skills, their capacity, and their long-term future.
             </p>
-
+            <p class="team-bio">
+              From Sumatra patchouli and Garut vetiver to nutmeg, benzoin, and
+              sandalwood, we produce our oils at source, together with the
+              producers and communities who keep these traditions alive. We work
+              alongside producers at every stage of the journey—from planting
+              and sourcing raw materials through to distillation.
+            </p>
+            <p class="team-bio">
+              This philosophy is at the heart of our business model. Our
+              producers and local partners are more than suppliers: they are
+              part of what we build. Deeply rooted in the field, each supply
+              chain is managed like an independent business, close to its
+              landscape, its producers, and its own local realities.
+            </p>
+            <p class="team-bio">
+              Across the Indonesian archipelago, our offices and collection
+              centres receive and check the oils, maintain traceability, and
+              manage the production records. Every day, our teams work closely
+              with producers, follow the harvests, oversee production, and
+              coordinate the programmes and investments developed together with
+              our local partners.
             </p>
           </div>
         </div>
@@ -2307,115 +2284,140 @@ Every day, our teams work closely with producers, follow the harvests, oversee p
           </div>
         </div>
 
-        <div class="products-grid" role="list">
-          <!-- Sandalwood Timor -->
-          <article
-            class="product-card reveal"
-            role="listitem"
-            data-product="sandalwoodtimor"
-            aria-label="Sandalwood Timor — click to view details"
-            tabindex="0"
-            onclick="openModal('sandalwoodtimor')"
-            onkeydown="
-              if (event.key === 'Enter') openModal('sandalwoodtimor');
-            ">
-            <div class="product-img prod-sandalwood" aria-hidden="true"></div>
-            <div class="product-overlay">
-              <div class="product-tag">Essential Oil</div>
-              <h3 class="product-name">Sandalwood Timor</h3>
-              <p class="product-origin">
-                East Nusa Tenggara, the Sandalwood at his origin
-              </p>
-              <button
-                class="product-cta"
-                aria-label="Explore Sandalwood product">
-                Explore Product
-              </button>
-            </div>
-          </article>
+        <div class="product-category">
+          <h3 class="product-category-title">ESSENTIAL OIL</h3>
+          <div class="products-grid" role="list">
+            <!-- Sandalwood Timor -->
+            <article
+              class="product-card reveal"
+              role="listitem"
+              data-product="sandalwoodtimor"
+              aria-label="Sandalwood Timor — click to view details"
+              tabindex="0"
+              onclick="window.location.href = 'product.html#sandalwood-timor'"
+              onkeydown="
+                if (event.key === 'Enter')
+                  window.location.href = 'product.html#sandalwood-timor';
+              ">
+              <div class="product-img prod-sandalwood" aria-hidden="true"></div>
+              <div class="product-overlay">
+                <!-- <div class="product-tag">Essential Oil</div> -->
+                <h3 class="product-name">Sandalwood Timor</h3>
+                <p class="product-origin">
+                  East Nusa Tenggara, the Sandalwood at his origin
+                </p>
+                <button
+                  class="product-cta"
+                  aria-label="Explore Sandalwood product">
+                  Explore Product
+                </button>
+              </div>
+            </article>
 
-          <!-- Vetiver -->
-          <article
-            class="product-card reveal reveal-delay-1"
-            role="listitem"
-            data-product="vetiver"
-            aria-label="Vetiver — click to view details"
-            tabindex="0"
-            onclick="openModal('vetiver')"
-            onkeydown="if (event.key === 'Enter') openModal('vetiver');">
-            <div class="product-img prod-vetiver" aria-hidden="true"></div>
-            <div class="product-overlay">
-              <div class="product-tag">Essential Oil</div>
-              <h3 class="product-name">Vetiver</h3>
-              <p class="product-origin">Garut, West Java, Indonesia</p>
-              <p class="product-variants">Conventional &amp; Low Smoked</p>
-              <button class="product-cta" aria-label="Explore Vetiver product">
-                Explore Product
-              </button>
-            </div>
-          </article>
+            <!-- Vetiver -->
+            <article
+              class="product-card reveal reveal-delay-1"
+              role="listitem"
+              data-product="vetiver"
+              aria-label="Vetiver — click to view details"
+              tabindex="0"
+              onclick="window.location.href = 'product.html#vetiver'"
+              onkeydown="
+                if (event.key === 'Enter')
+                  window.location.href = 'product.html#vetiver';
+              ">
+              <div class="product-img prod-vetiver" aria-hidden="true"></div>
+              <div class="product-overlay">
+                <!-- <div class="product-tag">Essential Oil</div> -->
+                <h3 class="product-name">Vetiver</h3>
+                <p class="product-origin">Garut, West Java, Indonesia</p>
+                <p class="product-variants">Conventional &amp; Low Smoked</p>
+                <button
+                  class="product-cta"
+                  aria-label="Explore Vetiver product">
+                  Explore Product
+                </button>
+              </div>
+            </article>
 
-          <!-- Patchouli -->
-          <article
-            class="product-card reveal reveal-delay-2"
-            role="listitem"
-            data-product="patchouli"
-            aria-label="Patchouli Sumatra — click to view details"
-            tabindex="0"
-            onclick="openModal('patchouli')"
-            onkeydown="if (event.key === 'Enter') openModal('patchouli');">
-            <div class="product-img prod-patchouli" aria-hidden="true"></div>
-            <div class="product-overlay">
-              <div class="product-tag">Essential Oil</div>
-              <h3 class="product-name">Patchouli Sumatra</h3>
-              <p class="product-origin">Banda Aceh, Sumatra, Indonesia</p>
-              <button
-                class="product-cta"
-                aria-label="Explore Patchouli Sumatra product">
-                Explore Product
-              </button>
-            </div>
-          </article>
+            <!-- Patchouli -->
+            <article
+              class="product-card reveal reveal-delay-2"
+              role="listitem"
+              data-product="patchouli"
+              aria-label="Patchouli Sumatra — click to view details"
+              tabindex="0"
+              onclick="window.location.href = 'product.html#patchouli-sumatra'"
+              onkeydown="
+                if (event.key === 'Enter')
+                  window.location.href = 'product.html#patchouli-sumatra';
+              ">
+              <div class="product-img prod-patchouli" aria-hidden="true"></div>
+              <div class="product-overlay">
+                <!-- <div class="product-tag">Essential Oil</div> -->
+                <h3 class="product-name">Patchouli Sumatra</h3>
+                <p class="product-origin">Banda Aceh, Sumatra, Indonesia</p>
+                <button
+                  class="product-cta"
+                  aria-label="Explore Patchouli Sumatra product">
+                  Explore Product
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
 
-          <!-- Nutmeg -->
-          <article
-            class="product-card reveal reveal-delay-3"
-            role="listitem"
-            data-product="nutmeg"
-            aria-label="Nutmeg — click to view details"
-            tabindex="0"
-            onclick="openModal('nutmeg')"
-            onkeydown="if (event.key === 'Enter') openModal('nutmeg');">
-            <div class="product-img prod-nutmeg" aria-hidden="true"></div>
-            <div class="product-overlay">
-              <div class="product-tag">Natural Raw Material</div>
-              <h3 class="product-name">Nutmeg</h3>
-              <p class="product-origin">Indonesia</p>
-              <button class="product-cta" aria-label="Explore Nutmeg product">
-                Explore Product
-              </button>
-            </div>
-          </article>
+        <div class="product-category">
+          <h3 class="product-category-title">NATURAL RAW MATERIAL</h3>
+          <div class="products-grid" role="list">
+            <!-- Nutmeg -->
+            <article
+              class="product-card reveal reveal-delay-3"
+              role="listitem"
+              data-product="nutmeg"
+              aria-label="Nutmeg — click to view details"
+              tabindex="0"
+              onclick="window.location.href = 'product.html#nutmeg'"
+              onkeydown="
+                if (event.key === 'Enter')
+                  window.location.href = 'product.html#nutmeg';
+              ">
+              <div class="product-img prod-nutmeg" aria-hidden="true"></div>
+              <div class="product-overlay">
+                <!-- <div class="product-tag">Natural Raw Material</div> -->
+                <h3 class="product-name">Nutmeg</h3>
+                <p class="product-origin">Indonesia</p>
+                <button class="product-cta" aria-label="Explore Nutmeg product">
+                  Explore Product
+                </button>
+              </div>
+            </article>
 
-          <!-- Benzoin -->
-          <article
-            class="product-card reveal reveal-delay-3"
-            role="listitem"
-            data-product="benzoin"
-            aria-label="Benzoin — click to view details"
-            tabindex="0"
-            onclick="openModal('benzoin')"
-            onkeydown="if (event.key === 'Enter') openModal('benzoin');">
-            <div class="product-img prod-benzoin" aria-hidden="true"></div>
-            <div class="product-overlay">
-              <div class="product-tag">Natural Raw Material</div>
-              <h3 class="product-name">Benzoin</h3>
-              <p class="product-origin">Indonesia</p>
-              <button class="product-cta" aria-label="Explore Benzoin product">
-                Explore Product
-              </button>
-            </div>
-          </article>
+            <!-- Benzoin -->
+            <article
+              class="product-card reveal reveal-delay-3"
+              role="listitem"
+              data-product="benzoin"
+              aria-label="Benzoin — click to view details"
+              tabindex="0"
+              onclick="window.location.href = 'product.html#benzoin'"
+              onkeydown="
+                if (event.key === 'Enter')
+                  window.location.href = 'product.html#benzoin';
+              ">
+              <div class="product-img prod-benzoin" aria-hidden="true"></div>
+              <div class="product-overlay">
+                <!-- <div class="product-tag">Natural Raw Material</div> -->
+                <h3 class="product-name">Benzoin</h3>
+                <p class="product-origin">Indonesia</p>
+                <button
+                  class="product-cta"
+                  aria-label="Explore Benzoin product">
+                  Explore Product
+                </button>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -3179,23 +3181,19 @@ Every day, our teams work closely with producers, follow the harvests, oversee p
             <div class="footer-col-title">Products</div>
             <ul class="footer-links">
               <li>
-                <a href="#products" onclick="openModal('sandalwood')"
-                  >Sandalwood</a
-                >
+                <a href="product.html#sandalwood-timor">Sandalwood</a>
               </li>
               <li>
-                <a href="#products" onclick="openModal('vetiver')">Vetiver</a>
+                <a href="product.html#vetiver">Vetiver</a>
               </li>
               <li>
-                <a href="#products" onclick="openModal('patchouli')"
-                  >Patchouli Sumatra</a
-                >
+                <a href="product.html#patchouli-sumatra">Patchouli Sumatra</a>
               </li>
               <li>
-                <a href="#products" onclick="openModal('nutmeg')">Nutmeg</a>
+                <a href="product.html#nutmeg">Nutmeg</a>
               </li>
               <li>
-                <a href="#products" onclick="openModal('benzoin')">Benzoin</a>
+                <a href="product.html#benzoin">Benzoin</a>
               </li>
             </ul>
           </div>
