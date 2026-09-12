@@ -76,6 +76,11 @@
         -webkit-font-smoothing: antialiased;
       }
 
+      /* Sections retained for later use but hidden from the homepage. */
+      .home-secondary-section {
+        display: none;
+      }
+
       /* section {
         scroll-margin-top: 96px;
       } */
@@ -168,6 +173,8 @@
         left: 0;
         right: 0;
         z-index: 1000;
+        background: rgba(245, 241, 232, 0.97);
+        backdrop-filter: blur(12px);
         padding: 24px 0;
         transition:
           background 0.4s,
@@ -196,7 +203,7 @@
         font-size: 1.25rem;
         font-weight: 500;
         letter-spacing: 0.08em;
-        color: var(--ivory);
+        color: var(--forest);
         transition: color 0.4s;
       }
       .nav-logo .logo-sub {
@@ -205,7 +212,7 @@
         font-weight: 600;
         letter-spacing: 0.3em;
         text-transform: uppercase;
-        color: rgba(245, 241, 232, 0.5);
+        color: var(--sage);
         transition: color 0.4s;
         margin-top: 3px;
       }
@@ -217,6 +224,9 @@
       }
 
       .nav-links {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         display: flex;
         align-items: center;
         gap: 36px;
@@ -228,7 +238,7 @@
         letter-spacing: 0.15em;
         text-transform: uppercase;
         text-decoration: none;
-        color: rgba(245, 241, 232, 0.85);
+        color: var(--text-light);
         transition: color 0.3s;
         position: relative;
       }
@@ -247,7 +257,7 @@
         transform: scaleX(1);
       }
       .nav-links a:hover {
-        color: var(--ivory);
+        color: var(--forest);
       }
       .nav-dropdown {
         position: relative;
@@ -263,7 +273,7 @@
         left: -18px;
         min-width: 170px;
         padding: 12px 0;
-        background: rgba(13, 42, 32, 0.97);
+        background: rgba(245, 241, 232, 0.97);
         list-style: none;
         opacity: 0;
         pointer-events: none;
@@ -278,12 +288,12 @@
       .nav-submenu a {
         display: block;
         padding: 10px 18px;
-        color: rgba(245, 241, 232, 0.78);
+        color: var(--text-light);
         white-space: nowrap;
       }
       .nav-submenu a:hover {
-        color: var(--ivory);
-        background: rgba(245, 241, 232, 0.08);
+        color: var(--forest);
+        background: rgba(23, 60, 44, 0.08);
       }
       #navbar.scrolled .nav-links a {
         color: var(--text-light);
@@ -313,7 +323,7 @@
         display: block;
         width: 24px;
         height: 1.5px;
-        background: var(--ivory);
+        background: var(--forest);
         transition:
           background 0.4s,
           transform 0.3s;
@@ -932,6 +942,12 @@
 
       /* Product backgrounds */
       .prod-sandalwood {
+        background-image:
+          linear-gradient(to top, rgba(13, 42, 32, 0.6) 0%, transparent 70%),
+          url("images/Sandalwood.png");
+        background-color: var(--deep);
+      }
+      .prod-sandalwood-java {
         background-image:
           linear-gradient(to top, rgba(13, 42, 32, 0.6) 0%, transparent 70%),
           url("images/Sandalwood.png");
@@ -1581,7 +1597,7 @@
       }
       .footer-main {
         display: grid;
-        grid-template-columns: 1.8fr 1fr 1fr 1fr;
+        grid-template-columns: 1.6fr repeat(4, 1fr);
         gap: 60px;
         margin-bottom: 60px;
       }
@@ -1631,6 +1647,23 @@
       }
       .footer-links a:hover {
         color: var(--ivory);
+      }
+      .footer-contact-label,
+      .footer-contact-value {
+        display: block;
+      }
+      .footer-contact-label {
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 3px;
+      }
+      .footer-contact-value {
+        font-size: 0.78rem;
+        line-height: 1.5;
+        color: rgba(245, 241, 232, 0.58);
       }
       .footer-bottom {
         border-top: 1px solid rgba(245, 241, 232, 0.08);
@@ -1857,22 +1890,27 @@
           </a>
 
           <ul class="nav-links" role="list">
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#supply-chain">Supply Chain</a></li>
-            <li><a href="#sustainability">Sustainability</a></li>
-            <li><a href="#nur-series">Our Nurseries</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="nav-dropdown">
+              <a href="#brand-statement" aria-haspopup="true">About Us</a>
+              <ul class="nav-submenu" role="menu">
+                <li role="none">
+                  <a href="about%20us.html#journey-title" role="menuitem">Our Journey</a>
+                </li>
+                <li role="none">
+                  <a href="about%20us.html#who-we-are" role="menuitem">Who We Are</a>
+                </li>
+                <li role="none">
+                  <a href="about%20us.html#our-team" role="menuitem">Our Team</a>
+                </li>
+                <li role="none">
+                  <a href="about%20us.html#supply-chain" role="menuitem">Supply Chain</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#products">Our Products</a></li>
+            <li><a href="sustainability.html">Sustainability</a></li>
+            <li><a href="#footer">Contact Us</a></li>
           </ul>
-
-          <div class="nav-cta">
-            <a
-              href="#contact"
-              class="btn btn-light"
-              aria-label="Let's work together"
-              >Let's Work Together</a
-            >
-          </div>
 
           <button
             class="nav-hamburger"
@@ -1896,32 +1934,14 @@
         &#x2715;
       </button>
       <ul class="mobile-nav-links" role="list">
-        <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
-        <li>
-          <a href="about.html#our-story" class="mobile-nav-link">Our Story</a>
-        </li>
-        <li>
-          <a href="about.html#our-team" class="mobile-nav-link">Our Team</a>
-        </li>
-        <li>
-          <a href="about.html#who-we-are" class="mobile-nav-link">Who We Are</a>
-        </li>
-        <li><a href="#products" class="mobile-nav-link">Products</a></li>
-        <li>
-          <a href="#supply-chain" class="mobile-nav-link">Supply Chain</a>
-        </li>
-        <li>
-          <a href="#sustainability" class="mobile-nav-link">Sustainability</a>
-        </li>
-        <li><a href="#nur-series" class="mobile-nav-link">Our Nurseries</a></li>
-        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        <li><a href="about%20us.html" class="mobile-nav-link">About Us</a></li>
+
+      
+        <li><a href="#products" class="mobile-nav-link">Our Products</a></li>
+        <li><a href="#approach" class="mobile-nav-link">How We Work</a></li>
+        
+        <li><a href="#footer" class="mobile-nav-link">Contact Us</a></li>
       </ul>
-      <a
-        href="#contact"
-        class="btn btn-light mobile-nav-link"
-        style="margin-top: 20px"
-        >Let's Work Together</a
-      >
     </nav>
 
     <!-- ═══════════════════════════════════════════════════
@@ -1946,7 +1966,7 @@
             <div class="hero-btns">
               <a href="#products" class="btn btn-light">Explore Our Products</a>
               <a
-                href="#about"
+                href="about%20us.html"
                 class="btn"
                 style="
                   color: rgba(245, 241, 232, 0.6);
@@ -1974,7 +1994,7 @@
               lasting supply chains across Indonesia.
             </p>
             <div class="hero-btns">
-              <a href="#supply-chain" class="btn btn-light">Our Supply Chain</a>
+              <a href="#approach" class="btn btn-light">How We Work</a>
             </div>
           </div>
         </div>
@@ -1993,7 +2013,7 @@
               partners at every stage of the journey.
             </p>
             <div class="hero-btns">
-              <a href="#about" class="btn btn-light">Our Story</a>
+              <a href="about%20us.html" class="btn btn-light">Our Story</a>
             </div>
           </div>
         </div>
@@ -2095,7 +2115,7 @@
               The source — our commitment to knowing exactly where every
               ingredient begins.
             </p>
-            <a href="#about" class="btn btn-light">Discover Our Story</a>
+            <a href="about%20us.html" class="btn btn-light">Discover Our Story</a>
           </div>
         </div>
       </div>
@@ -2104,7 +2124,7 @@
     <!-- ═══════════════════════════════════════════════════
      ABOUT
 ════════════════════════════════════════════════════ -->
-    <section id="about" aria-labelledby="about-headline">
+    <section id="about" class="home-secondary-section" aria-labelledby="about-headline">
       <div class="container">
         <div class="about-grid">
           <div class="about-img-wrap reveal">
@@ -2145,7 +2165,7 @@
               their local communities, where quality, traceability, and
               sustainable relationships go hand in hand.
             </p>
-            <a href="#supply-chain" class="btn btn-dark">Our Supply Chain</a>
+            <a href="#approach" class="btn btn-dark">How We Work</a>
           </div>
         </div>
       </div>
@@ -2154,7 +2174,7 @@
     <!-- ═══════════════════════════════════════════════════
      OUR TEAM
 ════════════════════════════════════════════════════ -->
-    <section id="our-team" aria-labelledby="our-team-headline">
+    <section id="our-team" class="home-secondary-section" aria-labelledby="our-team-headline">
       <div class="container">
         <div class="team-header reveal">
           <p class="eyebrow section-label">Our Team</p>
@@ -2314,6 +2334,30 @@
               </div>
             </article>
 
+            <!-- Sandalwood Java -->
+            <article
+              class="product-card reveal reveal-delay-3"
+              role="listitem"
+              data-product="sandalwoodjava"
+              aria-label="Sandalwood Java — click to view details"
+              tabindex="0"
+              onclick="window.location.href = 'product.html#sandalwood-java'"
+              onkeydown="
+                if (event.key === 'Enter')
+                  window.location.href = 'product.html#sandalwood-java';
+              ">
+              <div class="product-img prod-sandalwood-java" aria-hidden="true"></div>
+              <div class="product-overlay">
+                <h3 class="product-name">Sandalwood Java</h3>
+                <p class="product-origin">Java, Indonesia</p>
+                <button
+                  class="product-cta"
+                  aria-label="Explore Sandalwood Java product">
+                  Explore Product
+                </button>
+              </div>
+            </article>
+
             <!-- Vetiver -->
             <article
               class="product-card reveal reveal-delay-1"
@@ -2364,6 +2408,7 @@
                 </button>
               </div>
             </article>
+
           </div>
         </div>
 
@@ -2468,7 +2513,7 @@
     <!-- ═══════════════════════════════════════════════════
      SUPPLY CHAIN
 ════════════════════════════════════════════════════ -->
-    <section id="supply-chain" aria-labelledby="chain-headline">
+    <section id="supply-chain" class="home-secondary-section" aria-labelledby="chain-headline">
       <div class="container">
         <div class="chain-header reveal">
           <p class="eyebrow">From Source to Distillation</p>
@@ -2540,7 +2585,7 @@
     <!-- ═══════════════════════════════════════════════════
      PRESENCE / LOCATIONS
 ════════════════════════════════════════════════════ -->
-    <section id="presence" aria-labelledby="presence-headline">
+    <section id="presence" class="home-secondary-section" aria-labelledby="presence-headline">
       <div class="container">
         <div class="presence-header reveal">
           <p class="eyebrow">Our Presence</p>
@@ -2794,7 +2839,7 @@
     <!-- ═══════════════════════════════════════════════════
      NURSERY
 ════════════════════════════════════════════════════ -->
-    <section id="nursery" aria-labelledby="nursery-headline">
+    <section id="nursery" class="home-secondary-section" aria-labelledby="nursery-headline">
       <div class="nursery-grid">
         <div class="nursery-content">
           <p class="eyebrow">TRACEABLE</p>
@@ -2816,7 +2861,7 @@
     <!-- ═══════════════════════════════════════════════════
      NUR SERIES
 ════════════════════════════════════════════════════ -->
-    <section id="nur-series" aria-labelledby="nur-series-headline">
+    <section id="nur-series" class="home-secondary-section" aria-labelledby="nur-series-headline">
       <div class="container">
         <div class="nur-series-grid">
           <div
@@ -2846,7 +2891,7 @@
     <!-- ═══════════════════════════════════════════════════
      WHY PARTNER
 ════════════════════════════════════════════════════ -->
-    <section id="why" aria-labelledby="why-headline">
+    <section id="why" class="home-secondary-section" aria-labelledby="why-headline">
       <div class="container">
         <div class="why-header reveal">
           <p class="eyebrow">Why Choose Us</p>
@@ -2987,7 +3032,7 @@
     <!-- ═══════════════════════════════════════════════════
      CTA BAND
 ════════════════════════════════════════════════════ -->
-    <section id="cta-band" aria-labelledby="cta-headline">
+    <section id="cta-band" class="home-secondary-section" aria-labelledby="cta-headline">
       <div class="container">
         <p class="eyebrow" style="color: var(--gold)">Work With Us</p>
         <h2 id="cta-headline" class="reveal">
@@ -3014,149 +3059,9 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════
-     CONTACT
-════════════════════════════════════════════════════ -->
-    <section id="contact" aria-labelledby="contact-headline">
-      <div class="container">
-        <div class="contact-grid">
-          <div class="contact-info reveal">
-            <p class="eyebrow">Let's Connect</p>
-            <h2 id="contact-headline">We welcome your inquiry.</h2>
-            <p>
-              Whether you are sourcing essential oils for the first time or
-              looking to build a long-term supply relationship, we are ready to
-              discuss how Nusa Terra Origin can support your needs.
-            </p>
-
-            <div class="contact-detail">
-              <div class="contact-detail-label">Email</div>
-              <!-- PLACEHOLDER — to be updated with actual company email -->
-              <div class="contact-detail-val">
-                hello@nusaterraorigin.org
-                <em
-                  style="
-                    font-size: 0.72rem;
-                    color: var(--sage);
-                    font-style: normal;
-                  "
-                  >(placeholder)</em
-                >
-              </div>
-            </div>
-            <div class="contact-detail">
-              <div class="contact-detail-label">Website</div>
-              <div class="contact-detail-val">nusaterraorigin.org</div>
-            </div>
-            <div class="contact-detail">
-              <div class="contact-detail-label">Head Office</div>
-              <div class="contact-detail-val">
-                Salatiga, Central Java, Indonesia
-              </div>
-            </div>
-            <div class="contact-detail">
-              <div class="contact-detail-label">Export Hub</div>
-              <div class="contact-detail-val">Medan, Sumatra, Indonesia</div>
-            </div>
-          </div>
-
-          <div class="reveal reveal-delay-2">
-            <div
-              class="contact-form"
-              role="form"
-              aria-label="Product inquiry form">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="f-name" class="form-label">Full Name</label>
-                  <input
-                    type="text"
-                    id="f-name"
-                    name="name"
-                    class="form-input"
-                    autocomplete="name"
-                    required />
-                </div>
-                <div class="form-group">
-                  <label for="f-company" class="form-label">Company</label>
-                  <input
-                    type="text"
-                    id="f-company"
-                    name="company"
-                    class="form-input"
-                    autocomplete="organization" />
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="f-email" class="form-label">Email</label>
-                  <input
-                    type="email"
-                    id="f-email"
-                    name="email"
-                    class="form-input"
-                    autocomplete="email"
-                    required />
-                </div>
-                <div class="form-group">
-                  <label for="f-country" class="form-label">Country</label>
-                  <input
-                    type="text"
-                    id="f-country"
-                    name="country"
-                    class="form-input"
-                    autocomplete="country-name" />
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="f-product" class="form-label"
-                  >Product Interest</label
-                >
-                <select id="f-product" name="product" class="form-select">
-                  <option value="">Select a product...</option>
-                  <option value="sandalwood">Sandalwood</option>
-                  <option value="vetiver">Vetiver</option>
-                  <option value="patchouli">Patchouli Sumatra</option>
-                  <option value="nutmeg">Nutmeg</option>
-                  <option value="benzoin">Benzoin</option>
-                  <option value="multiple">Multiple Products</option>
-                  <option value="other">Other Enquiry</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="f-message" class="form-label">Message</label>
-                <textarea
-                  id="f-message"
-                  name="message"
-                  class="form-textarea"
-                  rows="4"></textarea>
-              </div>
-              <div class="form-submit">
-                <button
-                  type="submit"
-                  class="btn btn-dark"
-                  onclick="handleFormSubmit(event)">
-                  Send Inquiry
-                </button>
-              </div>
-              <div
-                id="form-success"
-                style="
-                  display: none;
-                  margin-top: 16px;
-                  font-size: 0.85rem;
-                  color: var(--forest);
-                ">
-                Thank you for your inquiry. We will be in touch soon.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════
      FOOTER
 ════════════════════════════════════════════════════ -->
-    <footer role="contentinfo">
+    <footer id="footer" role="contentinfo">
       <div class="container">
         <div class="footer-main">
           <div class="footer-brand">
@@ -3170,11 +3075,10 @@
             <div class="footer-col-title">Navigate</div>
             <ul class="footer-links">
               <li><a href="#">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
+              <li><a href="about%20us.html">About Us</a></li>
               <li><a href="#products">Products</a></li>
-              <li><a href="#supply-chain">Supply Chain</a></li>
-              <li><a href="#sustainability">Sustainability</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#approach">How We Work</a></li>
+              <li><a href="#footer">Contact Us</a></li>
             </ul>
           </div>
           <div>
@@ -3198,14 +3102,39 @@
             </ul>
           </div>
           <div>
+            <div class="footer-col-title">Contact</div>
+            <ul class="footer-links">
+              <li>
+                <span class="footer-contact-label">Email</span>
+                <span class="footer-contact-value">hello@nusaterraorigin.org</span>
+              </li>
+              <li>
+                <span class="footer-contact-label">Website</span>
+                <span class="footer-contact-value">nusaterraorigin.org</span>
+              </li>
+            </ul>
+          </div>
+          <div>
             <div class="footer-col-title">Locations</div>
             <ul class="footer-links">
-              <li><a href="#presence">Salatiga</a></li>
-              <li><a href="#presence">Banda Aceh</a></li>
-              <li><a href="#presence">Medan</a></li>
-              <li><a href="#presence">Garut</a></li>
-              <li><a href="#presence">Wonosari</a></li>
-              <li><a href="#presence">Soe, West Timor</a></li>
+              <li>
+                <a href="#footer">
+                  <span class="footer-contact-label">Head Office</span>
+                  <span class="footer-contact-value">Salatiga, Central Java, Indonesia</span>
+                </a>
+              </li>
+              <li>
+                <a href="#footer">
+                  <span class="footer-contact-label">Export Hub</span>
+                  <span class="footer-contact-value">Medan, Sumatra, Indonesia</span>
+                </a>
+              </li>
+              <li>
+                <a href="#footer">
+                  <span class="footer-contact-label">Regional Office</span>
+                  <span class="footer-contact-value">Banda Aceh, Sumatra, Indonesia</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -3359,6 +3288,15 @@
           variants: null,
           originDetail: "East Nusa Tenggara, the Sandalwood at his origin",
           imgClass: "prod-sandalwood",
+        },
+        sandalwoodjava: {
+          tag: "Essential Oil",
+          name: "Sandalwood Java",
+          origin: "Java, Indonesia",
+          desc: "Sandalwood Java is sourced through our origin-based supply chain in Java, with a focus on traceability, responsible sourcing, and long-term partnerships with local producers.",
+          variants: null,
+          originDetail: "Java, Indonesia",
+          imgClass: "prod-sandalwood-java",
         },
         vetiver: {
           tag: "Essential Oil",
