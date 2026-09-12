@@ -12,6 +12,9 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600;700&display=swap"
       rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet" />
     <style>
       :root {
         --forest: #173c2c;
@@ -126,13 +129,13 @@
       }
 
       .btn-dark {
-        color: var(--forest);
-        border-color: var(--forest);
+        color: var(--ivory);
+        border-color: rgba(245, 241, 232, 0.7);
       }
 
       .btn-dark:hover {
-        background: var(--forest);
-        color: var(--ivory);
+        background: var(--ivory);
+        color: var(--deep);
       }
 
       #navbar {
@@ -144,13 +147,11 @@
         padding: 24px 0;
         background: rgba(245, 241, 232, 0.97);
         backdrop-filter: blur(12px);
-        box-shadow: 0 1px 0 rgba(23, 60, 44, 0.08);
-        transition: all 0.4s ease;
+        transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
       }
 
       #navbar.scrolled {
         background: rgba(245, 241, 232, 0.97);
-        backdrop-filter: blur(12px);
         box-shadow: 0 1px 0 rgba(23, 60, 44, 0.08);
         padding: 16px 0;
       }
@@ -164,6 +165,7 @@
       .nav-logo {
         display: flex;
         flex-direction: column;
+        text-decoration: none;
         line-height: 1;
       }
 
@@ -173,7 +175,7 @@
         font-weight: 500;
         letter-spacing: 0.08em;
         color: var(--forest);
-        transition: color 0.3s ease;
+        transition: color 0.4s;
       }
 
       .nav-logo .logo-sub {
@@ -183,15 +185,16 @@
         text-transform: uppercase;
         color: var(--sage);
         margin-top: 3px;
-        transition: color 0.3s ease;
+        transition: color 0.4s;
       }
 
-      #navbar.scrolled .nav-logo .logo-main,
-      #navbar.scrolled .nav-logo .logo-sub {
-        color: var(--forest);
-      }
+      #navbar.scrolled .nav-logo .logo-main { color: var(--forest); }
+      #navbar.scrolled .nav-logo .logo-sub { color: var(--sage); }
 
       .nav-links {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         display: flex;
         align-items: center;
         gap: 36px;
@@ -205,7 +208,7 @@
         letter-spacing: 0.15em;
         text-transform: uppercase;
         color: var(--text-light);
-        transition: color 0.3s ease;
+        transition: color 0.3s;
       }
 
       .nav-links a::after {
@@ -213,12 +216,11 @@
         position: absolute;
         left: 0;
         right: 0;
-        bottom: -6px;
+        bottom: -3px;
         height: 1px;
         background: var(--gold);
         transform: scaleX(0);
-        transform-origin: center;
-        transition: transform 0.3s ease;
+        transition: transform 0.3s;
       }
 
       .nav-links a:hover::after,
@@ -226,21 +228,46 @@
         transform: scaleX(1);
       }
 
-      #navbar.scrolled .nav-links a {
-        color: var(--text-light);
-      }
+      #navbar.scrolled .nav-links a { color: var(--text-light); }
 
       #navbar.scrolled .nav-links a:hover {
         color: var(--forest);
       }
 
-      .nav-cta {
-        margin-left: 16px;
+      .nav-dropdown {
+        position: relative;
       }
-
-      .nav-cta .btn {
-        font-size: 0.65rem;
-        padding: 11px 24px;
+      .nav-dropdown > a::before {
+        content: "⌄";
+        margin-right: 6px;
+        color: var(--gold);
+      }
+      .nav-submenu {
+        position: absolute;
+        top: 100%;
+        left: -18px;
+        min-width: 170px;
+        padding: 12px 0;
+        background: rgba(245, 241, 232, 0.97);
+        list-style: none;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s;
+      }
+      .nav-dropdown:hover .nav-submenu,
+      .nav-dropdown:focus-within .nav-submenu {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .nav-submenu a {
+        display: block;
+        padding: 10px 18px;
+        color: var(--text-light);
+        white-space: nowrap;
+      }
+      .nav-submenu a:hover {
+        color: var(--forest);
+        background: rgba(23, 60, 44, 0.08);
       }
 
       .nav-hamburger {
@@ -258,7 +285,7 @@
         width: 24px;
         height: 1.5px;
         background: var(--forest);
-        transition: all 0.3s ease;
+        transition: background 0.4s, transform 0.3s;
       }
 
       #navbar.scrolled .nav-hamburger span {
@@ -309,12 +336,54 @@
         letter-spacing: 0.05em;
       }
 
+      .products-page-title {
+        padding: 154px 24px 68px;
+        background: var(--deep);
+        color: var(--ivory);
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(2.8rem, 7vw, 3rem);
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        line-height: 1;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
       .product-detail {
         padding: 96px 0;
+        background: var(--forest);
       }
 
       .product-detail:nth-child(even) {
-        background: rgba(255, 255, 255, 0.25);
+        background: var(--ivory);
+        color: var(--text);
+      }
+
+      .product-detail:nth-child(even) .detail-content h2,
+      .product-detail:nth-child(even) .info-item strong {
+        color: var(--forest);
+      }
+
+      .product-detail:nth-child(even) .detail-content p {
+        color: var(--text-light);
+      }
+
+      .product-detail:nth-child(even) .detail-origin {
+        color: var(--sage);
+      }
+
+      .product-detail:nth-child(even) .info-grid {
+        border-top-color: var(--sand);
+      }
+
+      .product-detail:nth-child(even) .btn-dark {
+        color: var(--forest);
+        border-color: var(--forest);
+      }
+
+      .product-detail:nth-child(even) .btn-dark:hover {
+        background: var(--forest);
+        color: var(--ivory);
       }
 
       .product-detail:nth-child(even) .detail-grid > *:first-child {
@@ -330,17 +399,18 @@
         grid-template-columns: 1.1fr 1fr;
         gap: 56px;
         align-items: center;
+        grid-template-areas: "media content";
       }
 
       .product-detail:nth-child(even) .detail-grid {
         grid-template-areas: "content media";
       }
 
-      .product-detail:nth-child(even) .detail-media {
+      .detail-media {
         grid-area: media;
       }
 
-      .product-detail:nth-child(even) .detail-content {
+      .detail-content {
         grid-area: content;
       }
 
@@ -357,8 +427,18 @@
         background-image:
           linear-gradient(
             to top,
-            rgba(13, 42, 32, 0.2),
-            rgba(13, 42, 32, 0.25)
+            rgba(13, 51, 14, 0.2),
+            rgba(13, 51, 14, 0.25)
+          ),
+          url("images/Sandalwood.png");
+      }
+
+      .media-sandalwood-java {
+        background-image:
+          linear-gradient(
+            to top,
+            rgba(13, 51, 14, 0.2),
+            rgba(13, 51, 14, 0.25)
           ),
           url("images/Sandalwood.png");
       }
@@ -367,8 +447,8 @@
         background-image:
           linear-gradient(
             to top,
-            rgba(13, 42, 32, 0.16),
-            rgba(13, 42, 32, 0.3)
+            rgba(13, 51, 14, 0.16),
+            rgba(13, 51, 14, 0.3)
           ),
           url("images/VetiverJavaGarut.jpeg");
       }
@@ -377,8 +457,8 @@
         background-image:
           linear-gradient(
             to top,
-            rgba(13, 42, 32, 0.16),
-            rgba(13, 42, 32, 0.3)
+            rgba(13, 51, 14, 0.16),
+            rgba(13, 51, 14, 0.3)
           ),
           url("images/PatchouliSumatra.jpeg");
       }
@@ -387,8 +467,8 @@
         background-image:
           linear-gradient(
             to top,
-            rgba(13, 42, 32, 0.16),
-            rgba(13, 42, 32, 0.3)
+            rgba(13, 51, 14, 0.16),
+            rgba(13, 51, 14, 0.3)
           ),
           url("images/Nutmeg.jpeg");
       }
@@ -408,7 +488,7 @@
         font-size: clamp(2.2rem, 4vw, 3.6rem);
         font-weight: 400;
         line-height: 1;
-        color: var(--forest);
+        color: var(--ivory);
         margin: 18px 0 10px;
       }
 
@@ -416,7 +496,7 @@
         font-size: 0.8rem;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: var(--sage);
+        color: rgba(245, 241, 232, 0.72);
         margin-bottom: 24px;
       }
 
@@ -435,7 +515,7 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 16px 28px;
         padding-top: 28px;
-        border-top: 1px solid var(--sand);
+        border-top: 1px solid rgba(245, 241, 232, 0.28);
       }
 
       .info-item {
@@ -455,7 +535,7 @@
       .info-item strong {
         font-size: 0.9rem;
         font-weight: 600;
-        color: var(--forest);
+        color: var(--ivory);
       }
 
       .detail-actions {
@@ -466,7 +546,7 @@
       }
 
       footer {
-        background: var(--deep);
+        background: linear-gradient(105deg, #173c2c 0%, #244b39 50%, #315845 100%);
         padding: 80px 0 40px;
         color: var(--ivory);
       }
@@ -529,6 +609,23 @@
       .footer-links a:hover {
         color: var(--ivory);
       }
+      .footer-location-label,
+      .footer-location-value {
+        display: block;
+      }
+      .footer-location-label {
+        color: var(--gold);
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        margin-bottom: 3px;
+      }
+      .footer-location-value {
+        color: rgba(245, 241, 232, 0.58);
+        font-size: 0.78rem;
+        line-height: 1.5;
+      }
 
       .footer-bottom {
         border-top: 1px solid rgba(245, 241, 232, 0.08);
@@ -543,6 +640,7 @@
       @media (max-width: 1024px) {
         .detail-grid {
           grid-template-columns: 1fr;
+          grid-template-areas: "media" "content";
         }
 
         .product-detail:nth-child(even) .detail-grid {
@@ -569,8 +667,13 @@
           scroll-margin-top: 78px;
         } */
 
-        .nav-links,
-        .nav-cta {
+        .products-page-title {
+          padding: 126px 18px 48px;
+          font-size: clamp(2rem, 10vw, 3rem);
+          letter-spacing: 0.04em;
+        }
+
+        .nav-links {
           display: none;
         }
 
@@ -615,19 +718,19 @@
         </a>
 
         <ul class="nav-links" role="list">
-          <li><a href="index.html#about">About Us</a></li>
-          <li><a href="index.html#products">Products</a></li>
-          <li><a href="index.html#supply-chain">Supply Chain</a></li>
-          <li><a href="index.html#sustainability">Sustainability</a></li>
-          <li><a href="index.html#nur-series">Our Nurseries</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li class="nav-dropdown">
+            <a href="index.html#brand-statement" aria-haspopup="true">About Us</a>
+            <ul class="nav-submenu" role="menu">
+              <li role="none"><a href="about%20us.html#journey-title" role="menuitem">Our Journey</a></li>
+              <li role="none"><a href="about%20us.html#who-we-are" role="menuitem">Who We Are</a></li>
+              <li role="none"><a href="about%20us.html#our-team" role="menuitem">Our Team</a></li>
+              <li role="none"><a href="about%20us.html#supply-chain" role="menuitem">Supply Chain</a></li>
+            </ul>
+          </li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="sustainability.html">Sustainability</a></li>
+          <li><a href="index.html#footer">Contact Us</a></li>
         </ul>
-
-        <div class="nav-cta">
-          <a href="index.html#contact" class="btn btn-light"
-            >Let’s Work Together</a
-          >
-        </div>
 
         <button
           class="nav-hamburger"
@@ -649,17 +752,15 @@
         ×
       </button>
       <ul class="mobile-nav-links" role="list">
-        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#brand-statement">About Us</a></li>
         <li><a href="index.html#products">Products</a></li>
-        <li><a href="index.html#supply-chain">Supply Chain</a></li>
-        <li><a href="index.html#sustainability">Sustainability</a></li>
-        <li><a href="index.html#nur-series">Our Nurseries</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="sustainability.html">Sustainability</a></li>
+        <li><a href="index.html#footer">Contact Us</a></li>
       </ul>
-      <a href="index.html#contact" class="btn btn-light">Let’s Work Together</a>
     </nav>
 
     <main>
+      <h1 class="products-page-title">Our Products</h1>
       <section class="product-detail reveal" id="sandalwood-timor">
         <div class="container detail-grid">
           <div
@@ -700,6 +801,49 @@
               >
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="product-detail reveal reveal-delay-3" id="sandalwood-java">
+        <div class="container detail-grid">
+          <div class="detail-content">
+            <p class="eyebrow">Essential Oil</p>
+            <h2>Sandalwood Java</h2>
+            <p class="detail-origin">Java, Indonesia</p>
+            <p class="description">
+              Sandalwood Java is sourced through our origin-based supply chain
+              in Java, with a focus on traceability, responsible sourcing, and
+              long-term partnerships with local producers. Each stage is
+              managed at origin to preserve quality and support the communities
+              connected to this distinctive Indonesian botanical.
+            </p>
+            <div class="info-grid">
+              <div class="info-item">
+                <span>Origin</span>
+                <strong>Java, Indonesia</strong>
+              </div>
+              <div class="info-item">
+                <span>Category</span>
+                <strong>Essential Oil</strong>
+              </div>
+              <div class="info-item">
+                <span>Supply Model</span>
+                <strong>Traceable sourcing at origin</strong>
+              </div>
+              <div class="info-item">
+                <span>Applications</span>
+                <strong>Fine fragrance, wellness, perfumery</strong>
+              </div>
+            </div>
+            <div class="detail-actions">
+              <a href="sustainability.html" class="btn btn-dark"
+                >Sustainability</a
+              >
+            </div>
+          </div>
+          <div
+            class="detail-media media-sandalwood-java"
+            aria-label="Sandalwood Java"></div>
         </div>
       </section>
 
@@ -890,7 +1034,7 @@
               <li><a href="index.html#about">About Us</a></li>
               <li><a href="index.html#products">Products</a></li>
               <li><a href="index.html#supply-chain">Supply Chain</a></li>
-              <li><a href="index.html#sustainability">Sustainability</a></li>
+              <li><a href="sustainability.html">Sustainability</a></li>
               <li><a href="index.html#contact">Contact</a></li>
             </ul>
           </div>
@@ -899,6 +1043,7 @@
             <div class="footer-col-title">Products</div>
             <ul class="footer-links">
               <li><a href="#sandalwood-timor">Sandalwood Timor</a></li>
+              <li><a href="#sandalwood-java">Sandalwood Java</a></li>
               <li><a href="#vetiver">Vetiver</a></li>
               <li><a href="#patchouli-sumatra">Patchouli Sumatra</a></li>
               <li><a href="#nutmeg">Nutmeg</a></li>
@@ -909,12 +1054,24 @@
           <div>
             <div class="footer-col-title">Locations</div>
             <ul class="footer-links">
-              <li><a href="index.html#presence">Salatiga</a></li>
-              <li><a href="index.html#presence">Banda Aceh</a></li>
-              <li><a href="index.html#presence">Medan</a></li>
-              <li><a href="index.html#presence">Garut</a></li>
-              <li><a href="index.html#presence">Wonosari</a></li>
-              <li><a href="index.html#presence">Soe, West Timor</a></li>
+              <li>
+                <a href="about%20us.html#presence">
+                  <span class="footer-location-label">Head Office</span>
+                  <span class="footer-location-value">Salatiga, Central Java, Indonesia</span>
+                </a>
+              </li>
+              <li>
+                <a href="about%20us.html#presence">
+                  <span class="footer-location-label">Export Hub</span>
+                  <span class="footer-location-value">Medan, Sumatra, Indonesia</span>
+                </a>
+              </li>
+              <li>
+                <a href="about%20us.html#presence">
+                  <span class="footer-location-label">Regional Office</span>
+                  <span class="footer-location-value">Banda Aceh, Sumatra, Indonesia</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
